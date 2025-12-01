@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Second Self Studios</title>
+    <meta name="description" content="Second Self Studios creates premium D&D 5e content for busy professionals. Less Prep. More Play.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="About Second Self Studios">
+    <meta property="og:description" content="Premium D&D 5e content designed for busy professionals. Less Prep. More Play.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://secondselfstudios.com/about/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        .about-hero {
+            padding: 140px 50px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+        }
+
+        .about-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .about-hero .lead {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .about-section {
+            padding: 60px 50px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+
+        .about-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--teal);
+            border-radius: 8px;
+            padding: 30px 35px;
+            margin: 40px 0;
+        }
+
+        .philosophy-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--teal);
+            margin-bottom: 15px;
+        }
+
+        .philosophy-card p {
+            margin-bottom: 0;
+        }
+
+        .principles-list {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .principles-list li {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .principles-list li:last-child {
+            border-bottom: none;
+        }
+
+        .principles-list h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .principles-list p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .for-you {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .for-you h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .for-you ul {
+            list-style: none;
+            columns: 2;
+            gap: 20px;
+        }
+
+        .for-you li {
+            color: var(--text-secondary);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .for-you li::before {
+            content: '✓';
+            color: var(--teal);
+            position: absolute;
+            left: 0;
+        }
+
+        .cta-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 80px 50px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 35px;
+        }
+
+        @media (max-width: 900px) {
+            .about-hero,
+            .about-section {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .about-hero {
+                padding-top: 120px;
+            }
+
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .for-you ul {
+                columns: 1;
+            }
+
+            .cta-section {
+                padding: 60px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">S<sup>3</sup></a>
+        <ul class="nav-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="about-hero">
+        <div class="breadcrumb">
+            <a href="/">Home</a> / About
+        </div>
+        <h1>Less Prep. More Play.</h1>
+        <p class="lead">
+            Second Self Studios creates premium D&D 5e content for people who love running games but have limited time to prepare. Every product is designed to minimize prep while maximizing table impact.
+        </p>
+    </section>
+
+    <section class="about-section">
+        <h2>The Problem We Solve</h2>
+        <p>
+            You have a career, a family, responsibilities. You get maybe an hour or two to prep before game night. Most published content assumes you have unlimited time to read dense lore, cross-reference stat blocks, and adapt generic adventures to your table.
+        </p>
+        <p>
+            We build differently. Our content is organized for how DMs actually prep: quick reference tables, clear session structures, NPCs with personalities you can voice in seconds, and adventures that tell you exactly what you need to know and nothing more.
+        </p>
+    </section>
+
+    <section class="about-section">
+        <h2>Design Philosophy</h2>
+        
+        <div class="philosophy-card">
+            <h3>The Active Content Test</h3>
+            <p>
+                Every element must answer one question: "Does this create an adventure hook?" If a piece of lore, an NPC detail, or a location description doesn't drive play, it doesn't belong. No passive worldbuilding. No encyclopedia entries. Everything exists to give you something to use at the table.
+            </p>
+        </div>
+
+        <ul class="principles-list">
+            <li>
+                <h4>Modular by Design</h4>
+                <p>Every zone, faction, and adventure works standalone or as part of a larger campaign. Use what you need, ignore what you don't. No required reading to run a session.</p>
+            </li>
+            <li>
+                <h4>Preparation Rewarded</h4>
+                <p>When players research enemies, scout locations, or gather intel, they get real mechanical advantages. Preparation isn't busywork. It's strategy that pays off in combat and roleplay.</p>
+            </li>
+            <li>
+                <h4>Living Environments</h4>
+                <p>Detailed economies, political tensions, and faction dynamics create emergent stories. NPCs have goals and act on them whether players are watching or not. The world moves.</p>
+            </li>
+            <li>
+                <h4>Professional Adventurers</h4>
+                <p>Characters aren't chosen ones fulfilling prophecy. They're skilled specialists doing dangerous work. Competence matters. Training matters. The Guild doesn't send amateurs.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section class="about-section">
+        <h2>Built For You If...</h2>
+        
+        <div class="for-you">
+            <h3>This content is designed for DMs who:</h3>
+            <ul>
+                <li>Have full-time jobs outside of gaming</li>
+                <li>Prep in stolen moments, not dedicated hours</li>
+                <li>Want depth without density</li>
+                <li>Prefer logical worlds over pure fantasy</li>
+                <li>Like morally complex situations</li>
+                <li>Value player agency and consequences</li>
+                <li>Run games for other busy adults</li>
+                <li>Appreciate professional-grade organization</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2>The Shattered Veil</h2>
+        <p>
+            Our flagship product is The Shattered Veil, a campaign setting where planar catastrophe transformed the world. One thousand years ago, an empress tried to control seventeen planar boundaries at once. She failed. Now fragments of other planes bleed permanently into reality, creating zones where alignment is geography and survival requires adaptation.
+        </p>
+        <p>
+            Each fragment zone is a complete campaign region with its own rules, societies, and conflicts. The Frozen Fjords is finished: 120,000+ words of content including four settlements, fifty NPCs, complete mechanics, and an introductory adventure. More zones are in development.
+        </p>
+    </section>
+
+    <section class="about-section">
+        <h2>Contact</h2>
+        <p>
+            Questions, feedback, or just want to say hello? Reach out on social media or through the platforms where our products are available.
+        </p>
+        <p style="color: var(--text-muted);">
+            Social links and contact form coming soon.
+        </p>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Play?</h2>
+        <p>
+            Start with the Frozen Fjords or jump straight into Blood on the Line.
+        </p>
+        <a href="/frozen-fjords/" class="cta-button">Explore Frozen Fjords</a>
+        <a href="/blood-on-the-line/" class="cta-button cta-secondary">Get the Adventure</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">S<sup>3</sup></div>
+        <div class="footer-tagline">Less Prep. More Play.</div>
+        <ul class="footer-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <div class="footer-copyright">© 2025 Second Self Studios. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
