@@ -99,6 +99,31 @@ nav {
     color: var(--teal);
 }
 
+/* Mobile Menu Toggle */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu Checkbox (hidden) */
+.nav-checkbox {
+    display: none;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -201,6 +226,18 @@ nav {
     background: var(--bg-card);
     border-color: var(--text-muted);
     color: var(--text-primary);
+}
+
+/* Button wrapper for proper stacking */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.button-group .cta-secondary {
+    margin-left: 0;
 }
 
 /* Sections */
@@ -430,6 +467,7 @@ footer {
     font-weight: 800;
     font-size: 2rem;
     margin-bottom: 15px;
+    color: var(--white);
 }
 
 .footer-logo sup {
@@ -451,6 +489,7 @@ footer {
     gap: 30px;
     list-style: none;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -470,18 +509,83 @@ footer {
     color: var(--text-muted);
 }
 
-/* Responsive */
+/* ==================
+   RESPONSIVE STYLES
+   ================== */
+
 @media (max-width: 900px) {
+    /* Navigation */
     nav {
         padding: 15px 25px;
     }
 
-    .nav-links {
-        display: none;
+    .nav-toggle {
+        display: flex;
     }
 
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--bg-dark);
+        border-left: 1px solid var(--border);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 80px 30px 30px;
+        gap: 0;
+        transition: right 0.3s ease;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 20px 0;
+        font-size: 1rem;
+    }
+
+    /* Show menu when checkbox is checked */
+    .nav-checkbox:checked ~ .nav-links {
+        right: 0;
+    }
+
+    /* Animate hamburger to X */
+    .nav-checkbox:checked ~ .nav-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .nav-checkbox:checked ~ .nav-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-checkbox:checked ~ .nav-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Overlay when menu open */
+    .nav-checkbox:checked ~ .nav-overlay {
+        display: block;
+    }
+
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    /* Hero */
     .hero {
         padding: 100px 25px 60px;
+        min-height: auto;
     }
 
     .hero-logo {
@@ -492,26 +596,11 @@ footer {
         font-size: 1.8rem;
     }
 
-    section {
-        padding: 60px 25px;
+    .hero-description {
+        font-size: 1.1rem;
     }
 
-    .value-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .featured {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-image {
-        min-height: 250px;
-    }
-
-    .zone-grid {
-        grid-template-columns: 1fr;
-    }
-
+    /* Buttons */
     .cta-secondary {
         margin-left: 0;
         margin-top: 15px;
@@ -521,5 +610,88 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hero .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Sections */
+    section {
+        padding: 60px 25px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    /* Grids */
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        min-height: 200px;
+    }
+
+    .featured-content {
+        padding: 30px;
+    }
+
+    .featured-title {
+        font-size: 1.5rem;
+    }
+
+    .zone-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    footer {
+        padding: 50px 25px;
+    }
+
+    .footer-links {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        font-size: 4rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.5rem;
+    }
+
+    .hero-brand {
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
+    }
+
+    .cta-button {
+        padding: 16px 30px;
+        font-size: 0.85rem;
+    }
+
+    .tag {
+        font-size: 0.65rem;
+        padding: 5px 10px;
+    }
+
+    .value-card {
+        padding: 25px;
+    }
+
+    .featured-content {
+        padding: 25px;
     }
 }
