@@ -11,6 +11,7 @@
     <meta property="og:description" content="Premium D&D 5e content designed for busy professionals. Less Prep. More Play.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secondselfstudios.com/about/">
+    <meta property="og:image" content="https://secondselfstudios.com/og-image.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -28,179 +29,423 @@
     
     <style>
         .about-hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 140px 50px 80px;
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
         }
 
-        .breadcrumb {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .breadcrumb a {
-            color: var(--text-secondary);
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(78, 205, 196, 0.08) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         .about-hero h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 800;
             color: var(--white);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+        }
+
+        .about-hero h1 .accent {
+            color: var(--teal);
         }
 
         .about-hero .lead {
             font-size: 1.3rem;
             color: var(--text-secondary);
+            max-width: 650px;
             line-height: 1.7;
         }
 
-        .about-section {
-            padding: 60px 50px;
-            max-width: 800px;
-            margin: 0 auto;
+        .problem-section {
+            padding: 100px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
-        .about-section h2 {
+        .problem-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .problem-text h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--white);
             margin-bottom: 25px;
         }
 
-        .about-section p {
+        .problem-text p {
             color: var(--text-secondary);
             font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 20px;
         }
 
-        .philosophy-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--teal);
-            border-radius: 8px;
-            padding: 30px 35px;
-            margin: 40px 0;
-        }
-
-        .philosophy-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            color: var(--teal);
-            margin-bottom: 15px;
-        }
-
-        .philosophy-card p {
-            margin-bottom: 0;
-        }
-
-        .principles-list {
-            list-style: none;
-            margin: 40px 0;
-        }
-
-        .principles-list li {
-            padding: 25px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .principles-list li:last-child {
-            border-bottom: none;
-        }
-
-        .principles-list h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            color: var(--white);
-            margin-bottom: 10px;
-        }
-
-        .principles-list p {
-            margin-bottom: 0;
-            font-size: 1rem;
-        }
-
-        .for-you {
-            background: var(--bg-card);
+        .problem-visual {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 40px;
-            margin: 40px 0;
         }
 
-        .for-you h3 {
+        .problem-visual h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--teal);
+            margin-bottom: 25px;
+        }
+
+        .comparison-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-item:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-item .label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .comparison-item .others {
+            color: #888;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        .comparison-item .ours {
+            color: var(--teal);
+            font-weight: 500;
+        }
+
+        .philosophy-section {
+            padding: 100px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .philosophy-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .philosophy-header .section-label {
+            margin-bottom: 15px;
+        }
+
+        .philosophy-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--white);
             margin-bottom: 20px;
         }
 
-        .for-you ul {
-            list-style: none;
-            columns: 2;
-            gap: 20px;
-        }
-
-        .for-you li {
+        .philosophy-header p {
             color: var(--text-secondary);
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .for-you li::before {
+        .active-content-test {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--teal);
+            border-radius: 12px;
+            padding: 50px;
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .active-content-icon {
+            font-size: 4rem;
+        }
+
+        .active-content-text h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .active-content-text p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .principle-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 35px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .principle-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+        }
+
+        .principle-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .principle-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .principle-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .audience-section {
+            padding: 100px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .audience-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .audience-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .audience-text p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .audience-checklist {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, var(--bg-dark) 100%);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 12px;
+            padding: 35px;
+        }
+
+        .audience-checklist h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .audience-checklist ul {
+            list-style: none;
+        }
+
+        .audience-checklist li {
+            color: var(--text-secondary);
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .audience-checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .audience-checklist li::before {
             content: '✓';
             color: var(--teal);
             position: absolute;
             left: 0;
+            font-weight: 600;
+        }
+
+        .setting-section {
+            padding: 100px 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .setting-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .setting-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .setting-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .setting-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .zone-preview {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .zone-preview:last-child {
+            border-bottom: none;
+        }
+
+        .zone-status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .zone-status.complete {
+            background: var(--teal);
+        }
+
+        .zone-status.progress {
+            background: #f0ad4e;
+        }
+
+        .zone-status.planned {
+            background: var(--text-muted);
+        }
+
+        .zone-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 3px;
+        }
+
+        .zone-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         .cta-section {
-            background: var(--bg-card);
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
             border-top: 1px solid var(--border);
-            padding: 80px 50px;
+            padding: 100px 50px;
             text-align: center;
-            margin-top: 60px;
         }
 
         .cta-section h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
         }
 
         .cta-section p {
             color: var(--text-secondary);
+            font-size: 1.1rem;
             max-width: 500px;
-            margin: 0 auto 35px;
+            margin: 0 auto 40px;
         }
 
         @media (max-width: 900px) {
-            .about-hero,
-            .about-section {
-                padding-left: 25px;
-                padding-right: 25px;
-            }
-
             .about-hero {
-                padding-top: 120px;
+                padding: 120px 25px 60px;
             }
 
             .about-hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
-            .for-you ul {
-                columns: 1;
+            .problem-section,
+            .philosophy-section,
+            .audience-section,
+            .setting-section {
+                padding: 60px 25px;
+            }
+
+            .problem-content,
+            .audience-content,
+            .setting-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .active-content-test {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 35px;
+            }
+
+            .principles-grid {
+                grid-template-columns: 1fr;
             }
 
             .cta-section {
                 padding: 60px 25px;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -212,102 +457,168 @@
         <ul class="nav-links">
             <li><a href="/products/">Products</a></li>
             <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/blood-on-the-line/">Blood on the Line</a></li>
             <li><a href="/about/">About</a></li>
         </ul>
     </nav>
 
     <section class="about-hero">
-        <div class="breadcrumb">
-            <a href="/">Home</a> / About
-        </div>
-        <h1>Less Prep. More Play.</h1>
+        <h1>Less Prep. <span class="accent">More Play.</span></h1>
         <p class="lead">
             Second Self Studios creates premium D&D 5e content for people who love running games but have limited time to prepare. Every product is designed to minimize prep while maximizing table impact.
         </p>
     </section>
 
-    <section class="about-section">
-        <h2>The Problem We Solve</h2>
-        <p>
-            You have a career, a family, responsibilities. You get maybe an hour or two to prep before game night. Most published content assumes you have unlimited time to read dense lore, cross-reference stat blocks, and adapt generic adventures to your table.
-        </p>
-        <p>
-            We build differently. Our content is organized for how DMs actually prep: quick reference tables, clear session structures, NPCs with personalities you can voice in seconds, and adventures that tell you exactly what you need to know and nothing more.
-        </p>
+    <section class="problem-section">
+        <div class="problem-content">
+            <div class="problem-text">
+                <h2>The Problem We Solve</h2>
+                <p>
+                    You have a career, a family, responsibilities. You get maybe an hour or two to prep before game night.
+                </p>
+                <p>
+                    Most published content assumes you have unlimited time to read dense lore, cross-reference stat blocks, and adapt generic adventures to your table. We build differently.
+                </p>
+            </div>
+            <div class="problem-visual">
+                <h3>How We're Different</h3>
+                <div class="comparison-item">
+                    <div class="label">Organization</div>
+                    <div class="others">Buried in paragraphs of lore</div>
+                    <div class="ours">Quick reference tables, clear headers</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="label">NPCs</div>
+                    <div class="others">Pages of backstory to memorize</div>
+                    <div class="ours">Personalities you can voice in seconds</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="label">Adventures</div>
+                    <div class="others">Walls of text, find the plot yourself</div>
+                    <div class="ours">Session-by-session, beat-by-beat guides</div>
+                </div>
+                <div class="comparison-item">
+                    <div class="label">Worldbuilding</div>
+                    <div class="others">Encyclopedia entries about history</div>
+                    <div class="ours">Everything creates adventure hooks</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="about-section">
-        <h2>Design Philosophy</h2>
-        
-        <div class="philosophy-card">
-            <h3>The Active Content Test</h3>
-            <p>
-                Every element must answer one question: "Does this create an adventure hook?" If a piece of lore, an NPC detail, or a location description doesn't drive play, it doesn't belong. No passive worldbuilding. No encyclopedia entries. Everything exists to give you something to use at the table.
-            </p>
+    <section class="philosophy-section">
+        <div class="philosophy-header">
+            <div class="section-label">Design Philosophy</div>
+            <h2>How We Build Content</h2>
+            <p>Every decision we make comes back to one question: does this help you run a better game with less effort?</p>
         </div>
 
-        <ul class="principles-list">
-            <li>
+        <div class="active-content-test">
+            <div class="active-content-icon">🎯</div>
+            <div class="active-content-text">
+                <h3>The Active Content Test</h3>
+                <p>
+                    Every element must answer one question: "Does this create an adventure hook?" If a piece of lore, an NPC detail, or a location description doesn't drive play, it doesn't belong. No passive worldbuilding. No encyclopedia entries. Everything exists to give you something to use at the table.
+                </p>
+            </div>
+        </div>
+
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-icon">⚡</div>
                 <h4>Modular by Design</h4>
                 <p>Every zone, faction, and adventure works standalone or as part of a larger campaign. Use what you need, ignore what you don't. No required reading to run a session.</p>
-            </li>
-            <li>
+            </div>
+            <div class="principle-card">
+                <div class="principle-icon">🎲</div>
                 <h4>Preparation Rewarded</h4>
-                <p>When players research enemies, scout locations, or gather intel, they get real mechanical advantages. Preparation isn't busywork. It's strategy that pays off in combat and roleplay.</p>
-            </li>
-            <li>
+                <p>When players research enemies, scout locations, or gather intel, they get real mechanical advantages. Preparation isn't busywork. It's strategy that pays off.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-icon">🗺️</div>
                 <h4>Living Environments</h4>
-                <p>Detailed economies, political tensions, and faction dynamics create emergent stories. NPCs have goals and act on them whether players are watching or not. The world moves.</p>
-            </li>
-            <li>
+                <p>Detailed economies, political tensions, and faction dynamics create emergent stories. NPCs have goals and act on them whether players are watching or not.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-icon">⚔️</div>
                 <h4>Professional Adventurers</h4>
-                <p>Characters aren't chosen ones fulfilling prophecy. They're skilled specialists doing dangerous work. Competence matters. Training matters. The Guild doesn't send amateurs.</p>
-            </li>
-        </ul>
-    </section>
-
-    <section class="about-section">
-        <h2>Built For You If...</h2>
-        
-        <div class="for-you">
-            <h3>This content is designed for DMs who:</h3>
-            <ul>
-                <li>Have full-time jobs outside of gaming</li>
-                <li>Prep in stolen moments, not dedicated hours</li>
-                <li>Want depth without density</li>
-                <li>Prefer logical worlds over pure fantasy</li>
-                <li>Like morally complex situations</li>
-                <li>Value player agency and consequences</li>
-                <li>Run games for other busy adults</li>
-                <li>Appreciate professional-grade organization</li>
-            </ul>
+                <p>Characters aren't chosen ones fulfilling prophecy. They're skilled specialists doing dangerous work. Competence matters. Training matters.</p>
+            </div>
         </div>
     </section>
 
-    <section class="about-section">
-        <h2>The Shattered Veil</h2>
-        <p>
-            Our flagship product is The Shattered Veil, a campaign setting where planar catastrophe transformed the world. One thousand years ago, an empress tried to control seventeen planar boundaries at once. She failed. Now fragments of other planes bleed permanently into reality, creating zones where alignment is geography and survival requires adaptation.
-        </p>
-        <p>
-            Each fragment zone is a complete campaign region with its own rules, societies, and conflicts. The Frozen Fjords is finished: 120,000+ words of content including four settlements, fifty NPCs, complete mechanics, and an introductory adventure. More zones are in development.
-        </p>
+    <section class="audience-section">
+        <div class="audience-content">
+            <div class="audience-text">
+                <h2>Built For Busy DMs</h2>
+                <p>
+                    Our content is designed for people who run games as a hobby, not a job. You want depth and quality, but you can't spend ten hours prepping a single session. We get it. We're the same way.
+                </p>
+            </div>
+            <div class="audience-checklist">
+                <h3>This is for you if you:</h3>
+                <ul>
+                    <li>Have a full-time job outside of gaming</li>
+                    <li>Prep in stolen moments, not dedicated hours</li>
+                    <li>Want depth without density</li>
+                    <li>Prefer logical worlds over pure fantasy</li>
+                    <li>Like morally complex situations</li>
+                    <li>Value player agency and consequences</li>
+                    <li>Run games for other busy adults</li>
+                    <li>Appreciate professional-grade organization</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <section class="about-section">
-        <h2>Contact</h2>
-        <p>
-            Questions, feedback, or just want to say hello? Reach out on social media or through the platforms where our products are available.
-        </p>
-        <p style="color: var(--text-muted);">
-            Social links and contact form coming soon.
-        </p>
+    <section class="setting-section">
+        <div class="setting-content">
+            <div class="setting-text">
+                <h2>The Shattered Veil</h2>
+                <p>
+                    Our flagship setting where planar catastrophe transformed the world. One thousand years ago, an empress tried to control seventeen planar boundaries at once. She failed.
+                </p>
+                <p>
+                    Now fragments of other planes bleed permanently into reality, creating zones where alignment is geography and survival requires adaptation. Each zone is a complete campaign region with its own rules, societies, and conflicts.
+                </p>
+            </div>
+            <div class="setting-visual">
+                <div class="zone-preview">
+                    <div class="zone-status complete"></div>
+                    <div class="zone-info">
+                        <h4>Frozen Fjords</h4>
+                        <span>Mount Celestia • 120k+ words</span>
+                    </div>
+                </div>
+                <div class="zone-preview">
+                    <div class="zone-status progress"></div>
+                    <div class="zone-info">
+                        <h4>Godsvein Valley</h4>
+                        <span>The Abyss • In development</span>
+                    </div>
+                </div>
+                <div class="zone-preview">
+                    <div class="zone-status planned"></div>
+                    <div class="zone-info">
+                        <h4>The Thousand Lakes</h4>
+                        <span>Elemental Water • Planned</span>
+                    </div>
+                </div>
+                <div class="zone-preview">
+                    <div class="zone-status planned"></div>
+                    <div class="zone-info">
+                        <h4>More Zones</h4>
+                        <span>17 total planned</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="cta-section">
         <h2>Ready to Play?</h2>
         <p>
-            Start with the Frozen Fjords or jump straight into Blood on the Line.
+            Start with the complete Frozen Fjords zone or jump straight into the Blood on the Line adventure.
         </p>
         <a href="/frozen-fjords/" class="cta-button">Explore Frozen Fjords</a>
         <a href="/blood-on-the-line/" class="cta-button cta-secondary">Get the Adventure</a>

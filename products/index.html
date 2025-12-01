@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Second Self Studios</title>
-    <meta name="description" content="Second Self Studios creates premium D&D 5e content for busy professionals. Less Prep. More Play.">
+    <title>Products | Second Self Studios</title>
+    <meta name="description" content="Campaign settings, adventures, and bundles for D&D 5e. Premium content designed for busy professionals.">
     
     <!-- Open Graph / Social -->
-    <meta property="og:title" content="About Second Self Studios">
-    <meta property="og:description" content="Premium D&D 5e content designed for busy professionals. Less Prep. More Play.">
+    <meta property="og:title" content="Products | Second Self Studios">
+    <meta property="og:description" content="Campaign settings, adventures, and bundles for D&D 5e. Less Prep. More Play.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://secondselfstudios.com/about/">
+    <meta property="og:url" content="https://secondselfstudios.com/products/">
+    <meta property="og:image" content="https://secondselfstudios.com/og-image.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -27,145 +28,394 @@
     <link rel="stylesheet" href="/css/style.css">
     
     <style>
-        .about-hero {
-            padding: 140px 50px 80px;
-            max-width: 800px;
-            margin: 0 auto;
+        .products-hero {
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 50px 60px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .breadcrumb {
+        .products-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(78, 205, 196, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .products-hero h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .breadcrumb a {
-            color: var(--text-secondary);
-        }
-
-        .about-hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             color: var(--white);
-            margin-bottom: 30px;
-        }
-
-        .about-hero .lead {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .about-section {
-            padding: 60px 50px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 25px;
-        }
-
-        .about-section p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
             margin-bottom: 20px;
         }
 
-        .philosophy-card {
+        .products-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        .category-nav {
             background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--teal);
-            border-radius: 8px;
-            padding: 30px 35px;
-            margin: 40px 0;
-        }
-
-        .philosophy-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            color: var(--teal);
-            margin-bottom: 15px;
-        }
-
-        .philosophy-card p {
-            margin-bottom: 0;
-        }
-
-        .principles-list {
-            list-style: none;
-            margin: 40px 0;
-        }
-
-        .principles-list li {
-            padding: 25px 0;
+            border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
+            padding: 0 50px;
+            position: sticky;
+            top: 60px;
+            z-index: 90;
         }
 
-        .principles-list li:last-child {
-            border-bottom: none;
+        .category-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
         }
 
-        .principles-list h4 {
+        .category-nav a {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 20px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .category-nav a:hover,
+        .category-nav a.active {
+            color: var(--teal);
+            border-bottom-color: var(--teal);
+        }
+
+        .products-section {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-header {
+            margin-bottom: 40px;
+        }
+
+        .category-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
             color: var(--white);
             margin-bottom: 10px;
         }
 
-        .principles-list p {
-            margin-bottom: 0;
-            font-size: 1rem;
+        .category-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
         }
 
-        .for-you {
+        .featured-product {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px;
-            margin: 40px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: border-color 0.2s, transform 0.2s;
         }
 
-        .for-you h3 {
+        .featured-product:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+        }
+
+        .featured-product-image {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        .featured-product-content {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-status {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-available {
+            color: var(--teal);
+        }
+
+        .status-available::before {
+            background: var(--teal);
+        }
+
+        .status-development {
+            color: #f0ad4e;
+        }
+
+        .status-development::before {
+            background: #f0ad4e;
+        }
+
+        .status-planned {
+            color: var(--text-muted);
+        }
+
+        .status-planned::before {
+            background: var(--text-muted);
+        }
+
+        .featured-product-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
             color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .featured-product-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--teal);
             margin-bottom: 20px;
         }
 
-        .for-you ul {
-            list-style: none;
-            columns: 2;
-            gap: 20px;
+        .featured-product-description {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
         }
 
-        .for-you li {
+        .featured-product-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .product-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+        }
+
+        .product-card-image {
+            height: 160px;
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .product-card-content {
+            padding: 25px;
+        }
+
+        .product-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .product-card-subtitle {
+            font-size: 0.85rem;
+            color: var(--teal);
+            margin-bottom: 15px;
+        }
+
+        .product-card-description {
             color: var(--text-secondary);
-            padding: 8px 0;
-            padding-left: 25px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .product-card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .product-card-meta .tag {
+            font-size: 0.7rem;
+            padding: 4px 10px;
+        }
+
+        .product-card-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+
+        .product-card-link:hover {
+            gap: 10px;
+        }
+
+        .product-card-link.disabled {
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        /* Bundle special styling */
+        .bundle-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 80px 50px;
+            margin-top: 40px;
+        }
+
+        .bundle-section .products-section {
+            padding: 0;
+        }
+
+        .bundle-card {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.08) 0%, var(--bg-dark) 100%);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 0;
+        }
+
+        .bundle-card:hover {
+            border-color: var(--teal);
+        }
+
+        .bundle-image {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        .bundle-content {
+            padding: 50px;
+        }
+
+        .bundle-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .bundle-content .subtitle {
+            color: var(--teal);
+            margin-bottom: 20px;
+        }
+
+        .bundle-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .bundle-includes {
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+        }
+
+        .bundle-includes h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .bundle-includes ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .bundle-includes li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding-left: 20px;
             position: relative;
         }
 
-        .for-you li::before {
-            content: '✓';
+        .bundle-includes li::before {
+            content: '+';
             color: var(--teal);
             position: absolute;
             left: 0;
+            font-weight: 600;
         }
 
         .cta-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            padding: 80px 50px;
+            padding: 100px 50px;
             text-align: center;
-            margin-top: 60px;
         }
 
         .cta-section h2 {
@@ -181,22 +431,65 @@
         }
 
         @media (max-width: 900px) {
-            .about-hero,
-            .about-section {
-                padding-left: 25px;
-                padding-right: 25px;
+            .products-hero {
+                padding: 120px 25px 40px;
             }
 
-            .about-hero {
-                padding-top: 120px;
+            .products-hero h1 {
+                font-size: 2.5rem;
             }
 
-            .about-hero h1 {
-                font-size: 2.2rem;
+            .category-nav {
+                padding: 0 25px;
+                overflow-x: auto;
             }
 
-            .for-you ul {
-                columns: 1;
+            .category-nav-inner {
+                gap: 25px;
+            }
+
+            .category-nav a {
+                white-space: nowrap;
+            }
+
+            .products-section {
+                padding: 50px 25px;
+            }
+
+            .featured-product {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-product-image {
+                min-height: 200px;
+            }
+
+            .featured-product-content {
+                padding: 30px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bundle-section {
+                padding: 50px 25px;
+            }
+
+            .bundle-card {
+                grid-template-columns: 1fr;
+            }
+
+            .bundle-image {
+                min-height: 180px;
+            }
+
+            .bundle-content {
+                padding: 30px;
+            }
+
+            .bundle-includes ul {
+                grid-template-columns: 1fr;
             }
 
             .cta-section {
@@ -212,104 +505,182 @@
         <ul class="nav-links">
             <li><a href="/products/">Products</a></li>
             <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/blood-on-the-line/">Blood on the Line</a></li>
             <li><a href="/about/">About</a></li>
         </ul>
     </nav>
 
-    <section class="about-hero">
-        <div class="breadcrumb">
-            <a href="/">Home</a> / About
+    <section class="products-hero">
+        <h1>Products</h1>
+        <p>Campaign settings, adventures, and bundles for D&D 5e. Everything is part of The Shattered Veil, but each product works standalone.</p>
+    </section>
+
+    <div class="category-nav">
+        <div class="category-nav-inner">
+            <a href="#settings" class="active">Campaign Settings</a>
+            <a href="#adventures">Adventures</a>
+            <a href="#bundles">Bundles</a>
         </div>
-        <h1>Less Prep. More Play.</h1>
-        <p class="lead">
-            Second Self Studios creates premium D&D 5e content for people who love running games but have limited time to prepare. Every product is designed to minimize prep while maximizing table impact.
-        </p>
-    </section>
+    </div>
 
-    <section class="about-section">
-        <h2>The Problem We Solve</h2>
-        <p>
-            You have a career, a family, responsibilities. You get maybe an hour or two to prep before game night. Most published content assumes you have unlimited time to read dense lore, cross-reference stat blocks, and adapt generic adventures to your table.
-        </p>
-        <p>
-            We build differently. Our content is organized for how DMs actually prep: quick reference tables, clear session structures, NPCs with personalities you can voice in seconds, and adventures that tell you exactly what you need to know and nothing more.
-        </p>
-    </section>
-
-    <section class="about-section">
-        <h2>Design Philosophy</h2>
-        
-        <div class="philosophy-card">
-            <h3>The Active Content Test</h3>
-            <p>
-                Every element must answer one question: "Does this create an adventure hook?" If a piece of lore, an NPC detail, or a location description doesn't drive play, it doesn't belong. No passive worldbuilding. No encyclopedia entries. Everything exists to give you something to use at the table.
-            </p>
+    <section id="settings" class="products-section">
+        <div class="category-header">
+            <h2>Campaign Settings</h2>
+            <p>Complete zones from The Shattered Veil. Each is a full campaign region with settlements, NPCs, factions, and mechanics.</p>
         </div>
 
-        <ul class="principles-list">
-            <li>
-                <h4>Modular by Design</h4>
-                <p>Every zone, faction, and adventure works standalone or as part of a larger campaign. Use what you need, ignore what you don't. No required reading to run a session.</p>
-            </li>
-            <li>
-                <h4>Preparation Rewarded</h4>
-                <p>When players research enemies, scout locations, or gather intel, they get real mechanical advantages. Preparation isn't busywork. It's strategy that pays off in combat and roleplay.</p>
-            </li>
-            <li>
-                <h4>Living Environments</h4>
-                <p>Detailed economies, political tensions, and faction dynamics create emergent stories. NPCs have goals and act on them whether players are watching or not. The world moves.</p>
-            </li>
-            <li>
-                <h4>Professional Adventurers</h4>
-                <p>Characters aren't chosen ones fulfilling prophecy. They're skilled specialists doing dangerous work. Competence matters. Training matters. The Guild doesn't send amateurs.</p>
-            </li>
-        </ul>
-    </section>
+        <a href="/frozen-fjords/" class="featured-product" style="text-decoration: none;">
+            <div class="featured-product-image">Map artwork</div>
+            <div class="featured-product-content">
+                <div class="product-status status-available">Available Now</div>
+                <h3 class="featured-product-title">Frozen Fjords</h3>
+                <div class="featured-product-subtitle">Mount Celestia Fragment • Lawful Good</div>
+                <p class="featured-product-description">
+                    A forced paradise where morality becomes environmental law. The Radiance transforms everyone who stays, pushing them toward Lawful Good whether they want it or not. Some call it heaven. Others call it a prison with comfortable chains.
+                </p>
+                <div class="featured-product-meta">
+                    <span class="tag">120k+ Words</span>
+                    <span class="tag">4 Settlements</span>
+                    <span class="tag">50+ NPCs</span>
+                    <span class="tag">Complete Zone</span>
+                </div>
+                <span class="product-card-link">Explore Frozen Fjords →</span>
+            </div>
+        </a>
 
-    <section class="about-section">
-        <h2>Built For You If...</h2>
-        
-        <div class="for-you">
-            <h3>This content is designed for DMs who:</h3>
-            <ul>
-                <li>Have full-time jobs outside of gaming</li>
-                <li>Prep in stolen moments, not dedicated hours</li>
-                <li>Want depth without density</li>
-                <li>Prefer logical worlds over pure fantasy</li>
-                <li>Like morally complex situations</li>
-                <li>Value player agency and consequences</li>
-                <li>Run games for other busy adults</li>
-                <li>Appreciate professional-grade organization</li>
-            </ul>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-card-image">Artwork coming</div>
+                <div class="product-card-content">
+                    <div class="product-status status-development">In Development</div>
+                    <h3 class="product-card-title">Godsvein Valley</h3>
+                    <div class="product-card-subtitle">Abyss Fragment • Chaotic Evil</div>
+                    <p class="product-card-description">
+                        Where the Abyss corrupts the land itself. Survival demands moral compromise. The eternal enemy of the Frozen Fjords, locked in perpetual border conflict.
+                    </p>
+                    <div class="product-card-meta">
+                        <span class="tag">Corruption Mechanics</span>
+                        <span class="tag">Border Conflict</span>
+                    </div>
+                    <span class="product-card-link disabled">Coming Soon</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card-image">Artwork coming</div>
+                <div class="product-card-content">
+                    <div class="product-status status-planned">Planned</div>
+                    <h3 class="product-card-title">The Thousand Lakes</h3>
+                    <div class="product-card-subtitle">Elemental Water Fragment</div>
+                    <p class="product-card-description">
+                        Shifting archipelagos in an endless aquatic expanse. Islands drift, currents change, and what was coast yesterday is deep water today.
+                    </p>
+                    <div class="product-card-meta">
+                        <span class="tag">Aquatic</span>
+                        <span class="tag">Exploration</span>
+                    </div>
+                    <span class="product-card-link disabled">Future Release</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card-image">Artwork coming</div>
+                <div class="product-card-content">
+                    <div class="product-status status-planned">Planned</div>
+                    <h3 class="product-card-title">More Zones</h3>
+                    <div class="product-card-subtitle">17 Total Planned</div>
+                    <p class="product-card-description">
+                        Burning Valleys (Elemental Fire), Ironspine Mountains (Shadowfell), Southern Peninsula (Arborea), and more fragments across three continents.
+                    </p>
+                    <div class="product-card-meta">
+                        <span class="tag">Various Planes</span>
+                    </div>
+                    <span class="product-card-link disabled">Future Releases</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="about-section">
-        <h2>The Shattered Veil</h2>
-        <p>
-            Our flagship product is The Shattered Veil, a campaign setting where planar catastrophe transformed the world. One thousand years ago, an empress tried to control seventeen planar boundaries at once. She failed. Now fragments of other planes bleed permanently into reality, creating zones where alignment is geography and survival requires adaptation.
-        </p>
-        <p>
-            Each fragment zone is a complete campaign region with its own rules, societies, and conflicts. The Frozen Fjords is finished: 120,000+ words of content including four settlements, fifty NPCs, complete mechanics, and an introductory adventure. More zones are in development.
-        </p>
+    <section id="adventures" class="products-section" style="padding-top: 40px;">
+        <div class="category-header">
+            <h2>Adventures</h2>
+            <p>Ready-to-run with complete session guides, NPC references, and beat-by-beat pacing. Each works standalone or as part of a campaign.</p>
+        </div>
+
+        <a href="/blood-on-the-line/" class="featured-product" style="text-decoration: none;">
+            <div class="featured-product-image">Artwork coming</div>
+            <div class="featured-product-content">
+                <div class="product-status status-available">Available Now</div>
+                <h3 class="featured-product-title">Blood on the Line</h3>
+                <div class="featured-product-subtitle">Frozen Fjords • Levels 1-3</div>
+                <p class="featured-product-description">
+                    Professional monster hunters uncover a demon conspiracy. Eight cells, one invasion, and a choice that determines whether the border holds. The perfect introduction to The Shattered Veil.
+                </p>
+                <div class="featured-product-meta">
+                    <span class="tag">5 Sessions</span>
+                    <span class="tag">Levels 1-3</span>
+                    <span class="tag">Standalone or Campaign Start</span>
+                </div>
+                <span class="product-card-link">Learn More →</span>
+            </div>
+        </a>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-card-image">Artwork coming</div>
+                <div class="product-card-content">
+                    <div class="product-status status-planned">Planned</div>
+                    <h3 class="product-card-title">Future Adventures</h3>
+                    <div class="product-card-subtitle">Various Zones & Levels</div>
+                    <p class="product-card-description">
+                        More adventures are in planning. Some will work across multiple zones, others will be zone-specific deep dives.
+                    </p>
+                    <div class="product-card-meta">
+                        <span class="tag">Various Levels</span>
+                    </div>
+                    <span class="product-card-link disabled">Future Releases</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="about-section">
-        <h2>Contact</h2>
-        <p>
-            Questions, feedback, or just want to say hello? Reach out on social media or through the platforms where our products are available.
-        </p>
-        <p style="color: var(--text-muted);">
-            Social links and contact form coming soon.
-        </p>
+    <section id="bundles" class="bundle-section">
+        <div class="products-section">
+            <div class="category-header">
+                <h2>Bundles</h2>
+                <p>Discounted collections that combine complementary content. Save money, get more game.</p>
+            </div>
+
+            <div class="bundle-card">
+                <div class="bundle-image">Bundle artwork</div>
+                <div class="bundle-content">
+                    <div class="product-status status-planned">Coming Soon</div>
+                    <h3>Heaven & Hell Pack</h3>
+                    <div class="subtitle">Two Zones, One Eternal Conflict</div>
+                    <p>
+                        The complete Frozen Fjords and Godsvein Valley together. Run campaigns on either side of the Heaven-Hell Line, cross between them, or play out the border war from both perspectives.
+                    </p>
+                    <div class="bundle-includes">
+                        <h4>Includes</h4>
+                        <ul>
+                            <li>Frozen Fjords (Mount Celestia)</li>
+                            <li>Godsvein Valley (Abyss)</li>
+                            <li>Heaven-Hell Line border content</li>
+                            <li>Cross-zone adventure hooks</li>
+                        </ul>
+                    </div>
+                    <span class="product-card-link disabled">Available when Godsvein Valley releases</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="cta-section">
-        <h2>Ready to Play?</h2>
+        <h2>Start Playing Today</h2>
         <p>
-            Start with the Frozen Fjords or jump straight into Blood on the Line.
+            Grab the Frozen Fjords or Blood on the Line and see the difference thoughtful organization makes.
         </p>
-        <a href="/frozen-fjords/" class="cta-button">Explore Frozen Fjords</a>
+        <a href="/frozen-fjords/" class="cta-button">Get Frozen Fjords</a>
         <a href="/blood-on-the-line/" class="cta-button cta-secondary">Get the Adventure</a>
     </section>
 
