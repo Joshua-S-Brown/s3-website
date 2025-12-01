@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood on the Line | The Shattered Veil | Second Self Studios</title>
+    <meta name="description" content="A 5-session D&D 5e adventure for levels 1-3. Professional monster hunters uncover a demon conspiracy in a celestial paradise. Preparation rewarded.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Blood on the Line | Introductory Adventure">
+    <meta property="og:description" content="Professional monster hunters uncover a demon conspiracy. 5 sessions, levels 1-3. Preparation is meaningfully rewarded.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://secondselfstudios.com/blood-on-the-line/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        /* Page-specific styles */
+        .product-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 140px 50px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(78, 205, 196, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .product-hero-content {
+            max-width: 800px;
+        }
+
+        .breadcrumb {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+        }
+
+        .product-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .product-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .product-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .feature-section {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .premise-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .premise-block h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--teal);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .premise-block p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .session-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .session-card .session-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .session-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .session-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .theme-list {
+            list-style: none;
+        }
+
+        .theme-list li {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .theme-list li:last-child {
+            border-bottom: none;
+        }
+
+        .theme-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .theme-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .theme-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .includes-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .includes-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .includes-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .quote-block {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .quote-block blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .quote-block cite {
+            color: var(--text-muted);
+            font-style: normal;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 35px;
+        }
+
+        .works-as {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .works-as-item {
+            text-align: center;
+        }
+
+        .works-as-item .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .works-as-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .works-as-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .related-section {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .product-hero {
+                padding: 120px 25px 60px;
+            }
+
+            .product-title {
+                font-size: 2.5rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .session-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .session-grid .session-card:last-child {
+                grid-column: span 2;
+            }
+
+            .includes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-section,
+            .cta-section,
+            .related-section {
+                padding: 60px 25px;
+            }
+
+            .works-as {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">S<sup>3</sup></a>
+        <ul class="nav-links">
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/#shattered-veil">The Shattered Veil</a></li>
+            <li><a href="/#about">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="product-hero">
+        <div class="product-hero-content">
+            <div class="breadcrumb">
+                <a href="/">Home</a> / <a href="/frozen-fjords/">Frozen Fjords</a> / Blood on the Line
+            </div>
+            <h1 class="product-title">Blood on the Line</h1>
+            <p class="product-subtitle">
+                Professional monster hunters uncover a demon conspiracy threatening paradise. Preparation matters. Choices have consequences.
+            </p>
+            <div class="product-meta">
+                <span class="tag">Levels 1-3</span>
+                <span class="tag">5 Sessions</span>
+                <span class="tag">2 Weeks In-Game</span>
+                <span class="tag">Introductory Adventure</span>
+            </div>
+            <a href="#" class="cta-button">Get the Adventure</a>
+            <a href="#" class="cta-button cta-secondary">Free Preview</a>
+        </div>
+    </section>
+
+    <section class="feature-section">
+        <div class="premise-block">
+            <h3>The Premise</h3>
+            <p>
+                Eight demon cells are sabotaging Hallowed Harbor's defenses. A supply train has gone silent. General Zaxareth masses eighty demons at the Heaven-Hell Line, preparing to assault Forward Camp Vigilance.
+            </p>
+            <p style="margin-top: 15px;">
+                Your party joins the Veilwalkers Guild as professional monster hunters. Over two in-game weeks, you'll uncover the conspiracy, confront the cell coordinator, and choose how to reach the border before it falls. The demons can't hold the Frozen Fjords - the celestial fragment transforms evil. Their real goal: destroy the Church infrastructure that legitimizes transformation. Plant doubt. Let paradise tear itself apart.
+            </p>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section-label">Adventure Structure</div>
+                <h2 class="section-title">Five Sessions, One Conspiracy</h2>
+                <p class="section-description" style="max-width: none;">
+                    Each session builds on the last. Early investigation reveals the scope. Middle sessions escalate the stakes. The finale puts everything on the line.
+                </p>
+            </div>
+            <div></div>
+        </div>
+
+        <div class="session-grid">
+            <div class="session-card">
+                <div class="session-num">0</div>
+                <h4>Guild Induction</h4>
+                <p>Join the Veilwalkers. Meet your mentor. Get your first contract.</p>
+            </div>
+            <div class="session-card">
+                <div class="session-num">1</div>
+                <h4>Warehouse Assault</h4>
+                <p>Clear infested warehouse. Discover evidence of coordination.</p>
+            </div>
+            <div class="session-card">
+                <div class="session-num">2</div>
+                <h4>Seminary Investigation</h4>
+                <p>Demon sighting at the Church. Pattern emerges.</p>
+            </div>
+            <div class="session-card">
+                <div class="session-num">3</div>
+                <h4>Merchant Quarter</h4>
+                <p>Confront the cell coordinator. Race against the clock.</p>
+            </div>
+            <div class="session-card">
+                <div class="session-num">4</div>
+                <h4>Forward Camp</h4>
+                <p>The border assault. Hold the line or everything falls.</p>
+            </div>
+        </div>
+
+        <p style="color: var(--text-muted); text-align: center; margin-top: 20px; font-size: 0.9rem;">
+            Plus one interlude side contract between sessions 1 and 2: hunt a celestial-touched beast or investigate pre-Cataclysm mysteries.
+        </p>
+    </section>
+
+    <section class="feature-section" style="padding-top: 0;">
+        <div class="quote-block">
+            <blockquote>"We stand between the innocent and the dark. We hold the line when others cannot. We watch so that others may sleep."</blockquote>
+            <cite>- The Veilwalkers' Oath</cite>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section-label">Design Philosophy</div>
+                <h2 class="section-title">Not Chosen Ones. Professionals.</h2>
+                <ul class="theme-list">
+                    <li>
+                        <span class="theme-icon">🎯</span>
+                        <div class="theme-content">
+                            <h4>Preparation Rewarded</h4>
+                            <p>Research reveals enemy weaknesses. Scouting enables tactical advantages. Rushing in gets you killed. Time spent preparing has mechanical payoff at the table.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="theme-icon">⚖️</span>
+                        <div class="theme-content">
+                            <h4>Moral Complexity</h4>
+                            <p>The villain believes transformation violates free will. He's not entirely wrong. Paradise has costs. Your players will argue about whether forced virtue is actually good.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="theme-icon">👥</span>
+                        <div class="theme-content">
+                            <h4>Professional Competence</h4>
+                            <p>You're not destined heroes. You're skilled specialists doing dangerous work. The Guild trains you, equips you, and expects results. Promotion is earned.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="theme-icon">💀</span>
+                        <div class="theme-content">
+                            <h4>Meaningful Consequences</h4>
+                            <p>NPCs can die. Choices matter. The ending changes based on your decisions. Victory comes at cost.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-label">What's Included</div>
+                <h2 class="section-title">Ready to Run</h2>
+                <div class="includes-grid" style="grid-template-columns: 1fr;">
+                    <div class="includes-card">
+                        <h4>Complete Session Guides</h4>
+                        <p>Scene-by-scene breakdowns, read-aloud text, DM decision trees, and pacing notes for each session.</p>
+                    </div>
+                    <div class="includes-card">
+                        <h4>Player's Guide</h4>
+                        <p>Spoiler-free handout covering the world, the Guild, and character creation guidance.</p>
+                    </div>
+                    <div class="includes-card">
+                        <h4>NPC Quick Reference</h4>
+                        <p>All major NPCs with personalities, secrets, and roleplaying notes. Organized for at-table use.</p>
+                    </div>
+                    <div class="includes-card">
+                        <h4>Battle Map Specifications</h4>
+                        <p>Detailed map requirements for every combat encounter. Use with your preferred VTT or print.</p>
+                    </div>
+                    <div class="includes-card">
+                        <h4>Interlude Adventures</h4>
+                        <p>Two optional side contracts: Frostfang (hunt a celestial beast) or Frozen Dead (pre-Cataclysm mystery).</p>
+                    </div>
+                    <div class="includes-card">
+                        <h4>Continuation Hooks</h4>
+                        <p>Six campaign directions for after the adventure: border patrol, zone exploration, Guild leadership, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="section-label">Works Three Ways</div>
+        <h2>Start Here</h2>
+        <p>
+            Blood on the Line is designed as a flexible entry point.
+        </p>
+        <div class="works-as">
+            <div class="works-as-item">
+                <div class="icon">🚀</div>
+                <h4>Campaign Starter</h4>
+                <p>Introduction to the Frozen Fjords<br>and The Shattered Veil</p>
+            </div>
+            <div class="works-as-item">
+                <div class="icon">📦</div>
+                <h4>Standalone Adventure</h4>
+                <p>Complete 5-session arc<br>with satisfying conclusion</p>
+            </div>
+            <div class="works-as-item">
+                <div class="icon">🔌</div>
+                <h4>Drop-In Module</h4>
+                <p>Arctic intrigue one-shot<br>for any campaign</p>
+            </div>
+        </div>
+        <div style="margin-top: 50px;">
+            <a href="#" class="cta-button">Get the Adventure</a>
+            <a href="/frozen-fjords/" class="cta-button cta-secondary">Explore the Full Zone</a>
+        </div>
+    </section>
+
+    <section class="related-section">
+        <div class="section-label">Part of the Frozen Fjords</div>
+        <h2 class="section-title">The Complete Zone</h2>
+        <p class="section-description">
+            Blood on the Line is included with the Frozen Fjords zone. Get the full 120,000+ word setting with all settlements, NPCs, mechanics, and adventures.
+        </p>
+        <div class="featured" style="margin-top: 40px;">
+            <div class="featured-image">
+                <div class="featured-placeholder">Map artwork placeholder</div>
+            </div>
+            <div class="featured-content">
+                <div class="featured-label">Complete Zone</div>
+                <h3 class="featured-title">Frozen Fjords</h3>
+                <p class="featured-description">
+                    Where Mount Celestia bleeds through the arctic. A forced paradise where morality becomes environmental law. Four settlements, 50+ NPCs, complete mechanics, and this adventure.
+                </p>
+                <div class="tag-list">
+                    <span class="tag">120k+ Words</span>
+                    <span class="tag">4 Settlements</span>
+                    <span class="tag">50+ NPCs</span>
+                </div>
+                <a href="/frozen-fjords/" class="cta-button">Explore the Zone</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">S<sup>3</sup></div>
+        <div class="footer-tagline">Less Prep. More Play.</div>
+        <ul class="footer-links">
+            <li><a href="/#shattered-veil">The Shattered Veil</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="footer-copyright">© 2025 Second Self Studios. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
