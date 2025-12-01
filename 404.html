@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Second Self Studios</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on track.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 25px 80px;
+            position: relative;
+        }
+
+        .error-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(78, 205, 196, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .error-code {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--bg-card);
+            line-height: 1;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            color: var(--teal);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .error-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .error-message {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 450px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .error-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .error-flavor {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            max-width: 400px;
+        }
+
+        .error-flavor p {
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-title {
+                font-size: 1.4rem;
+            }
+
+            .error-links {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .error-links .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">S<sup>3</sup></a>
+        <input type="checkbox" id="nav-toggle" class="nav-checkbox">
+        <label for="nav-toggle" class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/blood-on-the-line/">Blood on the Line</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <label for="nav-toggle" class="nav-overlay"></label>
+    </nav>
+
+    <section class="error-page">
+        <div class="error-code">404</div>
+        <h1 class="error-title">This Path Leads Nowhere</h1>
+        <p class="error-message">
+            The page you're looking for doesn't exist—or perhaps it wandered into a fragment zone and hasn't come back. Let's get you somewhere useful.
+        </p>
+        <div class="error-links">
+            <a href="/" class="cta-button">Back to Home</a>
+            <a href="/the-shattered-veil/" class="cta-button cta-secondary">Explore the Setting</a>
+        </div>
+        <div class="error-flavor">
+            <p>"Even the Veilwalkers lose their way sometimes. The difference is they always prepare a backup route."</p>
+        </div>
+    </section>
+
+</body>
+</html>

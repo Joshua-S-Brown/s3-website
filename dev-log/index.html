@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Log | Second Self Studios</title>
+    <meta name="description" content="Development updates from Second Self Studios. Follow along as we build The Shattered Veil campaign setting and Blood on the Line adventure.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Dev Log | Second Self Studios">
+    <meta property="og:description" content="Development updates on The Shattered Veil campaign setting and Blood on the Line adventure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://secondselfstudios.com/dev-log/">
+    <meta property="og:image" content="https://secondselfstudios.com/og-image.png">
+    <meta property="og:site_name" content="Second Self Studios">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dev Log | Second Self Studios">
+    <meta name="twitter:description" content="Development updates on The Shattered Veil.">
+    <meta name="twitter:image" content="https://secondselfstudios.com/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://secondselfstudios.com/dev-log/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        .blog-hero {
+            padding: 140px 50px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(78, 205, 196, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .blog-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .blog-hero p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 50px 120px;
+        }
+
+        .post-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: border-color 0.2s;
+        }
+
+        .post-card:hover {
+            border-color: var(--teal);
+        }
+
+        .post-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .post-meta {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 15px;
+        }
+
+        .post-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .post-title:hover {
+            color: var(--teal);
+        }
+
+        .post-excerpt {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Full post styles (for when viewing a post on this page) */
+        .post-full {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 50px;
+            margin-bottom: 30px;
+        }
+
+        .post-full .post-meta {
+            margin-bottom: 20px;
+        }
+
+        .post-full .post-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .post-full .post-body {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .post-full .post-body p {
+            margin-bottom: 20px;
+        }
+
+        .post-full .post-body h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+            margin: 40px 0 20px;
+        }
+
+        .post-full .post-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .post-full .post-body ul {
+            margin: 0 0 20px 25px;
+            color: var(--text-secondary);
+        }
+
+        .post-full .post-body li {
+            margin-bottom: 10px;
+        }
+
+        .post-full .post-body strong {
+            color: var(--white);
+        }
+
+        .post-full .post-body em {
+            color: var(--teal);
+            font-style: normal;
+        }
+
+        .post-full .callout {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, transparent 100%);
+            border-left: 4px solid var(--teal);
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .post-full .callout p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        .post-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 60px 0;
+        }
+
+        @media (max-width: 900px) {
+            .blog-hero {
+                padding: 120px 25px 40px;
+            }
+
+            .blog-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .blog-content {
+                padding: 40px 25px 80px;
+            }
+
+            .post-card,
+            .post-full {
+                padding: 30px;
+            }
+
+            .post-full .post-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">S<sup>3</sup></a>
+        <input type="checkbox" id="nav-toggle" class="nav-checkbox">
+        <label for="nav-toggle" class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/blood-on-the-line/">Blood on the Line</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <label for="nav-toggle" class="nav-overlay"></label>
+    </nav>
+
+    <section class="blog-hero">
+        <div class="section-label">From the Studio</div>
+        <h1>Dev Log</h1>
+        <p>Updates on The Shattered Veil, design decisions, and lessons from the table.</p>
+    </section>
+
+    <div class="blog-content">
+        
+        <!-- Post 1: What We're Building -->
+        <article class="post-full" id="what-were-building">
+            <div class="post-meta">December 2024 • First Post</div>
+            <h2 class="post-title">What We're Building (And Why)</h2>
+            <div class="post-body">
+                <p>
+                    Second Self Studios exists because I got tired of buying campaign settings that looked beautiful but took hours to prep for a single session. I have a full-time job. I prep D&D in stolen moments—lunch breaks, waiting rooms, the twenty minutes before my group arrives. I needed content that respected that reality.
+                </p>
+                <p>
+                    So I started building it myself.
+                </p>
+
+                <h2>The Shattered Veil</h2>
+                <p>
+                    The flagship setting is <strong>The Shattered Veil</strong>—a world where a magical catastrophe tore open seventeen permanent connections to other planes. Each "fragment zone" is a complete region where a different plane bleeds through, transforming geography, society, and even alignment itself.
+                </p>
+                <p>
+                    The concept solves a structural problem: how do you make a setting that's both deep enough for long campaigns and modular enough that DMs can use pieces without buying into the whole thing? Fragment zones are the answer. Each one is self-contained. Use one, use five, use all seventeen. They work independently or together.
+                </p>
+
+                <h2>Frozen Fjords: First Zone</h2>
+                <p>
+                    The first complete zone is the <strong>Frozen Fjords</strong>—where Mount Celestia bleeds through the arctic. It's a forced paradise where morality becomes environmental law. Stay long enough and you become Lawful Good whether you wanted to or not. The Radiance heals, but it also transforms. Some call it heaven. Others call it a prison with comfortable chains.
+                </p>
+                <p>
+                    It's 120,000+ words of content: four settlements, fifty NPCs, complete mechanics, and adventures. Everything cross-referenced, indexed, and built for quick prep.
+                </p>
+
+                <h2>Blood on the Line: The Entry Point</h2>
+                <p>
+                    <strong>Blood on the Line</strong> is the introductory adventure—five sessions where professional monster hunters uncover a demon conspiracy threatening the border. It's designed to teach the setting's core concepts through play: preparation matters, choices have consequences, and the world responds to what players actually do.
+                </p>
+                
+                <div class="callout">
+                    <p>We're actively playtesting Blood on the Line right now. Our first group learned the hard way that prep matters—their disorganized first contract left them scrambling in combat. By session two, they were scouting locations, researching enemies, and actually using the advantages they'd prepared. The system teaches through play, not lectures.</p>
+                </div>
+
+                <h2>What's Next</h2>
+                <p>
+                    Right now we're finishing Blood on the Line through playtesting, polishing the Frozen Fjords content, and building toward a 2025 launch. <strong>Godsvein Valley</strong> (the Abyss fragment) is in development—it'll be the counterpart to Frozen Fjords, and together they'll form the "Heaven & Hell" pack covering both sides of the eternal border war.
+                </p>
+                <p>
+                    I'll post updates here as things progress. If you want to know when we launch, check back or follow along.
+                </p>
+                <p>
+                    Less prep. More play. That's what we're building.
+                </p>
+            </div>
+        </article>
+
+    </div>
+
+    <footer>
+        <div class="footer-logo">S<sup>3</sup></div>
+        <div class="footer-tagline">Less Prep. More Play.</div>
+        <ul class="footer-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/dev-log/">Dev Log</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <div class="footer-copyright">© 2025 Second Self Studios. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
