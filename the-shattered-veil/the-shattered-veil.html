@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Shattered Veil | D&D 5e Campaign Setting | Second Self Studios</title>
+    <meta name="description" content="A D&D 5e campaign setting where planar catastrophe transformed the world. 17 fragment zones across 3 continents where different planes permanently bleed through reality. Alignment becomes geography. Survival requires adaptation.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="The Shattered Veil | A World Transformed by Planar Chaos">
+    <meta property="og:description" content="D&D 5e campaign setting with 17 fragment zones where planes bleed through reality. Alignment becomes geography.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://secondselfstudios.com/the-shattered-veil/">
+    <meta property="og:image" content="https://secondselfstudios.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Second Self Studios">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Shattered Veil | D&D 5e Campaign Setting">
+    <meta name="twitter:description" content="17 fragment zones where planes bleed through reality. Alignment becomes geography.">
+    <meta name="twitter:image" content="https://secondselfstudios.com/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://secondselfstudios.com/the-shattered-veil/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        /* Hero - dramatic full-screen opening */
+        .setting-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 50px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .setting-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(240, 100, 100, 0.05) 0%, transparent 40%),
+                radial-gradient(ellipse at center, rgba(78, 205, 196, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 25px;
+        }
+
+        .setting-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* The Cataclysm section */
+        .cataclysm-section {
+            padding: 120px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cataclysm-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cataclysm-content .section-label {
+            text-align: center;
+        }
+
+        .cataclysm-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--teal), var(--border));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 50px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            background: var(--bg-dark);
+            border: 3px solid var(--teal);
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .timeline-item p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .timeline-item .highlight {
+            color: var(--teal);
+            font-weight: 500;
+        }
+
+        /* Quote block */
+        .epic-quote {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.08) 0%, transparent 100%);
+            border-left: 4px solid var(--teal);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .epic-quote blockquote {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .epic-quote cite {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        /* Fragment zones concept */
+        .concept-section {
+            padding: 120px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .concept-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .concept-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .concept-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .concept-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .concept-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-5px);
+        }
+
+        .concept-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .concept-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .concept-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Three continents */
+        .continents-section {
+            padding: 120px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .continents-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .continents-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .continents-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .continents-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .continent-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .continent-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .continent-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .continent-info {
+            padding: 50px;
+        }
+
+        .continent-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .continent-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .continent-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .continent-question {
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            color: var(--teal);
+            font-size: 1.1rem;
+        }
+
+        .continent-visual {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            position: relative;
+        }
+
+        .zone-list {
+            padding: 0 50px 50px;
+        }
+
+        .zone-list h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .zones-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .zone-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .zone-item:hover {
+            border-color: var(--teal);
+        }
+
+        .zone-item h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .zone-item .plane {
+            font-size: 0.8rem;
+            color: var(--teal);
+            margin-bottom: 8px;
+        }
+
+        .zone-item .effect {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* What makes this different */
+        .difference-section {
+            padding: 120px 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .difference-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .difference-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .difference-list {
+            display: grid;
+            gap: 30px;
+        }
+
+        .difference-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .difference-item:last-child {
+            border-bottom: none;
+        }
+
+        .difference-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        .difference-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .difference-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Available content */
+        .available-section {
+            padding: 120px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+        }
+
+        .available-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .available-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .available-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .available-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .available-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .available-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .available-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-5px);
+        }
+
+        .available-card .status {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #f0ad4e;
+            margin-bottom: 15px;
+        }
+
+        .available-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .available-card .subtitle {
+            color: var(--teal);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .available-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .available-card .cta-button {
+            display: inline-block;
+        }
+
+        /* CTA section */
+        .final-cta {
+            padding: 120px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(78, 205, 196, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .final-cta h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .concept-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .zones-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .setting-hero {
+                padding: 100px 25px 60px;
+            }
+
+            .setting-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cataclysm-section,
+            .concept-section,
+            .continents-section,
+            .difference-section,
+            .available-section,
+            .final-cta {
+                padding: 80px 25px;
+            }
+
+            .cataclysm-content h2,
+            .concept-header h2,
+            .continents-header h2,
+            .difference-header h2,
+            .available-header h2,
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .continent-header {
+                grid-template-columns: 1fr;
+            }
+
+            .continent-visual {
+                min-height: 200px;
+            }
+
+            .continent-info {
+                padding: 30px;
+            }
+
+            .zone-list {
+                padding: 0 30px 30px;
+            }
+
+            .zones-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .difference-item {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .available-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .epic-quote {
+                padding: 30px;
+                margin: 50px 25px;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">S<sup>3</sup></a>
+        <input type="checkbox" id="nav-toggle" class="nav-checkbox">
+        <label for="nav-toggle" class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/blood-on-the-line/">Blood on the Line</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <label for="nav-toggle" class="nav-overlay"></label>
+    </nav>
+
+    <section class="setting-hero">
+        <div class="hero-label">Campaign Setting</div>
+        <h1>The Shattered Veil</h1>
+        <p class="hero-subtitle">
+            One thousand years ago, an empress tried to harness seventeen planes at once. She failed. Now fragments of other realities bleed permanently into the world, and humanity has learned to live in the spaces between.
+        </p>
+        <a href="#cataclysm" class="cta-button">Discover the World</a>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <span>↓</span>
+        </div>
+    </section>
+
+    <section id="cataclysm" class="cataclysm-section">
+        <div class="cataclysm-content">
+            <div class="section-label">The History</div>
+            <h2>The Shattering</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>The Vision</h3>
+                    <p>
+                        Archmage-Empress Kalithene spent fifty years constructing <span class="highlight">seventeen massive pylons</span> across three continents. Each would anchor a permanent connection to a different plane, filtering beneficial energies while blocking dangers. Fire that forged without burning. Celestial guidance without judgment. Demonic power without corruption.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Six Hours of Paradise</h3>
+                    <p>
+                        On the Summer Solstice of Year 667, the ritual began. For six glorious hours, <span class="highlight">it worked perfectly</span>. Angels walked among humans. Shadowsteel formed freely. Paradise bloomed across three continents. Kalithene's consciousness held seventeen contradictory realities in perfect balance.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h3>The Shattering</h3>
+                    <p>
+                        Then came the handoff—transferring control to the pylons themselves. Her mind couldn't hold the paradox. <span class="highlight">She shattered.</span> The filters failed. Every plane poured through uncontrolled. Cities drowned. Forests ignited. Demons invaded. Sixty percent of humanity died in the first week.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h3>A Thousand Years Later</h3>
+                    <p>
+                        The world isn't post-apocalyptic anymore. It's <span class="highlight">weird but functional</span>. The pylons still stand, indestructible and impossible to shut off. Seventeen fragment zones spread across three continents. Humanity adapted. Civilization rebuilt. The fragments became home.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="epic-quote">
+        <blockquote>
+            "My children ask if I'm scared of the zones. I tell them no, the same way I'm not scared of the ocean. I respect it, I understand it, but I don't fear it. This is our world now."
+        </blockquote>
+        <cite>— Stable zone merchant, 1650 SV</cite>
+    </div>
+
+    <section class="concept-section">
+        <div class="concept-header">
+            <div class="section-label">The Concept</div>
+            <h2>Fragment Zones</h2>
+            <p>Regions where other planes of existence bleed through into the Material Plane, fundamentally altering everything within.</p>
+        </div>
+
+        <div class="concept-grid">
+            <div class="concept-card">
+                <div class="concept-icon">🌍</div>
+                <h3>Geography</h3>
+                <p>Climate, terrain, and natural laws change. Arctic becomes temperate. Mountains of silver erupt from plains.</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">🌿</div>
+                <h3>Ecology</h3>
+                <p>Flora and fauna transform. Supernatural creatures appear. The food chain becomes cosmic.</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">🏛️</div>
+                <h3>Society</h3>
+                <p>Culture, government, and daily life adapt. Economies leverage planar resources. Laws account for transformation.</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">⚖️</div>
+                <h3>Alignment</h3>
+                <p>Moral frameworks become environmental. Stay long enough, and the zone changes who you are.</p>
+            </div>
+        </div>
+
+        <div class="epic-quote" style="margin: 0 auto;">
+            <blockquote>
+                "The longer you stay, the more you change. That's not a warning—it's just physics. Planar physics."
+            </blockquote>
+            <cite>— Veilwalkers Guild training manual</cite>
+        </div>
+    </section>
+
+    <section class="continents-section">
+        <div class="continents-content">
+            <div class="continents-header">
+                <div class="section-label">The Geography</div>
+                <h2>Three Continents, Seventeen Fragments</h2>
+                <p>Each continent asks different questions about what it means to live under planar influence.</p>
+            </div>
+
+            <div class="continent-card">
+                <div class="continent-header">
+                    <div class="continent-info">
+                        <div class="continent-name">Andoria</div>
+                        <h3 class="continent-title">The Moral Battleground</h3>
+                        <p class="continent-desc">
+                            Four fragment zones arranged in a philosophical grid. Mount Celestia enforces lawful good. The Abyss corrupts toward chaos. Arborea overwhelms with passion. The Shadowfell drains all feeling. Opposed moral philosophies made manifest—and forced to trade with each other.
+                        </p>
+                        <p class="continent-question">"What happens when alignment becomes geography?"</p>
+                    </div>
+                    <div class="continent-visual">
+                        <div class="featured-placeholder">Continent map</div>
+                    </div>
+                </div>
+                <div class="zone-list">
+                    <h4>Fragment Zones</h4>
+                    <div class="zones-grid">
+                        <div class="zone-item">
+                            <h5>Frozen Fjords</h5>
+                            <div class="plane">Mount Celestia</div>
+                            <div class="effect">Shifts toward Lawful Good</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Godsvein Valley</h5>
+                            <div class="plane">The Abyss</div>
+                            <div class="effect">Corrupts toward Evil</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Southern Peninsula</h5>
+                            <div class="plane">Arborea</div>
+                            <div class="effect">Overwhelms with Passion</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Ironspine Mountains</h5>
+                            <div class="plane">Shadowfell</div>
+                            <div class="effect">Drains Emotion</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="continent-card">
+                <div class="continent-header">
+                    <div class="continent-info">
+                        <div class="continent-name">Kalendra</div>
+                        <h3 class="continent-title">The Elemental Continent</h3>
+                        <p class="continent-desc">
+                            Five zones dominated by elemental planes. Less concerned with morality, more focused on surviving and harnessing raw elemental forces. Fire forges without burning. Water never depletes. Earth shifts and changes. And in the center, pure chaos.
+                        </p>
+                        <p class="continent-question">"How do you harness destruction productively?"</p>
+                    </div>
+                    <div class="continent-visual">
+                        <div class="featured-placeholder">Continent map</div>
+                    </div>
+                </div>
+                <div class="zone-list">
+                    <h4>Fragment Zones</h4>
+                    <div class="zones-grid">
+                        <div class="zone-item">
+                            <h5>Burning Valleys</h5>
+                            <div class="plane">Elemental Fire</div>
+                            <div class="effect">Eternal flames, metalworking center</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Thousand Lakes</h5>
+                            <div class="plane">Elemental Water</div>
+                            <div class="effect">Endless water, maritime economy</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Skyreach Mountains</h5>
+                            <div class="plane">Elemental Earth</div>
+                            <div class="effect">Shifting stone, rare minerals</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Central Desert</h5>
+                            <div class="plane">Limbo</div>
+                            <div class="effect">Pure chaos, mostly uninhabitable</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="continent-card">
+                <div class="continent-header">
+                    <div class="continent-info">
+                        <div class="continent-name">Morgard</div>
+                        <h3 class="continent-title">The Strange Lands</h3>
+                        <p class="continent-desc">
+                            The most bizarre and dangerous fragments. Time distortion where days become years. Soul-binding contracts that follow you beyond death. Ghost-touched lands where the dead walk as equals. This is where the stranger planes manifested.
+                        </p>
+                        <p class="continent-question">"What happens when reality itself becomes negotiable?"</p>
+                    </div>
+                    <div class="continent-visual">
+                        <div class="featured-placeholder">Continent map</div>
+                    </div>
+                </div>
+                <div class="zone-list">
+                    <h4>Fragment Zones</h4>
+                    <div class="zones-grid">
+                        <div class="zone-item">
+                            <h5>Everwood</h5>
+                            <div class="plane">Feywild</div>
+                            <div class="effect">Time distortion, fey bargains</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Lake Sorrow</h5>
+                            <div class="plane">Nine Hells</div>
+                            <div class="effect">Soul contracts, infernal law</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Frozen Crown</h5>
+                            <div class="plane">Ethereal</div>
+                            <div class="effect">The dead walk openly</div>
+                        </div>
+                        <div class="zone-item">
+                            <h5>Southern Ice</h5>
+                            <div class="plane">Unknown</div>
+                            <div class="effect">Unexplored. Forbidden.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="difference-section">
+        <div class="difference-header">
+            <div class="section-label">The Approach</div>
+            <h2>What Makes This Different</h2>
+        </div>
+
+        <div class="difference-list">
+            <div class="difference-item">
+                <div class="difference-label">Alignment</div>
+                <div class="difference-content">
+                    <h4>Geographic, Not Philosophical</h4>
+                    <p>Alignment isn't just how you feel—it's where you stand. Stay in Mount Celestia's shadow long enough and you become lawful good whether you wanted to or not. The zones don't care about your backstory.</p>
+                </div>
+            </div>
+            <div class="difference-item">
+                <div class="difference-label">Adventurers</div>
+                <div class="difference-content">
+                    <h4>Professional Specialists</h4>
+                    <p>No prophecies. No chosen ones. Characters are skilled professionals doing dangerous work because someone has to. The Veilwalkers Guild trains, equips, and deploys—and expects results.</p>
+                </div>
+            </div>
+            <div class="difference-item">
+                <div class="difference-label">Societies</div>
+                <div class="difference-content">
+                    <h4>Functional Under Influence</h4>
+                    <p>After a thousand years, people figured it out. Demon-ruled valleys have functioning economies. Celestial zones have crime (sort of). Every society adapted to its planar reality.</p>
+                </div>
+            </div>
+            <div class="difference-item">
+                <div class="difference-label">Content</div>
+                <div class="difference-content">
+                    <h4>Ready to Run</h4>
+                    <p>Complete settlements with NPCs you can voice in seconds. Session-by-session adventure guides. Quick reference tables. Everything built for DMs who prep in stolen moments, not dedicated hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="available-section">
+        <div class="available-content">
+            <div class="available-header">
+                <div class="section-label">Explore the Setting</div>
+                <h2>Available Content</h2>
+                <p>Start with the Frozen Fjords—our first complete zone—and the Blood on the Line adventure.</p>
+            </div>
+
+            <div class="available-grid">
+                <div class="available-card">
+                    <div class="status">Coming Soon</div>
+                    <h3>Frozen Fjords</h3>
+                    <div class="subtitle">Mount Celestia Fragment • Complete Zone</div>
+                    <p>A forced paradise where morality becomes environmental law. 120,000+ words, four settlements, fifty NPCs, and complete mechanics for running campaigns in a world that transforms everyone who stays.</p>
+                    <a href="/frozen-fjords/" class="cta-button">Preview the Zone</a>
+                </div>
+                <div class="available-card">
+                    <div class="status">Coming Soon</div>
+                    <h3>Blood on the Line</h3>
+                    <div class="subtitle">Introductory Adventure • Levels 1-3</div>
+                    <p>Professional monster hunters uncover a demon conspiracy. Five sessions, complete guides, and the perfect introduction to what makes The Shattered Veil different from other settings.</p>
+                    <a href="/blood-on-the-line/" class="cta-button">Preview the Adventure</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2>A World Worth Exploring</h2>
+        <p>
+            The Shattered Veil is designed for busy DMs who want depth without density. Less prep. More play.
+        </p>
+        <a href="/about/" class="cta-button">Learn About Our Approach</a>
+        <a href="/products/" class="cta-button cta-secondary">See All Products</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">S<sup>3</sup></div>
+        <div class="footer-tagline">Less Prep. More Play.</div>
+        <ul class="footer-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <div class="footer-copyright">© 2025 Second Self Studios. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
