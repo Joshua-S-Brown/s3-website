@@ -8,7 +8,7 @@
     
     <!-- Open Graph / Social -->
     <meta property="og:title" content="About Second Self Studios | Less Prep. More Play.">
-    <meta property="og:description" content="Premium D&D 5e content for busy DMs. The Active Content Test: if it doesn't create an adventure hook, it doesn't belong.">
+    <meta property="og:description" content="Premium D&D 5e content for busy Game Masters. The Active Content Test: if it doesn't create an adventure hook, it doesn't belong.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secondselfstudios.com/about/">
     <meta property="og:image" content="https://secondselfstudios.com/og-image.png">
@@ -19,7 +19,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Second Self Studios">
-    <meta name="twitter:description" content="Premium D&D 5e content for busy DMs. Less Prep. More Play.">
+    <meta name="twitter:description" content="Premium D&D 5e content for busy Game Masters. Less Prep. More Play.">
     <meta name="twitter:image" content="https://secondselfstudios.com/og-image.png">
     
     <!-- Canonical URL -->
@@ -481,6 +481,175 @@
             color: var(--text-muted);
         }
 
+        .creator-section {
+            padding: 100px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+        }
+
+        .creator-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .creator-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .creator-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .creator-text .creator-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .creator-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .creator-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .sample-section {
+            padding: 100px 50px;
+            border-top: 1px solid var(--border);
+        }
+
+        .sample-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sample-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .sample-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sample-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .sample-card-header {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, transparent 100%);
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sample-card-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .sample-card-header .sample-role {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .sample-card-body {
+            padding: 30px;
+        }
+
+        .sample-block {
+            margin-bottom: 25px;
+        }
+
+        .sample-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .sample-block-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .sample-block p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .sample-block ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sample-block li {
+            color: var(--text-secondary);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .sample-block li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+        }
+
+        .sample-footer {
+            background: var(--bg-dark);
+            padding: 20px 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .sample-footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
         .cta-section {
             background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
             border-top: 1px solid var(--border);
@@ -530,15 +699,32 @@
             .problem-section,
             .philosophy-section,
             .audience-section,
-            .setting-section {
+            .setting-section,
+            .creator-section,
+            .sample-section {
                 padding: 60px 25px;
             }
 
             .problem-content,
             .audience-content,
-            .setting-content {
+            .setting-content,
+            .creator-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+
+            .sample-card-body {
+                padding: 25px;
+            }
+
+            .creator-photo {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+            }
+
+            .creator-text {
+                text-align: center;
             }
 
             .active-content-test {
@@ -700,7 +886,7 @@
     <section class="audience-section">
         <div class="audience-content">
             <div class="audience-text">
-                <h2>Built For Busy DMs</h2>
+                <h2>Built For Busy Game Masters</h2>
                 <p>
                     Our content is designed for people who run games as a hobby, not a job. You want depth and quality, but you can't spend ten hours prepping a single session. We get it. We're the same way.
                 </p>
@@ -717,6 +903,43 @@
                     <li>Run games for other busy adults</li>
                     <li>Appreciate professional-grade organization</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="sample-section">
+        <div class="sample-header">
+            <div class="section-label">See the Format</div>
+            <h2>NPCs You Can Voice in Seconds</h2>
+            <p>Every character entry is designed for quick reference at the table. Here's what that actually looks like.</p>
+        </div>
+
+        <div class="sample-card">
+            <div class="sample-card-header">
+                <h3>Hunter Bram</h3>
+                <div class="sample-role">Local Guide • Blood on the Line</div>
+            </div>
+            <div class="sample-card-body">
+                <div class="sample-block">
+                    <div class="sample-block-label">Who He Is</div>
+                    <p>Bram is a civilian tracker who makes his living guiding travelers through the eastern mountain passes. He's not Guild, not Watch. Just a local who knows this terrain better than anyone alive. He operates out of Pinecrest Lodge, the last stop before the wilderness.</p>
+                </div>
+                <div class="sample-block">
+                    <div class="sample-block-label">Imagine</div>
+                    <p>Bram is made of silence and patience. Around 40 years old, lean as a winter branch, with a face that spent more time in weather than under roofs. He doesn't waste words because the wilderness doesn't talk back much. When he kneels to examine tracks in the snow, he reads them like a book. He sees things others miss.</p>
+                </div>
+                <div class="sample-block">
+                    <div class="sample-block-label">How to Play Him</div>
+                    <ul>
+                        <li>Few words. Observational. Let silence do the talking.</li>
+                        <li>Signature moves: kneels to examine tracks, tastes snow and soil, communicates with hand signals</li>
+                        <li>Key phrases: "Not wolf." / "We wait." / "Watch."</li>
+                        <li>When players do something clever, Bram approves with a nod. Make it feel significant.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sample-footer">
+                <p>Full entry includes introduction scene, running tips, and contingency guidance. This is the quick-reference version.</p>
             </div>
         </div>
     </section>
@@ -765,18 +988,36 @@
         </div>
     </section>
 
+    <section class="creator-section">
+        <div class="creator-content">
+            <div class="creator-photo">Photo placeholder</div>
+            <div class="creator-text">
+                <div class="section-label">The Creator</div>
+                <h2>Josh Brown</h2>
+                <div class="creator-title">Founder, Second Self Studios</div>
+                <p>
+                    By day, I'm a tech product manager. By night, I'm a lover of stories, whether written or played. Tabletop roleplaying games have been a passion for years, but as a busy professional and forever Game Master, I understand firsthand the challenge of finding time to prepare while still making memories with friends.
+                </p>
+                <p>
+                    I built Second Self Studios because I want more people to experience the joy of TTRPGs. The name reflects what happens at every table: you become someone else for a few hours, exploring a second self. My goal is to remove the barriers that keep busy people from the table, so more groups can gather, roll dice, and create stories together.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section">
-        <h2>Ready to Play?</h2>
+        <h2>Coming Soon</h2>
         <p>
-            Start with the complete Frozen Fjords zone or jump straight into the Blood on the Line adventure.
+            Frozen Fjords and Blood on the Line are in final development. Preview what's coming.
         </p>
-        <a href="/frozen-fjords/" class="cta-button">Explore Frozen Fjords</a>
-        <a href="/blood-on-the-line/" class="cta-button cta-secondary">Get the Adventure</a>
+        <a href="/frozen-fjords/" class="cta-button">Preview Frozen Fjords</a>
+        <a href="/blood-on-the-line/" class="cta-button cta-secondary">Preview the Adventure</a>
     </section>
 
     <footer>
         <div class="footer-logo">S<sup>3</sup></div>
         <div class="footer-tagline">Less Prep. More Play.</div>
+        <div class="footer-tagline-extension">More Play. More Memories.</div>
         <ul class="footer-links">
             <li><a href="/products/">Products</a></li>
             <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>

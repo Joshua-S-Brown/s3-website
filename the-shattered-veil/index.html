@@ -118,6 +118,44 @@
             50% { transform: translateX(-50%) translateY(10px); }
         }
 
+        /* Quick Summary */
+        .quick-summary {
+            padding: 60px 50px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+        }
+
+        .quick-summary-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .quick-summary-item {
+            text-align: center;
+            padding: 25px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .quick-summary-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .quick-summary-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
         /* The Cataclysm section */
         .cataclysm-section {
             padding: 120px 50px;
@@ -613,6 +651,10 @@
 
         /* Responsive */
         @media (max-width: 1000px) {
+            .quick-summary-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .concept-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -633,6 +675,15 @@
 
             .hero-subtitle {
                 font-size: 1.2rem;
+            }
+
+            .quick-summary {
+                padding: 40px 25px;
+            }
+
+            .quick-summary-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .cataclysm-section,
@@ -723,12 +774,33 @@
         <div class="hero-label">Campaign Setting</div>
         <h1>The Shattered Veil</h1>
         <p class="hero-subtitle">
-            One thousand years ago, an empress tried to harness seventeen planes at once. She failed. Now fragments of other realities bleed permanently into the world, and humanity has learned to live in the spaces between.
+            One thousand years ago, an empress tried to harness seventeen alternate dimensions at once. She failed. Now fragments of other realities bleed permanently into the world, and humanity has learned to live in the spaces between.
         </p>
         <a href="#cataclysm" class="cta-button">Discover the World</a>
         <div class="scroll-indicator">
             <span>Scroll</span>
             <span>↓</span>
+        </div>
+    </section>
+
+    <section class="quick-summary">
+        <div class="quick-summary-content">
+            <div class="quick-summary-item">
+                <h3>The Concept</h3>
+                <p>17 alternate dimensions permanently merged with reality, each transforming a region</p>
+            </div>
+            <div class="quick-summary-item">
+                <h3>The Scale</h3>
+                <p>3 continents, 17 unique zones, each a complete campaign setting</p>
+            </div>
+            <div class="quick-summary-item">
+                <h3>The Twist</h3>
+                <p>Morality becomes geography. Stay too long, and the zone changes who you are</p>
+            </div>
+            <div class="quick-summary-item">
+                <h3>The Approach</h3>
+                <p>Professional adventurers, not chosen ones. Competence and preparation matter</p>
+            </div>
         </div>
     </section>
 
@@ -741,13 +813,13 @@
                 <div class="timeline-item">
                     <h3>The Vision</h3>
                     <p>
-                        Archmage-Empress Kalithene spent fifty years constructing <span class="highlight">seventeen massive pylons</span> across three continents. Each would anchor a permanent connection to a different plane, filtering beneficial energies while blocking dangers. Fire that forged without burning. Celestial guidance without judgment. Demonic power without corruption.
+                        Archmage-Empress Kalithene spent fifty years constructing <span class="highlight">seventeen massive pylons</span> across three continents. Each would anchor a permanent connection to a different dimension: realms of fire, celestial heavens, demonic depths, elemental chaos. She planned to filter beneficial energies while blocking dangers. Divine guidance without judgment. Elemental power without destruction.
                     </p>
                 </div>
                 <div class="timeline-item">
                     <h3>Six Hours of Paradise</h3>
                     <p>
-                        On the Summer Solstice of Year 667, the ritual began. For six glorious hours, <span class="highlight">it worked perfectly</span>. Angels walked among humans. Shadowsteel formed freely. Paradise bloomed across three continents. Kalithene's consciousness held seventeen contradictory realities in perfect balance.
+                        On the Summer Solstice of Year 667, the ritual began. For six glorious hours, <span class="highlight">it worked perfectly</span>. Angels walked among humans. Magical metals formed freely. Paradise bloomed across three continents. Kalithene's consciousness held seventeen contradictory realities in perfect balance.
                     </p>
                 </div>
                 <div class="timeline-item">
@@ -759,7 +831,7 @@
                 <div class="timeline-item">
                     <h3>A Thousand Years Later</h3>
                     <p>
-                        The world isn't post-apocalyptic anymore. It's <span class="highlight">weird but functional</span>. The pylons still stand, indestructible and impossible to shut off. Seventeen fragment zones spread across three continents. Humanity adapted. Civilization rebuilt. The fragments became home.
+                        The world isn't post-apocalyptic anymore. It's <span class="highlight">weird but functional</span>. The pylons still stand, indestructible and impossible to shut off. Seventeen fragment zones spread across three continents, each transformed by its connected dimension. Humanity adapted. Civilization rebuilt. The fragments became home.
                     </p>
                 </div>
             </div>
@@ -777,7 +849,7 @@
         <div class="concept-header">
             <div class="section-label">The Concept</div>
             <h2>Fragment Zones</h2>
-            <p>Regions where other planes of existence bleed through into the Material Plane, fundamentally altering everything within.</p>
+            <p>Regions where other dimensions bleed through into our world, fundamentally altering everything within.</p>
         </div>
 
         <div class="concept-grid">
@@ -805,7 +877,7 @@
 
         <div class="epic-quote" style="margin: 0 auto;">
             <blockquote>
-                "The longer you stay, the more you change. That's not a warning. It's just physics. Planar physics."
+                "The longer you stay, the more you change. That's not a warning. It's just physics. Dimensional physics."
             </blockquote>
             <cite>— Veilwalkers Guild training manual</cite>
         </div>
@@ -825,9 +897,9 @@
                         <div class="continent-name">Andoria</div>
                         <h3 class="continent-title">The Moral Battleground</h3>
                         <p class="continent-desc">
-                            Four fragment zones arranged in a philosophical grid. Mount Celestia enforces lawful good. The Abyss corrupts toward chaos. Arborea overwhelms with passion. The Shadowfell drains all feeling. Opposed moral philosophies made manifest, forced to trade with each other.
+                            Four fragment zones arranged in a philosophical grid. Heaven enforces goodness. The demonic depths corrupt toward chaos. Nature overwhelms with passion. The shadow realm drains all feeling. Opposed moral philosophies made manifest, forced to trade with each other.
                         </p>
-                        <p class="continent-question">"What happens when alignment becomes geography?"</p>
+                        <p class="continent-question">"What happens when morality becomes geography?"</p>
                     </div>
                     <div class="continent-visual">
                         <div class="featured-placeholder">Continent map</div>
@@ -838,22 +910,22 @@
                     <div class="zones-grid">
                         <div class="zone-item">
                             <h5>Frozen Fjords</h5>
-                            <div class="plane">Mount Celestia</div>
-                            <div class="effect">Shifts toward Lawful Good</div>
+                            <div class="plane">Celestial Heaven</div>
+                            <div class="effect">Transforms toward Good</div>
                         </div>
                         <div class="zone-item">
                             <h5>Godsvein Valley</h5>
-                            <div class="plane">The Abyss</div>
+                            <div class="plane">Demonic Depths</div>
                             <div class="effect">Corrupts toward Evil</div>
                         </div>
                         <div class="zone-item">
                             <h5>Southern Peninsula</h5>
-                            <div class="plane">Arborea</div>
+                            <div class="plane">Wild Nature</div>
                             <div class="effect">Overwhelms with Passion</div>
                         </div>
                         <div class="zone-item">
                             <h5>Ironspine Mountains</h5>
-                            <div class="plane">Shadowfell</div>
+                            <div class="plane">Shadow Realm</div>
                             <div class="effect">Drains Emotion</div>
                         </div>
                     </div>
@@ -866,7 +938,7 @@
                         <div class="continent-name">Kalendra</div>
                         <h3 class="continent-title">The Elemental Continent</h3>
                         <p class="continent-desc">
-                            Five zones dominated by elemental planes. Less concerned with morality, more focused on surviving and harnessing raw elemental forces. Fire forges without burning. Water never depletes. Earth shifts and changes. And in the center, pure chaos.
+                            Five zones dominated by elemental forces. Less concerned with morality, more focused on surviving and harnessing raw power. Fire forges without burning. Water never depletes. Earth shifts and changes. And in the center, pure chaos.
                         </p>
                         <p class="continent-question">"How do you harness destruction productively?"</p>
                     </div>
@@ -976,7 +1048,7 @@
                 <div class="difference-label">Content</div>
                 <div class="difference-content">
                     <h4>Ready to Run</h4>
-                    <p>Complete settlements with NPCs you can voice in seconds. Session-by-session adventure guides. Quick reference tables. Everything built for DMs who prep in stolen moments, not dedicated hours.</p>
+                    <p>Complete settlements with NPCs you can voice in seconds. Session-by-session adventure guides. Quick reference tables. Everything built for Game Masters who prep in stolen moments, not dedicated hours.</p>
                 </div>
             </div>
         </div>
@@ -1012,7 +1084,7 @@
     <section class="final-cta">
         <h2>A World Worth Exploring</h2>
         <p>
-            The Shattered Veil is designed for busy DMs who want depth without density. Less prep. More play.
+            The Shattered Veil is designed for busy Game Masters who want depth without density. Less prep. More play.
         </p>
         <a href="/about/" class="cta-button">Learn About Our Approach</a>
         <a href="/products/" class="cta-button cta-secondary">See All Products</a>
@@ -1021,6 +1093,7 @@
     <footer>
         <div class="footer-logo">S<sup>3</sup></div>
         <div class="footer-tagline">Less Prep. More Play.</div>
+        <div class="footer-tagline-extension">More Play. More Memories.</div>
         <ul class="footer-links">
             <li><a href="/products/">Products</a></li>
             <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D&D 5e Campaign Settings & Adventures | Second Self Studios Products</title>
-    <meta name="description" content="Browse D&D 5e campaign settings, adventures, and bundles from Second Self Studios. Frozen Fjords (Mount Celestia), Blood on the Line adventure, and more. All designed for busy DMs.">
+    <meta name="description" content="Browse D&D 5e campaign settings, adventures, and bundles from Second Self Studios. Frozen Fjords (Mount Celestia), Blood on the Line adventure, and more. All designed for busy Game Masters.">
     
     <!-- Open Graph / Social -->
     <meta property="og:title" content="D&D 5e Products | Campaign Settings & Adventures">
-    <meta property="og:description" content="Campaign settings, adventures, and bundles for D&D 5e. All designed for busy DMs. Less Prep. More Play.">
+    <meta property="og:description" content="Campaign settings, adventures, and bundles for D&D 5e. All designed for busy Game Masters. Less Prep. More Play.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://secondselfstudios.com/products/">
     <meta property="og:image" content="https://secondselfstudios.com/og-image.png">
@@ -19,7 +19,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="D&D 5e Products | Second Self Studios">
-    <meta name="twitter:description" content="Campaign settings, adventures, and bundles for busy DMs.">
+    <meta name="twitter:description" content="Campaign settings, adventures, and bundles for busy Game Masters.">
     <meta name="twitter:image" content="https://secondselfstudios.com/og-image.png">
     
     <!-- Canonical URL -->
@@ -75,6 +75,49 @@
             font-size: 1.2rem;
             color: var(--text-secondary);
             max-width: 600px;
+        }
+
+        .how-it-works {
+            padding: 60px 50px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .how-it-works-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .how-it-works-item {
+            text-align: center;
+        }
+
+        .how-it-works-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .how-it-works-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .category-nav {
@@ -451,6 +494,15 @@
                 font-size: 2.5rem;
             }
 
+            .how-it-works {
+                padding: 40px 25px;
+            }
+
+            .how-it-works-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
             .category-nav {
                 padding: 0 25px;
                 overflow-x: auto;
@@ -532,7 +584,47 @@
 
     <section class="products-hero">
         <h1>Products</h1>
-        <p>Campaign settings, adventures, and bundles for D&D 5e. Everything is part of The Shattered Veil, but each product works standalone.</p>
+        <p>Campaign settings, adventures, and bundles for tabletop roleplaying games. Everything is part of The Shattered Veil, but each product works standalone.</p>
+    </section>
+
+    <section class="how-it-works">
+        <div class="how-it-works-content">
+            <h2>How It Works</h2>
+            <div class="how-it-works-grid">
+                <div class="how-it-works-item">
+                    <h3>Free World Setting</h3>
+                    <p>The Shattered Veil overview and core concepts are free. Understand the world before you buy anything.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <h3>Campaign Settings</h3>
+                    <p>Each major region (like Frozen Fjords) is a complete campaign zone sold separately. Buy what you'll use.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <h3>Adventures & Bundles</h3>
+                    <p>Standalone adventures within each region, plus bundle deals for the full experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" style="border-top: 1px solid var(--border); background: var(--bg-dark);">
+        <div class="how-it-works-content">
+            <h2>What You Get</h2>
+            <div class="how-it-works-grid">
+                <div class="how-it-works-item">
+                    <h3>Obsidian Vault</h3>
+                    <p>Fully linked, searchable content you can customize and expand for your campaign.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <h3>Foundry VTT Module</h3>
+                    <p>Ready-to-run digital tabletop with maps, tokens, and journal entries pre-configured.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <h3>Maps & Assets</h3>
+                    <p>World maps, region maps, city maps, and battle maps. Everything you need to run sessions.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="category-nav">
@@ -707,6 +799,7 @@
     <footer>
         <div class="footer-logo">S<sup>3</sup></div>
         <div class="footer-tagline">Less Prep. More Play.</div>
+        <div class="footer-tagline-extension">More Play. More Memories.</div>
         <ul class="footer-links">
             <li><a href="/products/">Products</a></li>
             <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
