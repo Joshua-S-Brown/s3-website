@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap | Second Self Studios</title>
+    <meta name="description" content="See what's coming from Second Self Studios. Frozen Fjords and Blood on the Line launching Summer 2026. Follow our journey from playtesting to publication.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Roadmap | Second Self Studios">
+    <meta property="og:description" content="Frozen Fjords and Blood on the Line launching Summer 2026. Follow our journey from playtesting to publication.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://secondselfstudios.com/roadmap/">
+    <meta property="og:image" content="https://secondselfstudios.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Second Self Studios">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Roadmap | Second Self Studios">
+    <meta name="twitter:description" content="Frozen Fjords launching Summer 2026. Follow our journey.">
+    <meta name="twitter:image" content="https://secondselfstudios.com/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://secondselfstudios.com/roadmap/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        .roadmap-hero {
+            min-height: 45vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 50px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(78, 205, 196, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .roadmap-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .roadmap-hero .lead {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            padding: 80px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+
+        .philosophy-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .philosophy-highlight {
+            color: var(--teal);
+            font-weight: 500;
+        }
+
+        /* Current Status */
+        .status-section {
+            padding: 100px 50px;
+        }
+
+        .status-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .status-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .status-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .status-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .status-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 35px;
+        }
+
+        .status-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-card .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .status-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .status-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+        }
+
+        .status-card li:last-child {
+            border-bottom: none;
+        }
+
+        .status-card li.complete {
+            color: var(--text-primary);
+        }
+
+        .status-card li.complete::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        .status-card li.in-progress::before {
+            content: '◐';
+            color: #F4D03F;
+        }
+
+        .status-card li.planned::before {
+            content: '○';
+            color: var(--text-muted);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 100px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+        }
+
+        .timeline-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .timeline-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .timeline-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 50px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            border: 2px solid var(--border);
+        }
+
+        .timeline-item.current::before {
+            background: var(--teal);
+            border-color: var(--teal);
+            box-shadow: 0 0 15px rgba(78, 205, 196, 0.4);
+        }
+
+        .timeline-item.complete::before {
+            background: var(--teal);
+            border-color: var(--teal);
+        }
+
+        .timeline-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .timeline-item .tag {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.15);
+            color: var(--teal);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-top: 12px;
+        }
+
+        /* Future Section */
+        .future-section {
+            padding: 100px 50px;
+            border-top: 1px solid var(--border);
+        }
+
+        .future-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .future-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .future-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .future-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .future-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .future-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .future-card .year {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+
+        .future-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
+            border-top: 1px solid var(--border);
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .roadmap-hero {
+                padding: 120px 25px 50px;
+            }
+
+            .roadmap-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .philosophy-section,
+            .status-section,
+            .timeline-section,
+            .future-section {
+                padding: 60px 25px;
+            }
+
+            .status-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .future-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 35px;
+            }
+
+            .timeline-item::before {
+                left: -35px;
+            }
+
+            .cta-section {
+                padding: 60px 25px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">S<sup>3</sup></a>
+        <input type="checkbox" id="nav-toggle" class="nav-checkbox">
+        <label for="nav-toggle" class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/blood-on-the-line/">Blood on the Line</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <label for="nav-toggle" class="nav-overlay"></label>
+    </nav>
+
+    <section class="roadmap-hero">
+        <div class="section-label">The Journey</div>
+        <h1>Roadmap</h1>
+        <p class="lead">
+            Building something worth playing takes time. Here's where we are, where we're headed, and why we're not rushing it.
+        </p>
+    </section>
+
+    <section class="philosophy-section">
+        <div class="philosophy-content">
+            <h2>Our Approach to Timelines</h2>
+            <p>
+                I'd rather delay a release than ship something that doesn't meet the standard. Every Game Master who buys our content is trusting us with their limited prep time and their table's experience. That trust matters more than hitting an arbitrary date.
+            </p>
+            <p>
+                The dates below are targets, not promises. When things change, I'll update this page and explain why. <span class="philosophy-highlight">Transparency builds trust. Trust builds community.</span> That's more valuable than any launch schedule.
+            </p>
+        </div>
+    </section>
+
+    <section class="status-section">
+        <div class="status-content">
+            <div class="status-header">
+                <div class="section-label">Right Now</div>
+                <h2>Current Status</h2>
+                <p>What's done, what's in progress, and what's next.</p>
+            </div>
+
+            <div class="status-grid">
+                <div class="status-card">
+                    <h3>Frozen Fjords</h3>
+                    <div class="subtitle">Campaign Setting</div>
+                    <ul>
+                        <li class="complete">Core worldbuilding complete (120k+ words)</li>
+                        <li class="complete">Two major settlements fully developed</li>
+                        <li class="complete">50+ NPCs with voice guides</li>
+                        <li class="complete">Faction dynamics and conflicts</li>
+                        <li class="in-progress">Remaining settlements in development</li>
+                        <li class="in-progress">Maps and visual assets</li>
+                        <li class="planned">Foundry VTT module</li>
+                        <li class="planned">Final editing pass</li>
+                    </ul>
+                </div>
+
+                <div class="status-card">
+                    <h3>Blood on the Line</h3>
+                    <div class="subtitle">Introductory Adventure</div>
+                    <ul>
+                        <li class="complete">Full adventure drafted (5 sessions)</li>
+                        <li class="complete">Core NPCs and encounters designed</li>
+                        <li class="in-progress">Active playtesting with home group</li>
+                        <li class="in-progress">Session-by-session guides</li>
+                        <li class="planned">Battle maps</li>
+                        <li class="planned">Handouts and player materials</li>
+                        <li class="planned">Foundry VTT integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline-content">
+            <div class="timeline-header">
+                <div class="section-label">The Path Forward</div>
+                <h2>2025-2026 Timeline</h2>
+                <p>Major milestones on the road to launch.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item current">
+                    <div class="timeline-date">Now - Early 2026</div>
+                    <h3>Playtesting & Refinement</h3>
+                    <p>
+                        Running Blood on the Line with my regular group. Every session generates feedback that improves the final product. Testing encounter balance, pacing, and whether the prep-to-play ratio actually delivers on the promise.
+                    </p>
+                    <span class="tag">In Progress</span>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Early 2026</div>
+                    <h3>Art & Maps</h3>
+                    <p>
+                        Commissioning and creating visual assets. Regional maps, settlement maps, battle maps, and character art. This is where the setting transforms from words into a world you can see.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Spring 2026</div>
+                    <h3>Digital Tools</h3>
+                    <p>
+                        Building the Foundry VTT module and finalizing the Obsidian vault structure. Making sure the digital experience matches the quality of the written content.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Spring 2026</div>
+                    <h3>Community Preview</h3>
+                    <p>
+                        Opening up to external playtesters and early readers. Fresh eyes catch what familiarity misses. This is where the community starts shaping the final product.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Summer 2026</div>
+                    <h3>Launch: Frozen Fjords & Blood on the Line</h3>
+                    <p>
+                        The complete Frozen Fjords campaign setting and Blood on the Line adventure go live. Obsidian vault, Foundry module, maps, and all supporting materials.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Late 2026</div>
+                    <h3>Godsvein Valley</h3>
+                    <p>
+                        The Abyss fragment zone. The eternal enemy of the Frozen Fjords, where demonic corruption seeps into the land and survival demands moral compromise. A very different tone, a complementary experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="future-section">
+        <div class="future-content">
+            <div class="future-header">
+                <div class="section-label">Looking Ahead</div>
+                <h2>Beyond 2026</h2>
+                <p>The larger vision, loosely held.</p>
+            </div>
+
+            <div class="future-grid">
+                <div class="future-card">
+                    <h3>More Fragment Zones</h3>
+                    <div class="year">2027+</div>
+                    <p>Seventeen zones across three continents. Each one a complete campaign region. The full Shattered Veil, piece by piece.</p>
+                </div>
+                <div class="future-card">
+                    <h3>Player Options</h3>
+                    <div class="year">2027+</div>
+                    <p>Backgrounds, subclasses, and feats tied to the setting. Mechanical hooks that let players build characters native to this world.</p>
+                </div>
+                <div class="future-card">
+                    <h3>Standalone Adventures</h3>
+                    <div class="year">Ongoing</div>
+                    <p>One-shots and short campaigns within each zone. Quick entry points for Game Masters who want to test the waters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Follow the Journey</h2>
+        <p>
+            The dev log tracks progress in real time. Updates, playtest stories, and the occasional honest reflection on what's working and what isn't.
+        </p>
+        <a href="/dev-log/" class="cta-button">Read the Dev Log</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">S<sup>3</sup></div>
+        <div class="footer-tagline">Less Prep. More Play.</div>
+        <div class="footer-tagline-extension">More Play. More Memories.</div>
+        <ul class="footer-links">
+            <li><a href="/products/">Products</a></li>
+            <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
+            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
+            <li><a href="/dev-log/">Dev Log</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+        <div class="footer-copyright">© 2025 Second Self Studios. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
