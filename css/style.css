@@ -262,6 +262,15 @@ nav {
     color: var(--teal);
 }
 
+.hero-tagline-extension {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--teal);
+    margin-bottom: 25px;
+    opacity: 0.85;
+}
+
 .hero-description {
     max-width: 600px;
     font-size: 1.25rem;
@@ -672,6 +681,10 @@ footer {
 
     .hero-tagline {
         font-size: 1.8rem;
+    }
+
+    .hero-tagline-extension {
+        font-size: 1.1rem;
     }
 
     .hero-description {
