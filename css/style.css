@@ -278,6 +278,16 @@ nav {
     margin-bottom: 50px;
 }
 
+/* Images */
+.creator-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+}
+
+
 /* Buttons */
 .cta-button {
     font-family: 'Montserrat', sans-serif;
