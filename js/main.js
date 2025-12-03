@@ -6,25 +6,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ==================
-    // READING PROGRESS BAR
-    // ==================
-    
-    const progressBar = document.createElement('div');
-    progressBar.className = 'reading-progress';
-    document.body.prepend(progressBar);
-    
-    const updateReadingProgress = () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + '%';
-    };
-    
-    window.addEventListener('scroll', updateReadingProgress, { passive: true });
-    updateReadingProgress();
-    
-    
-    // ==================
     // BACK TO TOP BUTTON
     // ==================
     

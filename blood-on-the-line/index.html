@@ -805,6 +805,78 @@
             text-align: center;
         }
 
+        /* Formats Showcase */
+        .formats-showcase {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .formats-showcase-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .formats-showcase-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .formats-showcase-header p {
+            color: var(--text-muted);
+        }
+
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .format-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .format-item .format-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .format-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .format-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .formats-showcase-footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+        }
+
+        .formats-showcase-footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .formats-showcase-footer .teal {
+            color: var(--teal);
+        }
+
         .cta-section h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.2rem;
@@ -870,6 +942,10 @@
                 grid-template-columns: 1fr;
                 max-width: 400px;
             }
+
+            .formats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -925,6 +1001,27 @@
 
             .cta-section h2 {
                 font-size: 1.8rem;
+            }
+
+            .formats-showcase {
+                padding: 25px;
+                margin: 0 auto 60px;
+            }
+
+            .formats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .format-item {
+                padding: 15px 10px;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .session-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1049,37 +1146,35 @@
         </div>
 
         <!-- Multi-format delivery -->
-        <div class="formats-showcase" style="max-width: 900px; margin: 0 auto 80px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 40px;">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: var(--white); margin-bottom: 10px;">Prep Your Way</h3>
-                <p style="color: var(--text-muted);">Every guide comes in multiple formats. Use what works for your life.</p>
+        <div class="formats-showcase">
+            <div class="formats-showcase-header">
+                <h3>Prep Your Way</h3>
+                <p>Every guide comes in multiple formats. Use what works for your life.</p>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 2rem; margin-bottom: 12px;">🎬</div>
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px;">Video</div>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Watch the walkthrough on your commute or lunch break</p>
+            <div class="formats-grid">
+                <div class="format-item">
+                    <div class="format-icon">🎬</div>
+                    <h4>Video</h4>
+                    <p>Watch the walkthrough on your commute or lunch break</p>
                 </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 2rem; margin-bottom: 12px;">🎧</div>
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px;">Audio</div>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Listen while you drive, exercise, or do chores</p>
+                <div class="format-item">
+                    <div class="format-icon">🎧</div>
+                    <h4>Audio</h4>
+                    <p>Listen while you drive, exercise, or do chores</p>
                 </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 2rem; margin-bottom: 12px;">📄</div>
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px;">PDF</div>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Print it, mark it up, keep it at the table</p>
+                <div class="format-item">
+                    <div class="format-icon">📄</div>
+                    <h4>PDF</h4>
+                    <p>Print it, mark it up, keep it at the table</p>
                 </div>
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 2rem; margin-bottom: 12px;">🔮</div>
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px;">Obsidian</div>
-                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Fully linked vault you can search and customize</p>
+                <div class="format-item">
+                    <div class="format-icon">🔮</div>
+                    <h4>Obsidian</h4>
+                    <p>Fully linked vault you can search and customize</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 25px; padding-top: 25px; border-top: 1px solid var(--border);">
-                <p style="color: var(--text-muted); font-size: 0.9rem;">
-                    <span style="color: var(--teal);">Coming:</span> Foundry VTT journal entries with embedded maps and tokens
-                </p>
+            <div class="formats-showcase-footer">
+                <p><span class="teal">Coming:</span> Foundry VTT journal entries with embedded maps and tokens</p>
             </div>
         </div>
 

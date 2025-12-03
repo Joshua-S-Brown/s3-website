@@ -370,6 +370,38 @@
             pointer-events: none;
         }
 
+        /* Disabled/Coming Soon cards - no interactive hover */
+        .product-card.coming-soon {
+            opacity: 0.7;
+        }
+
+        .product-card.coming-soon:hover {
+            border-color: var(--border);
+            transform: none;
+            cursor: default;
+        }
+
+        .product-card.coming-soon .product-card-image {
+            position: relative;
+        }
+
+        .product-card.coming-soon .product-card-image::after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            background: rgba(10, 10, 10, 0.8);
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
         /* Bundle special styling */
         .bundle-section {
             background: var(--bg-card);
@@ -395,6 +427,14 @@
 
         .bundle-card:hover {
             border-color: var(--teal);
+        }
+
+        .bundle-card.coming-soon {
+            opacity: 0.7;
+        }
+
+        .bundle-card.coming-soon:hover {
+            border-color: rgba(78, 205, 196, 0.3);
         }
 
         .bundle-image {
@@ -662,8 +702,8 @@
         </a>
 
         <div class="product-grid">
-            <div class="product-card">
-                <div class="product-card-image">Artwork coming</div>
+            <div class="product-card coming-soon">
+                <div class="product-card-image"></div>
                 <div class="product-card-content">
                     <div class="product-status status-development">In Development</div>
                     <h3 class="product-card-title">Godsvein Valley</h3>
@@ -679,8 +719,8 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <div class="product-card-image">Artwork coming</div>
+            <div class="product-card coming-soon">
+                <div class="product-card-image"></div>
                 <div class="product-card-content">
                     <div class="product-status status-planned">Planned</div>
                     <h3 class="product-card-title">The Thousand Lakes</h3>
@@ -696,8 +736,8 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <div class="product-card-image">Artwork coming</div>
+            <div class="product-card coming-soon">
+                <div class="product-card-image"></div>
                 <div class="product-card-content">
                     <div class="product-status status-planned">Planned</div>
                     <h3 class="product-card-title">More Zones</h3>
@@ -739,8 +779,8 @@
         </a>
 
         <div class="product-grid">
-            <div class="product-card">
-                <div class="product-card-image">Artwork coming</div>
+            <div class="product-card coming-soon">
+                <div class="product-card-image"></div>
                 <div class="product-card-content">
                     <div class="product-status status-planned">Planned</div>
                     <h3 class="product-card-title">Future Adventures</h3>
@@ -764,7 +804,7 @@
                 <p>Discounted collections that combine complementary content. Save money, get more game.</p>
             </div>
 
-            <div class="bundle-card">
+            <div class="bundle-card coming-soon">
                 <div class="bundle-image">Bundle artwork</div>
                 <div class="bundle-content">
                     <div class="product-status status-planned">Future Release</div>
