@@ -93,6 +93,65 @@ body {
     transform: translateY(0);
 }
 
+/* Reading progress bar */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-dim) 100%);
+    width: 0%;
+    z-index: 1000;
+    transition: width 0.1s linear;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s var(--transition-smooth),
+                visibility 0.3s var(--transition-smooth),
+                transform 0.3s var(--transition-smooth),
+                background 0.2s var(--transition-smooth),
+                border-color 0.2s var(--transition-smooth);
+    z-index: 99;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--teal);
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-secondary);
+    transition: stroke 0.2s var(--transition-smooth);
+}
+
+.back-to-top:hover svg {
+    stroke: var(--teal);
+}
+
 /* Interactive card hover effects */
 .interactive-card {
     transition: transform var(--transition-smooth),

@@ -6,6 +6,58 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ==================
+    // READING PROGRESS BAR
+    // ==================
+    
+    const progressBar = document.createElement('div');
+    progressBar.className = 'reading-progress';
+    document.body.prepend(progressBar);
+    
+    const updateReadingProgress = () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+    };
+    
+    window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    updateReadingProgress();
+    
+    
+    // ==================
+    // BACK TO TOP BUTTON
+    // ==================
+    
+    const backToTop = document.createElement('button');
+    backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    `;
+    document.body.appendChild(backToTop);
+    
+    const toggleBackToTop = () => {
+        if (window.scrollY > 400) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    };
+    
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
+    
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    
+    // ==================
     // FADE IN ON SCROLL
     // ==================
     
