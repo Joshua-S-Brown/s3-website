@@ -642,10 +642,6 @@ section {
     transform: translateY(-3px);
 }
 
-.zone-card.coming-soon {
-    opacity: 0.7;
-}
-
 .zone-card.coming-soon:hover {
     border-color: var(--border);
     transform: none;
@@ -2684,5 +2680,591 @@ input:focus,
 
     .principles-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ==================
+   GAME MASTER ACADEMY PAGE
+   ================== */
+
+/* Academy Hero */
+.academy-hero {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 50px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.academy-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center top, rgba(78, 205, 196, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.academy-hero-content {
+    max-width: 700px;
+}
+
+.academy-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.academy-subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--teal);
+    margin-bottom: 25px;
+}
+
+.academy-lead {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Academy Premise Section */
+.academy-premise {
+    padding: 100px 50px;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+}
+
+.premise-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.premise-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 25px;
+}
+
+.premise-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.premise-questions {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.premise-questions li {
+    color: var(--text-secondary);
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.05rem;
+}
+
+.premise-questions li:last-child {
+    border-bottom: none;
+}
+
+.premise-questions li::before {
+    content: '?';
+    color: var(--teal);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.premise-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.premise-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px 35px;
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+}
+
+.premise-card.highlight {
+    border-color: var(--teal);
+    background: rgba(78, 205, 196, 0.1);
+}
+
+.premise-card.result {
+    border-color: var(--teal);
+}
+
+.premise-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.premise-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.premise-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.premise-plus,
+.premise-equals,
+.premise-vs {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
+
+/* Academy Format Section */
+.academy-format {
+    padding: 100px 50px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.format-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.format-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.format-intro {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.format-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.format-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: center;
+    position: relative;
+}
+
+.format-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.format-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.format-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.format-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(78, 205, 196, 0.15);
+    color: var(--teal);
+}
+
+/* Academy Topics Section */
+.academy-topics {
+    padding: 100px 50px;
+}
+
+.topics-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.topics-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.topics-intro {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+
+.topic-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.topic-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--teal);
+    opacity: 0.5;
+    margin-bottom: 15px;
+}
+
+.topic-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.topic-card > p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.topic-lessons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+}
+
+.topic-lessons li {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.topic-lessons li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+}
+
+.topic-type {
+    display: inline-block;
+    margin-top: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    background: rgba(78, 205, 196, 0.1);
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+
+/* Academy Philosophy Section */
+.academy-philosophy {
+    padding: 80px 50px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+}
+
+.philosophy-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.philosophy-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.philosophy-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.philosophy-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.philosophy-text p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Academy Pipeline Section */
+.academy-pipeline {
+    padding: 100px 50px;
+}
+
+.pipeline-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pipeline-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.pipeline-intro {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 50px;
+}
+
+.pipeline-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pipeline-step {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    width: 180px;
+}
+
+.pipeline-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.pipeline-step h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.pipeline-step p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.pipeline-arrow {
+    font-size: 1.5rem;
+    color: var(--teal);
+}
+
+.pipeline-tagline {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.pipeline-tagline p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.pipeline-tagline .tagline-extension {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--teal);
+}
+
+/* Academy CTA Section */
+.academy-cta {
+    background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
+    border-top: 1px solid var(--border);
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.academy-cta h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.academy-cta p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ==================
+   GAME MASTER ACADEMY RESPONSIVE
+   ================== */
+
+@media (max-width: 1000px) {
+    .format-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .philosophy-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .academy-hero {
+        padding: 120px 25px 60px;
+    }
+
+    .academy-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .academy-premise,
+    .academy-format,
+    .academy-topics,
+    .academy-philosophy,
+    .academy-pipeline,
+    .academy-cta {
+        padding: 60px 25px;
+    }
+
+    .premise-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .premise-visual {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .premise-card {
+        max-width: none;
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .premise-plus,
+    .premise-equals,
+    .premise-vs {
+        display: none;
+    }
+
+    .format-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pipeline-visual {
+        flex-direction: column;
+    }
+
+    .pipeline-arrow {
+        transform: rotate(90deg);
+    }
+
+    .pipeline-step {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .academy-cta h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .cta-secondary {
+        margin-left: 0;
     }
 }
