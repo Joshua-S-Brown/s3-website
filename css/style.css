@@ -14,6 +14,7 @@
     --teal: #4ECDC4;
     --teal-dim: #3da89f;
     --white: #ffffff;
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Reset */
@@ -109,6 +110,87 @@ body {
 
 .zone-card:nth-child(1) { animation-delay: 0.1s; }
 .zone-card:nth-child(2) { animation-delay: 0.2s; }
+
+/* Scroll-triggered fade in */
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s var(--transition-smooth), 
+                transform 0.6s var(--transition-smooth);
+}
+
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Interactive card hover effects */
+.interactive-card {
+    transition: transform var(--transition-smooth),
+                box-shadow var(--transition-smooth),
+                border-color var(--transition-smooth);
+}
+
+.interactive-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(78, 205, 196, 0.1);
+    border-color: rgba(78, 205, 196, 0.3);
+}
+
+/* Active nav link */
+.nav-links a.nav-active {
+    color: var(--teal);
+    position: relative;
+}
+
+.nav-links a.nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--teal);
+    border-radius: 1px;
+}
+
+/* Timeline progress fill */
+.timeline-progress-fill {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(180deg, var(--teal) 0%, rgba(78, 205, 196, 0.3) 100%);
+    transition: height 0.1s linear;
+    z-index: 1;
+}
+
+/* Reduced motion support */
+.reduce-motion .scroll-hidden,
+.reduce-motion .scroll-visible {
+    transition: none;
+    opacity: 1;
+    transform: none;
+}
+
+.reduce-motion .interactive-card:hover {
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-hidden,
+    .scroll-visible {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .interactive-card:hover {
+        transform: none;
+    }
+}
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
@@ -277,16 +359,6 @@ nav {
     color: var(--text-secondary);
     margin-bottom: 50px;
 }
-
-/* Images */
-.creator-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    object-fit: cover;
-}
-
 
 /* Buttons */
 .cta-button {
@@ -873,3 +945,14 @@ input:focus,
     background: var(--teal);
     color: var(--bg-dark);
 }
+
+
+/* Images */
+.creator-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+}
+
