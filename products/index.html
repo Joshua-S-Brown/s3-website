@@ -591,6 +591,72 @@
             .cta-section {
                 padding: 60px 25px;
             }
+
+            .academy-promo {
+                padding: 60px 25px;
+            }
+
+            .academy-promo-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .academy-promo-visual {
+                justify-content: center;
+            }
+        }
+
+        /* Academy Promo Section */
+        .academy-promo {
+            padding: 100px 50px;
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.08) 0%, var(--bg-dark) 100%);
+            border-top: 1px solid var(--border);
+        }
+
+        .academy-promo-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .academy-promo-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .academy-promo-text p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .academy-promo-visual {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .promo-feature {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .promo-icon {
+            font-size: 1.3rem;
         }
     </style>
 </head>
@@ -609,6 +675,7 @@
             <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
             <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
             <li><a href="/blood-on-the-line/">Blood on the Line</a></li>
+            <li><a href="/gm-academy/">GM Academy</a></li>
             <li><a href="/roadmap/">Roadmap</a></li>
             <li><a href="/about/">About</a></li>
         </ul>
@@ -820,6 +887,37 @@
         </div>
     </section>
 
+    <section class="academy-promo">
+        <div class="academy-promo-content">
+            <div class="academy-promo-text">
+                <div class="section-label">New to Game Mastering?</div>
+                <h2>Learn by Running. Not by Reading.</h2>
+                <p>
+                    Our adventures are built for learning. Rules explained when they come up. Creative prompts at the right moments. Video prep guides for every session. You grow as a GM by running games, not by studying rulebooks.
+                </p>
+                <a href="/gm-academy/" class="cta-button">Explore the GM Academy</a>
+            </div>
+            <div class="academy-promo-visual">
+                <div class="promo-feature">
+                    <span class="promo-icon">📖</span>
+                    <span>Rules in context</span>
+                </div>
+                <div class="promo-feature">
+                    <span class="promo-icon">🎨</span>
+                    <span>Creative prompts</span>
+                </div>
+                <div class="promo-feature">
+                    <span class="promo-icon">🎬</span>
+                    <span>Video prep guides</span>
+                </div>
+                <div class="promo-feature">
+                    <span class="promo-icon">📈</span>
+                    <span>Graduated complexity</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section">
         <h2>Check Back Soon</h2>
         <p>
@@ -837,8 +935,7 @@
             <li><a href="/products/">Products</a></li>
             <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
             <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
-            <li><a href="/dev-log/">Dev Log</a></li>
-            <li><a href="/roadmap/">Roadmap</a></li>
+            <li><a href="/gm-academy/">GM Academy</a></li>
             <li><a href="/roadmap/">Roadmap</a></li>
             <li><a href="/about/">About</a></li>
         </ul>

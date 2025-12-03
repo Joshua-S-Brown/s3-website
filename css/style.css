@@ -3027,7 +3027,7 @@ input:focus,
     border-top: 1px solid var(--border);
 }
 
-.philosophy-content {
+.academy-philosophy-content {
     max-width: 1000px;
     margin: 0 auto;
     display: grid;
@@ -3035,7 +3035,7 @@ input:focus,
     gap: 30px;
 }
 
-.philosophy-card {
+.academy-philosophy-card {
     display: flex;
     gap: 20px;
     align-items: flex-start;
@@ -3187,7 +3187,7 @@ input:focus,
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .philosophy-content {
+    .academy-philosophy-content {
         grid-template-columns: 1fr;
         gap: 25px;
     }
@@ -3257,6 +3257,18 @@ input:focus,
 
     .academy-cta h2 {
         font-size: 1.8rem;
+    }
+
+    .pipeline-tagline {
+        margin-top: 40px;
+    }
+
+    .pipeline-tagline p {
+        font-size: 1.4rem;
+    }
+
+    .pipeline-tagline .tagline-extension {
+        font-size: 1.1rem;
     }
 
     .cta-buttons {
