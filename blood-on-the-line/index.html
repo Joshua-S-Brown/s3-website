@@ -53,14 +53,14 @@
         "category": "Tabletop RPG Adventure",
         "offers": {
             "@type": "Offer",
-            "availability": "https://schema.org/InStock",
+            "availability": "https://schema.org/PreOrder",
             "priceCurrency": "USD"
         }
     }
     </script>
     
     <style>
-        /* Page-specific styles */
+        /* Hero */
         .product-hero {
             min-height: 60vh;
             display: flex;
@@ -119,214 +119,741 @@
             margin-bottom: 35px;
         }
 
-        .feature-section {
+        /* Story in 60 Seconds */
+        .story-section {
             padding: 80px 50px;
-            max-width: 1200px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story-content {
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
+        .story-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        .premise-block {
+        .story-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .story-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .story-box {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--teal);
+            border-radius: 8px;
+            padding: 35px 40px;
+        }
+
+        .story-box p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .story-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-box strong {
+            color: var(--white);
+        }
+
+        .story-box .story-hook {
+            color: var(--teal);
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        /* Format Preview Section */
+        .format-section {
+            padding: 100px 50px;
+        }
+
+        .format-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .format-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .format-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* Dual Guide Showcase */
+        .dual-guide {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto 80px;
+        }
+
+        .guide-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 60px;
+            overflow: hidden;
         }
 
-        .premise-block h3 {
+        .guide-card-header {
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .guide-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(78, 205, 196, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .guide-card-header h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .guide-card-header span {
+            font-size: 0.85rem;
             color: var(--teal);
+        }
+
+        .guide-card-body {
+            padding: 25px 30px;
+        }
+
+        .guide-card-body p {
+            color: var(--text-secondary);
             margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .guide-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .guide-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guide-features li:last-child {
+            border-bottom: none;
+        }
+
+        .guide-features li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        /* NPC Preview */
+        .npc-preview {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .npc-preview-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .npc-preview-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .npc-preview-header p {
+            color: var(--text-muted);
+        }
+
+        .npc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .npc-card-header {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.15) 0%, transparent 100%);
+            padding: 30px 35px;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .npc-card-header h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .npc-card-header .npc-role {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: var(--teal);
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
 
-        .premise-block p {
+        .npc-tldr {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px 20px;
+            max-width: 300px;
+        }
+
+        .npc-tldr-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .npc-tldr p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .npc-card-body {
+            padding: 35px;
+        }
+
+        .npc-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        .npc-tab {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: none;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .npc-tab:hover {
+            color: var(--text-secondary);
+            background: var(--bg-dark);
+        }
+
+        .npc-tab.active {
+            color: var(--teal);
+            background: rgba(78, 205, 196, 0.15);
+        }
+
+        .npc-tab-content {
+            display: none;
+        }
+
+        .npc-tab-content.active {
+            display: block;
+        }
+
+        .npc-tab-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .npc-tab-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .npc-quick-ref {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .npc-quick-ref table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .npc-quick-ref th {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .npc-quick-ref td {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .npc-quick-ref tr:last-child td {
+            border-bottom: none;
+        }
+
+        .npc-card-footer {
+            background: var(--bg-dark);
+            padding: 20px 35px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .npc-card-footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Session Flow */
+        .flow-section {
+            background: var(--bg-card);
+            padding: 80px 50px;
+            border-top: 1px solid var(--border);
+        }
+
+        .flow-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .flow-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .flow-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .flow-header p {
+            color: var(--text-muted);
+        }
+
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 40px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .flow-step {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px 20px;
+            text-align: center;
+            min-width: 120px;
+            flex-shrink: 0;
+        }
+
+        .flow-step.active {
+            border-color: var(--teal);
+            background: rgba(78, 205, 196, 0.1);
+        }
+
+        .flow-step .step-time {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 5px;
+        }
+
+        .flow-step .step-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .flow-arrow {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .pacing-table {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pacing-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .pacing-table th {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: left;
+            padding: 15px 20px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pacing-table td {
+            color: var(--text-secondary);
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pacing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pacing-table .phase-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Challenges Preview */
+        .challenges-section {
+            padding: 80px 50px;
+            border-top: 1px solid var(--border);
+        }
+
+        .challenges-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .challenges-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .challenges-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .challenges-header p {
+            color: var(--text-muted);
+        }
+
+        .challenges-table {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .challenges-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .challenges-table th {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: left;
+            padding: 18px 25px;
+            background: var(--bg-dark);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .challenges-table td {
+            padding: 18px 25px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .challenges-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .challenges-table .challenge {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .challenges-table .solution {
+            color: var(--text-secondary);
+        }
+
+        .challenges-note {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Session Grid */
+        .sessions-section {
+            padding: 80px 50px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+        }
+
+        .sessions-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sessions-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sessions-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .sessions-header p {
             color: var(--text-secondary);
             font-size: 1.1rem;
-            line-height: 1.8;
         }
 
         .session-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 15px;
-            margin-top: 40px;
         }
 
         .session-card {
-            background: var(--bg-card);
+            background: var(--bg-dark);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
+            border-radius: 10px;
+            padding: 25px 20px;
             text-align: center;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .session-card:hover {
+            border-color: rgba(78, 205, 196, 0.3);
+            transform: translateY(-2px);
         }
 
         .session-card .session-num {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--teal);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .session-card h4 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--white);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .session-card p {
             font-size: 0.85rem;
             color: var(--text-muted);
+            line-height: 1.5;
         }
 
-        .theme-list {
-            list-style: none;
+        /* What's Included */
+        .included-section {
+            padding: 80px 50px;
+            border-top: 1px solid var(--border);
         }
 
-        .theme-list li {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
+        .included-content {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .theme-list li:last-child {
-            border-bottom: none;
-        }
-
-        .theme-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .theme-content h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            color: var(--white);
-            margin-bottom: 6px;
-        }
-
-        .theme-content p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .includes-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .includes-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 25px;
-        }
-
-        .includes-card h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            color: var(--white);
-            margin-bottom: 10px;
-        }
-
-        .includes-card p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .quote-block {
-            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px;
-            margin: 60px 0;
+        .included-header {
             text-align: center;
+            margin-bottom: 50px;
         }
 
-        .quote-block blockquote {
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--text-primary);
+        .included-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
             margin-bottom: 15px;
         }
 
-        .quote-block cite {
-            color: var(--text-muted);
-            font-style: normal;
-            font-size: 0.9rem;
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
-        .cta-section {
+        .included-card {
             background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .included-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .included-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);
             border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 80px 50px;
+            padding: 100px 50px;
             text-align: center;
         }
 
         .cta-section h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
+            color: var(--white);
             margin-bottom: 20px;
         }
 
-        .cta-section p {
+        .cta-section > p {
             color: var(--text-secondary);
-            max-width: 500px;
-            margin: 0 auto 35px;
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto 40px;
         }
 
-        .works-as {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto 50px;
         }
 
-        .works-as-item {
+        .works-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 30px;
             text-align: center;
         }
 
-        .works-as-item .icon {
+        .works-card .works-icon {
             font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .works-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--white);
             margin-bottom: 10px;
         }
 
-        .works-as-item h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            color: var(--white);
-            margin-bottom: 5px;
-        }
-
-        .works-as-item p {
-            font-size: 0.8rem;
+        .works-card p {
             color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        .related-section {
-            padding: 80px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .dual-guide {
+                grid-template-columns: 1fr;
+            }
+
+            .session-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .included-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
             .product-hero {
                 padding: 120px 25px 60px;
             }
@@ -335,32 +862,50 @@
                 font-size: 2.5rem;
             }
 
-            .two-column {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .story-section,
+            .format-section,
+            .flow-section,
+            .challenges-section,
+            .sessions-section,
+            .included-section {
+                padding: 60px 25px;
             }
 
             .session-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .session-grid .session-card:last-child {
-                grid-column: span 2;
-            }
-
-            .includes-grid {
+            .included-grid {
                 grid-template-columns: 1fr;
             }
 
-            .feature-section,
-            .cta-section,
-            .related-section {
+            .npc-card-header {
+                grid-template-columns: 1fr;
+            }
+
+            .npc-tldr {
+                max-width: none;
+            }
+
+            .flow-diagram {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .flow-arrow {
+                display: none;
+            }
+
+            .npc-tabs {
+                flex-wrap: wrap;
+            }
+
+            .cta-section {
                 padding: 60px 25px;
             }
 
-            .works-as {
-                flex-direction: column;
-                gap: 25px;
+            .cta-section h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -368,7 +913,7 @@
 <body>
 
     <nav>
-        <a href="/" class="nav-logo">S<sup>3</sup></a>
+        <a href="/" class="logo">S<sup>3</sup></a>
         <input type="checkbox" id="nav-toggle" class="nav-checkbox">
         <label for="nav-toggle" class="nav-toggle">
             <span></span>
@@ -389,208 +934,460 @@
     <section class="product-hero">
         <div class="product-hero-content">
             <div class="breadcrumb">
-                <a href="/">Home</a> / <a href="/frozen-fjords/">Frozen Fjords</a> / Blood on the Line
+                <a href="/products/">Products</a> / <a href="/frozen-fjords/">Frozen Fjords</a> / Blood on the Line
             </div>
-            <div class="product-status" style="margin-bottom: 15px;">
-                <span class="tag" style="background: rgba(240, 173, 78, 0.2); color: #f0ad4e;">Coming Soon</span>
-            </div>
+            <div class="section-label">Coming Summer 2026</div>
             <h1 class="product-title">Blood on the Line</h1>
             <p class="product-subtitle">
-                Professional monster hunters uncover a demon conspiracy threatening paradise. Preparation matters. Choices have consequences.
+                Professional monster hunters uncover a demon conspiracy in a celestial paradise. Five sessions. Meaningful choices. Consequences that matter.
             </p>
             <div class="product-meta">
                 <span class="tag">Levels 1-3</span>
                 <span class="tag">5 Sessions</span>
-                <span class="tag">2 Weeks In-Game</span>
-                <span class="tag">Introductory Adventure</span>
+                <span class="tag">15-20 Hours</span>
+                <span class="tag">Dungeons & Dragons 5e</span>
             </div>
-            <a href="/frozen-fjords/" class="cta-button">Preview Frozen Fjords</a>
-            <a href="/about/" class="cta-button cta-secondary">Learn About S³</a>
         </div>
     </section>
 
-    <section class="feature-section">
-        <div class="premise-block">
-            <h3>The Premise</h3>
-            <p>
-                Eight demon cells are sabotaging Hallowed Harbor's defenses. A supply train has gone silent. General Zaxareth masses eighty demons at the Heaven-Hell Line, preparing to assault Forward Camp Vigilance.
-            </p>
-            <p style="margin-top: 15px;">
-                Your party joins the Veilwalkers Guild as professional monster hunters. Over two in-game weeks, you'll uncover the conspiracy, confront the cell coordinator, and choose how to reach the border before it falls. The demons can't hold the Frozen Fjords - the celestial fragment transforms evil. Their real goal: destroy the Church infrastructure that legitimizes transformation. Plant doubt. Let paradise tear itself apart.
-            </p>
-        </div>
-
-        <div class="two-column">
-            <div>
-                <div class="section-label">Adventure Structure</div>
-                <h2 class="section-title">Five Sessions, One Conspiracy</h2>
-                <p class="section-description" style="max-width: none;">
-                    Each session builds on the last. Early investigation reveals the scope. Middle sessions escalate the stakes. The finale puts everything on the line.
+    <!-- Story in 60 Seconds -->
+    <section class="story-section">
+        <div class="story-content">
+            <div class="story-header">
+                <div class="section-label">Read Once, Run Tonight</div>
+                <h2>The Story in 60 Seconds</h2>
+                <p>Everything you need to understand the adventure. One minute.</p>
+            </div>
+            <div class="story-box">
+                <p>
+                    <strong>The Frostfang Pack has guarded the eastern mountains for generations.</strong> They're celestial-touched wolves, drawn to a remote Guild outpost that requires constant protection. The outpost served an old mining operation decades ago, now decommissioned, but the magical infrastructure remains and requires a keeper.
+                </p>
+                <p>
+                    Two weeks ago, a frost troll followed a migrating elk herd into the territory. It found the wolves' cave, killed two pack members, and claimed the den. The troll has been attacking travelers on the mountain trails. But the wolves have been investigating the kill sites, scavenging from the bodies, and trying to warn travelers away. Merchants see wolves near corpses and assume causation. Reports of "wolf attacks" reach the outpost keeper, Elsa.
+                </p>
+                <p>
+                    Elsa can't leave her post. She contacts the Guild in Hallowed Harbor and requests hunters. The contract she posted reflects what she was told, not what she witnessed: <strong>"Aggressive wolves threatening eastern mountain trails."</strong>
+                </p>
+                <p>
+                    The party pulls this contract from the Guild board. The truth is more complicated. The wolves never attacked anyone. <span class="story-hook">The question becomes whether the party figures this out before killing the very creatures they should be saving.</span>
                 </p>
             </div>
-            <div></div>
         </div>
-
-        <div class="session-grid">
-            <div class="session-card">
-                <div class="session-num">0</div>
-                <h4>Guild Induction</h4>
-                <p>Join the Veilwalkers. Meet your mentor. Get your first contract.</p>
-            </div>
-            <div class="session-card">
-                <div class="session-num">1</div>
-                <h4>Warehouse Assault</h4>
-                <p>Clear infested warehouse. Discover evidence of coordination.</p>
-            </div>
-            <div class="session-card">
-                <div class="session-num">2</div>
-                <h4>Seminary Investigation</h4>
-                <p>Demon sighting at the Church. Pattern emerges.</p>
-            </div>
-            <div class="session-card">
-                <div class="session-num">3</div>
-                <h4>Merchant Quarter</h4>
-                <p>Confront the cell coordinator. Race against the clock.</p>
-            </div>
-            <div class="session-card">
-                <div class="session-num">4</div>
-                <h4>Forward Camp</h4>
-                <p>The border assault. Hold the line or everything falls.</p>
-            </div>
-        </div>
-
-        <p style="color: var(--text-muted); text-align: center; margin-top: 20px; font-size: 0.9rem;">
-            Plus one interlude side contract between sessions 1 and 2: hunt a celestial-touched beast or investigate pre-Cataclysm mysteries.
-        </p>
     </section>
 
-    <section class="feature-section" style="padding-top: 0;">
-        <div class="quote-block">
-            <blockquote>"We stand between the innocent and the dark. We hold the line when others cannot. We watch so that others may sleep."</blockquote>
-            <cite>- The Veilwalkers' Oath</cite>
+    <!-- Format Preview -->
+    <section class="format-section">
+        <div class="format-header">
+            <div class="section-label">See the Format</div>
+            <h2>Two Guides. One Session. Zero Wasted Time.</h2>
+            <p>
+                Every session comes with two documents: a <strong>Prep Guide</strong> you read once before the session, and a <strong>Play Guide</strong> you reference at the table. No flipping back and forth. No hunting for information mid-scene.
+            </p>
         </div>
 
-        <div class="two-column">
-            <div>
-                <div class="section-label">Design Philosophy</div>
-                <h2 class="section-title">Not Chosen Ones. Professionals.</h2>
-                <ul class="theme-list">
-                    <li>
-                        <span class="theme-icon">🎯</span>
-                        <div class="theme-content">
-                            <h4>Preparation Rewarded</h4>
-                            <p>Research reveals enemy weaknesses. Scouting enables tactical advantages. Rushing in gets you killed. Time spent preparing has mechanical payoff at the table.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="theme-icon">⚖️</span>
-                        <div class="theme-content">
-                            <h4>Moral Complexity</h4>
-                            <p>The villain believes transformation violates free will. He's not entirely wrong. Paradise has costs. Your players will argue about whether forced virtue is actually good.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="theme-icon">👥</span>
-                        <div class="theme-content">
-                            <h4>Professional Competence</h4>
-                            <p>You're not destined heroes. You're skilled specialists doing dangerous work. The Guild trains you, equips you, and expects results. Promotion is earned.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="theme-icon">💀</span>
-                        <div class="theme-content">
-                            <h4>Meaningful Consequences</h4>
-                            <p>NPCs can die. Choices matter. The ending changes based on your decisions. Victory comes at cost.</p>
-                        </div>
-                    </li>
-                </ul>
+        <div class="dual-guide">
+            <div class="guide-card">
+                <div class="guide-card-header">
+                    <div class="guide-icon">📖</div>
+                    <div>
+                        <h3>Prep Guide</h3>
+                        <span>Read, watch, or listen (20-30 min)</span>
+                    </div>
+                </div>
+                <div class="guide-card-body">
+                    <p>Everything you need to understand the session deeply. Consume it once however works best for you, then set it aside.</p>
+                    <ul class="guide-features">
+                        <li>Story in 60 Seconds overview</li>
+                        <li>Session goals and emotional beats</li>
+                        <li>Full NPC backgrounds and motivations</li>
+                        <li>The 8 Secrets players can discover</li>
+                        <li>Common challenges and solutions</li>
+                        <li>Tone and atmosphere guidance</li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <div class="section-label">What's Included</div>
-                <h2 class="section-title">Ready to Run</h2>
-                <div class="includes-grid" style="grid-template-columns: 1fr;">
-                    <div class="includes-card">
-                        <h4>Complete Session Guides</h4>
-                        <p>Scene-by-scene breakdowns, read-aloud text, DM decision trees, and pacing notes for each session.</p>
+
+            <div class="guide-card">
+                <div class="guide-card-header">
+                    <div class="guide-icon">⚡</div>
+                    <div>
+                        <h3>Play Guide</h3>
+                        <span>At-table quick reference</span>
                     </div>
-                    <div class="includes-card">
-                        <h4>Player's Guide</h4>
-                        <p>Spoiler-free handout covering the world, the Guild, and character creation guidance.</p>
+                </div>
+                <div class="guide-card-body">
+                    <p>Scannable tables, read-aloud text, and quick stats. Find anything in seconds while your players wait.</p>
+                    <ul class="guide-features">
+                        <li>Session flow diagram</li>
+                        <li>NPC voice quick reference</li>
+                        <li>Key DCs in one table</li>
+                        <li>Combat stat blocks</li>
+                        <li>Read-aloud scene descriptions</li>
+                        <li>Pacing checkpoints</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multi-format delivery -->
+        <div class="formats-showcase" style="max-width: 900px; margin: 0 auto 80px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 40px;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: var(--white); margin-bottom: 10px;">Prep Your Way</h3>
+                <p style="color: var(--text-muted);">Every guide comes in multiple formats. Use what works for your life.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 12px;">🎬</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px;">Video</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Watch the walkthrough on your commute or lunch break</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 12px;">🎧</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px;">Audio</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Listen while you drive, exercise, or do chores</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 12px;">📄</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px;">PDF</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Print it, mark it up, keep it at the table</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 12px;">🔮</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 6px;">Obsidian</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Fully linked vault you can search and customize</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding-top: 25px; border-top: 1px solid var(--border);">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    <span style="color: var(--teal);">Coming:</span> Foundry VTT journal entries with embedded maps and tokens
+                </p>
+            </div>
+        </div>
+
+        <!-- NPC Preview -->
+        <div class="npc-preview">
+            <div class="npc-preview-header">
+                <h3>NPCs You Can Voice in Seconds</h3>
+                <p>Every character comes with everything you need to bring them to life.</p>
+            </div>
+
+            <div class="npc-card">
+                <div class="npc-card-header">
+                    <div>
+                        <h4>Greymaw the Alpha</h4>
+                        <div class="npc-role">Pack Leader • Frostfang Pack</div>
                     </div>
-                    <div class="includes-card">
-                        <h4>NPC Quick Reference</h4>
-                        <p>All major NPCs with personalities, secrets, and roleplaying notes. Organized for at-table use.</p>
+                    <div class="npc-tldr">
+                        <div class="npc-tldr-label">TL;DR</div>
+                        <p>Pack leader with distinctive grey muzzle. Desperate, injured, protecting pups. Will ally with party if approached peacefully. The emotional hook for the alliance path.</p>
                     </div>
-                    <div class="includes-card">
-                        <h4>Battle Map Specifications</h4>
-                        <p>Detailed map requirements for every combat encounter. Use with your preferred VTT or print.</p>
+                </div>
+
+                <div class="npc-card-body">
+                    <div class="npc-tabs">
+                        <button class="npc-tab active" data-tab="imagine">Imagine</button>
+                        <button class="npc-tab" data-tab="introduce">Introduce</button>
+                        <button class="npc-tab" data-tab="run">Run</button>
                     </div>
-                    <div class="includes-card">
-                        <h4>Interlude Adventures</h4>
-                        <p>Two optional side contracts: Frostfang (hunt a celestial beast) or Frozen Dead (pre-Cataclysm mystery).</p>
+
+                    <div class="npc-tab-content active" id="imagine">
+                        <p>
+                            This wolf is massive, with silver-white fur that seems to glow faintly when you look closer. His muzzle is distinctively grey, like ash dusted across snow. You can see fresh scars across his shoulder, a limp he's trying to hide, and eyes with more intelligence than a normal wolf.
+                        </p>
+                        <p>
+                            His ribs show through his fur. He's watching you, evaluating you as if he's weighing whether you're a threat to his pack that should be eliminated or whether you're an ally that can be trusted.
+                        </p>
                     </div>
-                    <div class="includes-card">
-                        <h4>Continuation Hooks</h4>
-                        <p>Six campaign directions for after the adventure: border patrol, zone exploration, Guild leadership, and more.</p>
+
+                    <div class="npc-tab-content" id="introduce">
+                        <p>
+                            The party follows the trail and it leads to a rocky outcropping. You see six wolves waiting in a defensive line with silver-white fur and eyes that gleam with unnatural intelligence. At their center is a massive wolf, the alpha.
+                        </p>
+                        <p>
+                            His muzzle is distinctively grey, almost ash-colored. He's scarred, injured, and his eyes are weighing you with what looks like desperation. Behind them, a cave entrance, and the sound of whimpering reaches your ears.
+                        </p>
+                        <p>
+                            The alpha doesn't attack. He watches. Waiting to see what you'll do.
+                        </p>
                     </div>
+
+                    <div class="npc-tab-content" id="run">
+                        <p>
+                            Greymaw is your emotional hook for the alliance path. Show the injuries, the exhaustion, the desperation. This is a parent protecting children against something he can't beat alone.
+                        </p>
+                        <p>
+                            If players attack immediately, describe Greymaw making a "last stand" protecting his den. Make them feel the weight of that choice.
+                        </p>
+                        <p>
+                            If players attempt to ally, Greymaw can communicate basic Common through thought projection. If offered alliance, he howls once: three wolves join the party while three remain to protect the pups.
+                        </p>
+                        <div class="npc-quick-ref">
+                            <table>
+                                <tr>
+                                    <th>Voice</th>
+                                    <td>Simple, exhausted, protective</td>
+                                </tr>
+                                <tr>
+                                    <th>Key Phrases</th>
+                                    <td>"Big. Cold. Kills pack. Help?" / "Pups. Must protect."</td>
+                                </tr>
+                                <tr>
+                                    <th>Alliance DC</th>
+                                    <td>12 (non-aggression) / 14 (interest) / 16+ (full alliance)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="npc-card-footer">
+                    <p>Every major NPC includes: TL;DR, Imagine, Introduce, Run, and Quick Reference sections.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Session Flow -->
+    <section class="flow-section">
+        <div class="flow-content">
+            <div class="flow-header">
+                <div class="section-label">Pacing Built In</div>
+                <h3>Session Flow at a Glance</h3>
+                <p>Know exactly where you are and how much time you have left.</p>
+            </div>
+
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="step-time">10 min</div>
+                    <div class="step-name">Contract Board</div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <div class="step-time">15 min</div>
+                    <div class="step-name">Pinecrest Lodge</div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <div class="step-time">20 min</div>
+                    <div class="step-name">Travel</div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step active">
+                    <div class="step-time">30 min</div>
+                    <div class="step-name">Investigation</div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <div class="step-time">45-60 min</div>
+                    <div class="step-name">Confrontation</div>
+                </div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-step">
+                    <div class="step-time">15 min</div>
+                    <div class="step-name">Resolution</div>
+                </div>
+            </div>
+
+            <div class="pacing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Target Time</th>
+                            <th>What Happens</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="phase-name">Contract Board</td>
+                            <td>10 min</td>
+                            <td>Party chooses Frostfang contract from Guild board</td>
+                        </tr>
+                        <tr>
+                            <td class="phase-name">Pinecrest Lodge</td>
+                            <td>10-15 min</td>
+                            <td>Meet Hunter Bram, gather local rumors, last supplies</td>
+                        </tr>
+                        <tr>
+                            <td class="phase-name">Travel</td>
+                            <td>15-20 min</td>
+                            <td>Journey with Bram, wolf scouts watching from treeline</td>
+                        </tr>
+                        <tr>
+                            <td class="phase-name">Investigation</td>
+                            <td>20-30 min</td>
+                            <td>Examine attack site, discover wolves are innocent</td>
+                        </tr>
+                        <tr>
+                            <td class="phase-name">Confrontation</td>
+                            <td>45-60 min</td>
+                            <td>Wolf encounter + troll combat (with or without allies)</td>
+                        </tr>
+                        <tr>
+                            <td class="phase-name">Resolution</td>
+                            <td>10-15 min</td>
+                            <td>Report to Elsa, rewards, consequences</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Challenges -->
+    <section class="challenges-section">
+        <div class="challenges-content">
+            <div class="challenges-header">
+                <div class="section-label">Problems Solved</div>
+                <h3>Common Challenges (Already Handled)</h3>
+                <p>We've run this. We know what goes wrong. Here's what to do.</p>
+            </div>
+
+            <div class="challenges-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>When Players Say...</th>
+                            <th>You Say...</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="challenge">"We attack the wolves immediately"</td>
+                            <td class="solution">Run combat. They discover the troll afterward and fight alone. Harder, and they killed innocents. Let that weight land.</td>
+                        </tr>
+                        <tr>
+                            <td class="challenge">"How do we stop the regeneration?"</td>
+                            <td class="solution">Fire or radiant. Torches, alchemist's fire, holy water, spells. Bram hints: "Trolls fear fire."</td>
+                        </tr>
+                        <tr>
+                            <td class="challenge">"Can we tame a wolf?"</td>
+                            <td class="solution">Not permanently, but alliance means wolves remember them. Future favor possible.</td>
+                        </tr>
+                        <tr>
+                            <td class="challenge">"Nobody has Animal Handling"</td>
+                            <td class="solution">Use behavioral fallback: peaceful actions (lower weapons, offer food) trigger wolf contact.</td>
+                        </tr>
+                        <tr>
+                            <td class="challenge">"Can Bram help fight?"</td>
+                            <td class="solution">"I track. You fight. That's my contract." Tactical advice only.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="challenges-note">
+                Full prep guide includes 12+ common challenges with solutions, plus safety valves for deadly encounters.
+            </p>
+        </div>
+    </section>
+
+    <!-- Session Overview -->
+    <section class="sessions-section">
+        <div class="sessions-content">
+            <div class="sessions-header">
+                <div class="section-label">Adventure Structure</div>
+                <h2>Five Sessions, One Conspiracy</h2>
+                <p>Each session builds on the last. Early investigation reveals the scope. Middle sessions escalate. The finale puts everything on the line.</p>
+            </div>
+
+            <div class="session-grid">
+                <div class="session-card">
+                    <div class="session-num">0</div>
+                    <h4>Guild Induction</h4>
+                    <p>Join the Veilwalkers. Meet your mentor. Get your first contract.</p>
+                </div>
+                <div class="session-card">
+                    <div class="session-num">1</div>
+                    <h4>Warehouse Assault</h4>
+                    <p>Clear infested warehouse. Discover evidence of coordination.</p>
+                </div>
+                <div class="session-card">
+                    <div class="session-num">2</div>
+                    <h4>Seminary Investigation</h4>
+                    <p>Demon sighting at the Church. Pattern emerges.</p>
+                </div>
+                <div class="session-card">
+                    <div class="session-num">3</div>
+                    <h4>Merchant Quarter</h4>
+                    <p>Confront the cell coordinator. Race against time.</p>
+                </div>
+                <div class="session-card">
+                    <div class="session-num">4</div>
+                    <h4>Forward Camp</h4>
+                    <p>The border assault. Hold the line or everything falls.</p>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); text-align: center; margin-top: 25px; font-size: 0.95rem;">
+                Plus interlude side contracts between main sessions. The Frostfang Pack preview above is one of them.
+            </p>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included-section">
+        <div class="included-content">
+            <div class="included-header">
+                <div class="section-label">Everything You Need</div>
+                <h2>What's Included</h2>
+            </div>
+
+            <div class="included-grid">
+                <div class="included-card">
+                    <h4>Prep Guides (Video + Audio + PDF)</h4>
+                    <p>Watch, listen, or read. 20-30 minutes per session, consumed however fits your life.</p>
+                </div>
+                <div class="included-card">
+                    <h4>Play Guides (PDF + Obsidian)</h4>
+                    <p>At-table quick reference. Scannable tables, read-aloud text, instant lookup.</p>
+                </div>
+                <div class="included-card">
+                    <h4>Player's Guide</h4>
+                    <p>Spoiler-free handout: the world, the Guild, character creation.</p>
+                </div>
+                <div class="included-card">
+                    <h4>Battle Maps</h4>
+                    <p>Detailed maps for every combat. VTT-ready or printable.</p>
+                </div>
+                <div class="included-card">
+                    <h4>Obsidian Vault</h4>
+                    <p>Fully linked, searchable. Customize and expand for your campaign.</p>
+                </div>
+                <div class="included-card">
+                    <h4>Foundry VTT Module</h4>
+                    <p>Pre-configured scenes, tokens, and journal entries. Import and play.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-section">
         <div class="section-label">Works Three Ways</div>
         <h2>Start Here</h2>
-        <p>
-            Blood on the Line is designed as a flexible entry point.
-        </p>
-        <div class="works-as">
-            <div class="works-as-item">
-                <div class="icon">🚀</div>
-                <h4>Campaign Starter</h4>
-                <p>Introduction to the Frozen Fjords<br>and The Shattered Veil</p>
-            </div>
-            <div class="works-as-item">
-                <div class="icon">📦</div>
-                <h4>Standalone Adventure</h4>
-                <p>Complete 5-session arc<br>with satisfying conclusion</p>
-            </div>
-            <div class="works-as-item">
-                <div class="icon">🔌</div>
-                <h4>Drop-In Module</h4>
-                <p>Arctic intrigue one-shot<br>for any campaign</p>
-            </div>
-        </div>
-        <div style="margin-top: 50px;">
-            <a href="/frozen-fjords/" class="cta-button">Preview Frozen Fjords</a>
-            <a href="/about/" class="cta-button cta-secondary">Learn About S³</a>
-        </div>
-    </section>
+        <p>Blood on the Line is designed as a flexible entry point to the Frozen Fjords and The Shattered Veil.</p>
 
-    <section class="related-section">
-        <div class="section-label">Part of the Frozen Fjords</div>
-        <h2 class="section-title">The Complete Zone</h2>
-        <p class="section-description">
-            Blood on the Line will be included with the Frozen Fjords zone. The full 120,000+ word setting with all settlements, NPCs, mechanics, and adventures. Both coming soon.
-        </p>
-        <div class="featured" style="margin-top: 40px;">
-            <div class="featured-image">
-                <div class="featured-placeholder">Map artwork placeholder</div>
+        <div class="works-grid">
+            <div class="works-card">
+                <div class="works-icon">🚀</div>
+                <h4>Campaign Starter</h4>
+                <p>Introduction to the Frozen Fjords and The Shattered Veil</p>
             </div>
-            <div class="featured-content">
-                <div class="featured-label">Coming Soon</div>
-                <h3 class="featured-title">Frozen Fjords</h3>
-                <p class="featured-description">
-                    Where Mount Celestia bleeds through the arctic. A forced paradise where morality becomes environmental law. Four settlements, 50+ NPCs, complete mechanics, and this adventure.
-                </p>
-                <div class="tag-list">
-                    <span class="tag">120k+ Words</span>
-                    <span class="tag">4 Settlements</span>
-                    <span class="tag">50+ NPCs</span>
-                </div>
-                <a href="/frozen-fjords/" class="cta-button">Preview the Zone</a>
+            <div class="works-card">
+                <div class="works-icon">📦</div>
+                <h4>Standalone Adventure</h4>
+                <p>Complete 5-session arc with satisfying conclusion</p>
+            </div>
+            <div class="works-card">
+                <div class="works-icon">🔌</div>
+                <h4>Drop-In Module</h4>
+                <p>Arctic intrigue one-shot for any campaign</p>
             </div>
         </div>
+
+        <a href="/frozen-fjords/" class="cta-button">Preview Frozen Fjords</a>
+        <a href="/roadmap/" class="cta-button cta-secondary">See the Roadmap</a>
     </section>
 
     <footer>
@@ -603,12 +1400,27 @@
             <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
             <li><a href="/dev-log/">Dev Log</a></li>
             <li><a href="/roadmap/">Roadmap</a></li>
-            <li><a href="/roadmap/">Roadmap</a></li>
             <li><a href="/about/">About</a></li>
         </ul>
         <div class="footer-copyright">© 2025 Second Self Studios. All rights reserved.</div>
     </footer>
 
     <script src="/js/main.js"></script>
+    <script>
+        // NPC Tab functionality
+        document.querySelectorAll('.npc-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.dataset.tab;
+                
+                // Remove active from all tabs and content
+                document.querySelectorAll('.npc-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.npc-tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
