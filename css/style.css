@@ -945,14 +945,3 @@ input:focus,
     background: var(--teal);
     color: var(--bg-dark);
 }
-
-
-/* Images */
-.creator-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    object-fit: cover;
-}
-
