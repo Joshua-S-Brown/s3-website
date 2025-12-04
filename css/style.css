@@ -7142,3 +7142,197 @@ footer::before {
         font-size: 1.6rem;
     }
 }
+
+/* ============================================
+   HOME PAGE REDESIGN - FIXES
+   Append after the previous redesign CSS
+   ============================================ */
+
+/* -----------------------------------------
+   FIX 1: Remove veil tear line from hero
+   ----------------------------------------- */
+
+.hero::after {
+    display: none;
+}
+
+/* -----------------------------------------
+   FIX 2: Remove emoji from format preview
+   ----------------------------------------- */
+
+.format-preview-example::after {
+    display: none;
+}
+
+/* -----------------------------------------
+   FIX 3: Faster hover transitions
+   ----------------------------------------- */
+
+.value-card {
+    transition: all 0.2s var(--transition-smooth);
+}
+
+.featured {
+    transition: all 0.2s var(--transition-smooth);
+}
+
+.cta-button {
+    transition: all 0.2s var(--transition-smooth);
+}
+
+/* -----------------------------------------
+   FIX 4: Adventure section - more visual interest
+   ----------------------------------------- */
+
+#adventure {
+    padding: 120px 50px;
+    position: relative;
+    background: var(--bg-dark);
+}
+
+#adventure::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+}
+
+/* Add a subtle accent card around the content */
+#adventure .section-label,
+#adventure .section-title,
+#adventure .section-description,
+#adventure .tag-list,
+#adventure .cta-button {
+    position: relative;
+    z-index: 1;
+}
+
+/* Adventure content wrapper - create a visual container */
+#adventure {
+    text-align: left;
+    max-width: none;
+}
+
+#adventure > * {
+    max-width: 700px;
+}
+
+/* Add decorative border accent */
+#adventure::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 300px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    opacity: 0.3;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.03) 0%, transparent 100%);
+}
+
+/* Style the adventure tags with slight coral hint */
+#adventure .tag-list .tag:first-child {
+    background: rgba(255, 107, 107, 0.1);
+    border-color: rgba(255, 107, 107, 0.2);
+    color: var(--coral);
+}
+
+/* -----------------------------------------
+   FIX 4: Notify section - more presence
+   ----------------------------------------- */
+
+.notify-section {
+    padding: 100px 50px;
+    background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.notify-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+}
+
+/* Add subtle decorative elements */
+.notify-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.notify-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    padding: 48px;
+    margin: 0 auto;
+    background: rgba(26, 26, 26, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.notify-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+}
+
+.notify-content p {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.notify-content a {
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.notify-content a:hover {
+    color: var(--white);
+    border-bottom-color: var(--teal);
+}
+
+/* -----------------------------------------
+   RESPONSIVE FIXES
+   ----------------------------------------- */
+
+@media (max-width: 768px) {
+    #adventure::after {
+        display: none;
+    }
+    
+    .notify-content {
+        padding: 32px 24px;
+    }
+    
+    #adventure {
+        text-align: center;
+    }
+    
+    #adventure > * {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
