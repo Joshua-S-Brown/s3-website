@@ -3598,6 +3598,11 @@ input:focus,
     border-bottom: 1px solid var(--border);
 }
 
+.how-it-works-alt {
+    background: var(--bg-dark);
+    border-top: 1px solid var(--border);
+}
+
 .how-it-works-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -3605,7 +3610,8 @@ input:focus,
 
 .how-it-works h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 25px;
     text-align: center;
@@ -3677,13 +3683,27 @@ input:focus,
     margin: 0 auto;
 }
 
+.products-section-compact {
+    padding: 60px 50px;
+}
+
+/* Utility class for linked cards */
+.no-text-decoration {
+    text-decoration: none;
+    color: inherit;
+}
+
+.no-text-decoration:hover {
+    text-decoration: none;
+}
+
 .category-header {
     margin-bottom: 40px;
 }
 
 .category-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 10px;
@@ -3704,11 +3724,13 @@ input:focus,
     border-radius: 16px;
     overflow: hidden;
     margin-bottom: 40px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .featured-product:hover {
     border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .featured-product-image {
@@ -3774,17 +3796,19 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .product-card:hover {
     border-color: var(--teal);
     transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .product-card.coming-soon:hover {
     border-color: var(--border);
     transform: none;
+    box-shadow: none;
     cursor: default;
 }
 
@@ -3891,10 +3915,23 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.bundle-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .bundle-card.coming-soon {
     opacity: 0.85;
+}
+
+.bundle-card.coming-soon:hover {
+    border-color: var(--border);
+    transform: none;
+    box-shadow: none;
 }
 
 .bundle-image {
@@ -3998,7 +4035,8 @@ input:focus,
 
 .academy-promo-text h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
 }
@@ -4022,6 +4060,12 @@ input:focus,
     border-radius: 8px;
     padding: 20px;
     text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.promo-feature:hover {
+    border-color: var(--teal);
+    transform: translateY(-2px);
 }
 
 .promo-feature .promo-icon {
@@ -4034,6 +4078,34 @@ input:focus,
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     color: var(--text-secondary);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 100px 50px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+    border-top: 1px solid var(--border);
+}
+
+.cta-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.cta-section .cta-button {
+    margin: 0 8px 16px;
 }
 
 /* Products Page Responsive */
@@ -4455,17 +4527,14 @@ input:focus,
 
 /* Roadmap Page Responsive */
 @media (max-width: 900px) {
-    .roadmap-hero {
-        padding: 120px 25px 50px;
-    }
-
-    .roadmap-hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .philosophy-section-roadmap {
-        padding: 60px 25px;
-    }
-
+    .roadmap-hero { padding: 120px 25px 50px; }
+    .roadmap-hero h1 { font-size: 2.5rem; }
+    .philosophy-section-roadmap { padding: 60px 25px; }
     .status-section,
-    .time
+    .timeline-section,
+    .future-section { padding: 60px 25px; }
+    .status-grid { grid-template-columns: 1fr; }
+    .future-grid { grid-template-columns: 1fr; }
+    .timeline { padding-left: 35px; }
+    .timeline-item::before { left: -35px; }
+}
