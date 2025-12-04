@@ -2151,7 +2151,8 @@ input:focus,
 
 .why-text h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 25px;
 }
@@ -2227,7 +2228,7 @@ input:focus,
 
 .problem-text h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 25px;
@@ -2304,7 +2305,7 @@ input:focus,
 
 .philosophy-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
@@ -2402,7 +2403,8 @@ input:focus,
 
 .audience-text h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
 }
@@ -2467,7 +2469,8 @@ input:focus,
 
 .setting-text h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
 }
@@ -2555,7 +2558,8 @@ input:focus,
 
 .creator-text h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 8px;
 }
@@ -2593,7 +2597,8 @@ input:focus,
 
 .sample-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 15px;
 }
@@ -2693,6 +2698,34 @@ input:focus,
     color: var(--text-muted);
     font-size: 0.9rem;
     font-style: italic;
+}
+
+/* Academy Callout */
+.academy-callout {
+    padding: 80px 50px;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.08) 0%, var(--bg-dark) 100%);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.academy-callout-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.academy-callout h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.academy-callout p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
 }
 
 /* ==================
