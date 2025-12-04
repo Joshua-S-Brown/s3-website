@@ -5039,12 +5039,13 @@ input:focus,
     border-radius: 12px;
     padding: 30px;
     text-align: center;
-    transition: border-color 0.3s, transform 0.3s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .concept-card:hover {
     border-color: var(--teal);
     transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .concept-icon {
@@ -5208,12 +5209,42 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s;
+    padding: 35px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .available-card:hover {
     border-color: var(--teal);
     transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
+}
+
+.available-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.available-card .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+.available-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.available-card .cta-button {
+    display: inline-block;
 }
 
 .available-content {
@@ -5284,6 +5315,14 @@ input:focus,
     line-height: 1.7;
 }
 
+.difference-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
 /* Final CTA */
 .final-cta {
     background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
@@ -5306,6 +5345,10 @@ input:focus,
     line-height: 1.8;
     max-width: 600px;
     margin: 0 auto 30px;
+}
+
+.final-cta .cta-button {
+    margin: 0 8px 16px;
 }
 
 /* Responsive - Shattered Veil */
@@ -5516,12 +5559,13 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 24px;
-    transition: border-color 0.3s, transform 0.3s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .settlement-card:hover {
     border-color: var(--teal);
     transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .settlement-card h3 {
