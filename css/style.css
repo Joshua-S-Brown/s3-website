@@ -4562,3 +4562,733 @@ input:focus,
         left: -35px;
     }
 }
+/* ============================================
+   THE SHATTERED VEIL PAGE
+   ============================================ */
+
+/* Setting Hero */
+.setting-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 50px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.setting-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center top, rgba(78, 205, 196, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hero-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 20px;
+}
+
+.setting-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 30px;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+/* Quick Summary */
+.quick-summary {
+    padding: 80px 50px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.quick-summary-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.quick-summary-item {
+    text-align: center;
+}
+
+.quick-summary-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.quick-summary-item p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Cataclysm Section */
+.cataclysm-section {
+    padding: 100px 50px;
+    background: var(--bg-dark);
+}
+
+.cataclysm-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cataclysm-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.cataclysm-section .timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.cataclysm-section .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+.cataclysm-section .timeline-item {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.cataclysm-section .timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.cataclysm-section .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-dark);
+    border: 2px solid var(--teal);
+}
+
+.cataclysm-section .timeline-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.cataclysm-section .timeline-item p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.cataclysm-section .highlight {
+    color: var(--coral);
+    font-weight: 500;
+}
+
+/* Epic Quote */
+.epic-quote {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+    padding: 60px 50px;
+    border-left: 4px solid var(--teal);
+    max-width: 900px;
+    margin: 80px auto;
+    border-radius: 0 12px 12px 0;
+}
+
+.epic-quote.epic-quote-centered {
+    margin: 60px auto;
+    border-left: none;
+    border-top: 4px solid var(--coral);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.epic-quote blockquote {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.epic-quote cite {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: normal;
+}
+
+/* Concept Section */
+.concept-section {
+    padding: 100px 50px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+}
+
+.concept-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.concept-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.concept-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.concept-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.concept-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
+}
+
+.concept-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.concept-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.concept-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Continents Section */
+.continents-section {
+    padding: 100px 50px;
+    background: var(--bg-dark);
+    border-top: 1px solid var(--border);
+}
+
+.continents-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.continents-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.continents-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.continents-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Continent Cards */
+.continent-card {
+    margin-bottom: 80px;
+    padding: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.continent-card:last-child {
+    margin-bottom: 0;
+}
+
+.continent-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.continent-info {
+    order: 1;
+}
+
+.continent-visual {
+    order: 2;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+    border-radius: 12px;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.continent-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.continent-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.continent-desc {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.continent-question {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--coral);
+}
+
+/* Zone List */
+.zone-list {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+.zone-list h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.zones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.zone-item {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.zone-item h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.zone-item .plane {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.zone-item .effect {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Difference Section */
+.difference-section {
+    padding: 100px 50px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+}
+
+.difference-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.difference-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.difference-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.difference-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 30px;
+    align-items: start;
+    padding: 30px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.difference-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.difference-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.difference-content p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Available Section */
+.available-section {
+    padding: 100px 50px;
+    background: var(--bg-dark);
+    border-top: 1px solid var(--border);
+}
+
+.available-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.available-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.available-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.available-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.available-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.available-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.available-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
+}
+
+.available-card .status {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--coral);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.available-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.available-card .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+.available-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.available-card .cta-button {
+    align-self: flex-start;
+}
+
+/* Final CTA */
+.final-cta {
+    padding: 100px 50px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+    border-top: 1px solid var(--border);
+}
+
+.final-cta h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.final-cta p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.final-cta .cta-button {
+    margin: 0 8px 16px;
+}
+
+/* ============================================
+   SHATTERED VEIL PAGE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .quick-summary-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .concept-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .continent-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .continent-visual {
+        order: -1;
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .setting-hero {
+        padding: 120px 25px 60px;
+        min-height: auto;
+    }
+    
+    .setting-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .quick-summary {
+        padding: 60px 25px;
+    }
+    
+    .quick-summary-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .cataclysm-section {
+        padding: 60px 25px;
+    }
+    
+    .cataclysm-content h2 {
+        font-size: 2rem;
+    }
+    
+    .epic-quote {
+        margin: 40px 25px;
+        padding: 40px 30px;
+    }
+    
+    .concept-section {
+        padding: 60px 25px;
+    }
+    
+    .concept-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .continents-section {
+        padding: 60px 25px;
+    }
+    
+    .continent-card {
+        padding: 25px;
+    }
+    
+    .zones-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .difference-section {
+        padding: 60px 25px;
+    }
+    
+    .difference-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .available-section {
+        padding: 60px 25px;
+    }
+    
+    .available-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .final-cta {
+        padding: 60px 25px;
+    }
+    
+    .final-cta h2 {
+        font-size: 2rem;
+    }
+}
