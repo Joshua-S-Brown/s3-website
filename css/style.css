@@ -3657,6 +3657,7 @@ input:focus,
     margin: 0 auto;
     display: flex;
     gap: 40px;
+    padding: 16px 0;
 }
 
 .category-nav a {
@@ -3665,7 +3666,7 @@ input:focus,
     font-weight: 600;
     color: var(--text-secondary);
     text-decoration: none;
-    padding: 20px 0;
+    padding: 4px 0;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
 }
@@ -4527,14 +4528,37 @@ input:focus,
 
 /* Roadmap Page Responsive */
 @media (max-width: 900px) {
-    .roadmap-hero { padding: 120px 25px 50px; }
-    .roadmap-hero h1 { font-size: 2.5rem; }
-    .philosophy-section-roadmap { padding: 60px 25px; }
+    .roadmap-hero {
+        padding: 120px 25px 50px;
+    }
+
+    .roadmap-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .philosophy-section-roadmap {
+        padding: 60px 25px;
+    }
+
     .status-section,
     .timeline-section,
-    .future-section { padding: 60px 25px; }
-    .status-grid { grid-template-columns: 1fr; }
-    .future-grid { grid-template-columns: 1fr; }
-    .timeline { padding-left: 35px; }
-    .timeline-item::before { left: -35px; }
+    .future-section {
+        padding: 60px 25px;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .future-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding-left: 35px;
+    }
+
+    .timeline-item::before {
+        left: -35px;
+    }
 }
