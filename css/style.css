@@ -6260,3 +6260,81 @@ input:focus,
         padding: 0 25px;
     }
 }
+
+/* ============================================
+   ADDITIONAL FIXES - Shattered Veil
+   ============================================ */
+
+/* Available Card - Full styling for direct children */
+.available-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 35px;
+    transition: border-color 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.available-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+}
+
+.available-card .status {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--coral);
+    margin-bottom: 12px;
+}
+
+.available-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.available-card .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+.available-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.available-card .cta-button {
+    align-self: flex-start;
+}
+
+/* Available Grid - Ensure 2 columns for these cards */
+.available-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .available-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .available-card {
+        padding: 25px;
+    }
+}
