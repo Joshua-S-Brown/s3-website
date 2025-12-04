@@ -4057,7 +4057,7 @@ rem; }
     transition: opacity 0.3s var(--transition-smooth),
                 visibility 0.3s var(--transition-smooth),
                 transform 0.3s var(--transition-smooth),
-                background var(--transition-fast),
+                background-color var(--transition-fast),
                 border-color var(--transition-fast);
     z-index: 99;
 }
