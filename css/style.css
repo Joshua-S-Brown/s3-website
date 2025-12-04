@@ -2838,7 +2838,8 @@ input:focus,
 
 .premise-text h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 25px;
 }
@@ -2945,7 +2946,8 @@ input:focus,
 
 .format-content h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
 }
@@ -2970,6 +2972,13 @@ input:focus,
     padding: 30px 25px;
     text-align: center;
     position: relative;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.format-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .format-card-icon {
@@ -3018,7 +3027,8 @@ input:focus,
 
 .topics-content h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
 }
@@ -3042,6 +3052,13 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 30px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.topic-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .topic-number {
@@ -3156,7 +3173,8 @@ input:focus,
 
 .pipeline-content h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
 }
