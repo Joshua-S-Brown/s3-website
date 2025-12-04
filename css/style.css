@@ -4325,7 +4325,8 @@ input:focus,
 
 .status-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 15px;
 }
@@ -4346,6 +4347,13 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 35px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.status-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .status-card h3 {
@@ -4425,7 +4433,8 @@ input:focus,
 
 .timeline-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 15px;
 }
@@ -4517,7 +4526,8 @@ input:focus,
 
 .future-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 15px;
 }
@@ -4538,6 +4548,13 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 35px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.future-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .future-card h3 {
