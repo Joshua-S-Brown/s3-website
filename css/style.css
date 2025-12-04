@@ -1,4 +1,4 @@
-/* S³ - Second Self Studios
+\/* S³ - Second Self Studios
    Global Stylesheet
    ================== */
 
@@ -9,10 +9,12 @@
     --bg-card-hover: #222222;
     --border: #2a2a2a;
     --text-primary: #e0e0e0;
-    --text-secondary: #888888;
+    --text-secondary: #a0a0a0;
     --text-muted: #666666;
     --teal: #4ECDC4;
     --teal-dim: #3da89f;
+    --coral: #FF6B6B;
+    --coral-dim: #e55a5a;
     --white: #ffffff;
     --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -60,6 +62,22 @@ body {
 
 *::-webkit-scrollbar-thumb:hover {
     background: var(--text-muted);
+}
+
+/* ==================
+   UTILITY CLASSES
+   ================== */
+
+.text-emphasis {
+    color: var(--coral);
+}
+
+.text-teal {
+    color: var(--teal);
+}
+
+.text-white {
+    color: var(--white);
 }
 
 /* ==================
@@ -400,9 +418,9 @@ nav {
     font-family: 'Crimson Pro', serif;
     font-size: 1.3rem;
     font-style: italic;
-    color: var(--teal);
+    color: var(--coral);
     margin-bottom: 25px;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .hero-description {
@@ -714,9 +732,9 @@ footer {
     font-family: 'Crimson Pro', serif;
     font-size: 0.95rem;
     font-style: italic;
-    color: var(--teal);
+    color: var(--coral);
     margin-bottom: 30px;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .footer-links {
@@ -2045,7 +2063,7 @@ input:focus,
     font-family: 'Crimson Pro', serif;
     font-size: 1.4rem;
     font-style: italic;
-    color: var(--teal);
+    color: var(--coral);
     margin-bottom: 25px;
     opacity: 0.9;
 }
@@ -2192,7 +2210,7 @@ input:focus,
 }
 
 .comparison-item .others {
-    color: #888;
+    color: #a0a0a0;
     text-decoration: line-through;
     margin-bottom: 5px;
 }
@@ -2727,7 +2745,7 @@ input:focus,
     font-family: 'Crimson Pro', serif;
     font-size: 1.4rem;
     font-style: italic;
-    color: var(--teal);
+    color: var(--coral);
     margin-bottom: 25px;
 }
 
@@ -3142,7 +3160,7 @@ input:focus,
     font-size: 1.3rem;
     font-weight: 400;
     font-style: italic;
-    color: var(--teal);
+    color: var(--coral);
 }
 
 /* Academy CTA Section */
