@@ -2108,10 +2108,11 @@ input:focus,
 
 .about-hero h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 800;
+    letter-spacing: -0.02em;
     color: var(--white);
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .about-hero h1 .accent {
@@ -2183,11 +2184,13 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 30px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .why-card:hover {
     border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .why-icon {
@@ -2359,12 +2362,13 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 35px;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .principle-card:hover {
     border-color: var(--teal);
     transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .principle-icon {
@@ -2495,6 +2499,11 @@ input:focus,
     gap: 20px;
     padding: 15px 0;
     border-bottom: 1px solid var(--border);
+    transition: padding-left 0.2s;
+}
+
+.zone-preview:hover {
+    padding-left: 10px;
 }
 
 .zone-preview:last-child {
