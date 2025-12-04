@@ -5977,3 +5977,286 @@ input:focus,
         font-size: 1rem;
     }
 }
+
+/* ============================================
+   TARGETED FIXES - Append to end of style.css
+   ============================================ */
+
+/* -----------------------------------------
+   SHATTERED VEIL FIXES
+   ----------------------------------------- */
+
+/* Epic Quote - Center properly (was margin: 0 50px) */
+.epic-quote {
+    margin: 60px auto;
+}
+
+/* Zone List - Inside continent cards (was missing) */
+.zone-list {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+.zone-list h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.zone-item {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    transition: border-color 0.3s;
+}
+
+.zone-item:hover {
+    border-color: var(--teal);
+}
+
+.zone-item h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.zone-item .plane {
+    font-size: 0.8rem;
+    color: var(--teal);
+    margin-bottom: 4px;
+}
+
+.zone-item .effect {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Continent Header - Grid so visual sits beside info */
+.continent-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Continent Card - Remove old grid layout */
+.continent-card {
+    display: block;
+}
+
+
+/* -----------------------------------------
+   FROZEN FJORDS FIXES
+   ----------------------------------------- */
+
+/* Feature List - Styled list with icons */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.feature-text span {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Zone Image - Make placeholder fill the box */
+.zone-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+}
+
+.zone-image .featured-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* -----------------------------------------
+   ROADMAP FIXES
+   ----------------------------------------- */
+
+/* Status Grid - 2 columns, centered */
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Status Card - Better styling */
+.status-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: left;
+}
+
+.status-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.status-card .subtitle {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.status-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.status-card li {
+    padding: 12px 0;
+    padding-left: 28px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    display: block;
+}
+
+.status-card li:last-child {
+    border-bottom: none;
+}
+
+/* Status indicators with dot icons */
+.status-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-card li.complete::before {
+    background: var(--teal);
+    box-shadow: 0 0 8px rgba(78, 205, 196, 0.4);
+}
+
+.status-card li.in-progress::before {
+    background: var(--coral);
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.4);
+}
+
+.status-card li.planned::before {
+    background: var(--text-muted);
+}
+
+
+/* -----------------------------------------
+   PRODUCTS FIXES
+   ----------------------------------------- */
+
+/* Category Nav - Center the links */
+.category-nav-inner {
+    justify-content: center;
+    gap: 60px;
+    padding: 0 50px;
+}
+
+
+/* -----------------------------------------
+   RESPONSIVE OVERRIDES
+   ----------------------------------------- */
+
+@media (max-width: 1024px) {
+    .continent-header {
+        grid-template-columns: 1fr;
+    }
+    
+    .continent-visual {
+        order: -1;
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .epic-quote {
+        margin: 40px 25px;
+    }
+    
+    .zones-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .status-card {
+        padding: 30px;
+    }
+    
+    .category-nav-inner {
+        gap: 30px;
+        padding: 0 25px;
+    }
+}
