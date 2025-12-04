@@ -1222,7 +1222,8 @@ input:focus,
 
 .story-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 10px;
 }
@@ -1761,7 +1762,8 @@ input:focus,
 
 .sessions-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 15px;
 }
@@ -1783,12 +1785,13 @@ input:focus,
     border-radius: 10px;
     padding: 25px 20px;
     text-align: center;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .session-card:hover {
-    border-color: rgba(78, 205, 196, 0.3);
-    transform: translateY(-2px);
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .session-card .session-num {
@@ -1830,7 +1833,8 @@ input:focus,
 
 .included-header h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: 15px;
 }
@@ -1846,6 +1850,13 @@ input:focus,
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 30px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.included-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .included-card h4 {
@@ -1876,6 +1887,13 @@ input:focus,
     border-radius: 10px;
     padding: 30px;
     text-align: center;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.works-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-teal);
 }
 
 .works-card .works-icon {
