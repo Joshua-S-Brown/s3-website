@@ -4972,13 +4972,15 @@ input:focus,
     padding: 60px 50px;
     border-left: 4px solid var(--teal);
     max-width: 900px;
-    margin: 0 50px;
+    margin: 80px auto;
+    border-radius: 0 12px 12px 0;
 }
 
 .epic-quote.epic-quote-centered {
     margin: 60px auto;
     border-left: none;
     border-top: 4px solid var(--coral);
+    border-radius: 12px;
     text-align: center;
 }
 
@@ -5100,10 +5102,6 @@ input:focus,
 }
 
 .continent-card {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-    align-items: start;
     margin-bottom: 80px;
     padding: 40px;
     background: var(--bg-card);
@@ -5112,6 +5110,14 @@ input:focus,
 }
 
 .continent-card:last-child {
+    margin-bottom: 0;
+}
+
+.continent-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
     margin-bottom: 0;
 }
 
@@ -5124,17 +5130,12 @@ input:focus,
     justify-content: center;
     color: var(--text-muted);
     font-size: 0.9rem;
+    order: 2;
 }
 
 .continent-info {
-    padding: 20px 0;
-}
-
-.continent-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    padding: 0;
+    order: 1;
 }
 
 .continent-name {
@@ -5210,6 +5211,8 @@ input:focus,
     border-radius: 12px;
     overflow: hidden;
     padding: 35px;
+    display: flex;
+    flex-direction: column;
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
@@ -5241,10 +5244,11 @@ input:focus,
     font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 24px;
+    flex-grow: 1;
 }
 
 .available-card .cta-button {
-    display: inline-block;
+    align-self: flex-start;
 }
 
 .available-content {
@@ -5361,8 +5365,14 @@ input:focus,
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .continent-card {
+    .continent-header {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .continent-visual {
+        order: -1;
+        min-height: 200px;
     }
 }
 
@@ -5385,7 +5395,7 @@ input:focus,
     }
     
     .epic-quote {
-        margin: 0 25px;
+        margin: 40px 25px;
         padding: 40px 30px;
     }
     
