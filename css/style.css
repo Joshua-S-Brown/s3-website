@@ -6338,3 +6338,183 @@ input:focus,
         padding: 25px;
     }
 }
+
+
+/* ============================================
+   HOME PAGE UX/UI IMPROVEMENTS
+   ============================================ */
+
+/* -----------------------------------------
+   HERO REFINEMENTS
+   ----------------------------------------- */
+
+/* Increase tagline prominence */
+.hero-tagline {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Tighten description */
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 550px;
+    margin-bottom: 40px;
+}
+
+/* -----------------------------------------
+   VALUE SECTION REFINEMENTS
+   ----------------------------------------- */
+
+/* Tighter section description */
+#value .section-description {
+    max-width: 500px;
+    margin-bottom: 48px;
+}
+
+/* Value card refinements */
+.value-card {
+    padding: 32px;
+}
+
+.value-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* -----------------------------------------
+   FORMAT PREVIEW REFINEMENTS
+   ----------------------------------------- */
+
+/* Make the example box more distinct */
+.format-preview-example {
+    position: relative;
+    border: 1px solid var(--teal);
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.05) 0%, var(--bg-dark) 100%);
+}
+
+.format-preview-example::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--teal);
+}
+
+.format-preview-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+}
+
+/* -----------------------------------------
+   FEATURED SECTION REFINEMENTS
+   ----------------------------------------- */
+
+/* "First Release" label styling */
+.featured-label {
+    color: var(--coral);
+}
+
+/* -----------------------------------------
+   NOTIFY SECTION (NEW)
+   ----------------------------------------- */
+
+.notify-section {
+    padding: 100px 50px;
+    background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.notify-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.notify-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.notify-section > p,
+.notify-content > p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.notify-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.notify-input {
+    flex: 1;
+    max-width: 300px;
+    padding: 16px 20px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    color: var(--white);
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.notify-input:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.15);
+}
+
+.notify-input::placeholder {
+    color: var(--text-muted);
+}
+
+.notify-form .cta-button {
+    flex-shrink: 0;
+}
+
+.notify-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* -----------------------------------------
+   RESPONSIVE - HOME PAGE
+   ----------------------------------------- */
+
+@media (max-width: 768px) {
+    .hero-tagline {
+        font-size: 2.2rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .notify-section {
+        padding: 60px 25px;
+    }
+    
+    .notify-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .notify-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .notify-input {
+        max-width: none;
+    }
+}
