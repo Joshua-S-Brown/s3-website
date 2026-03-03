@@ -25,32 +25,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     mapEl.style.height = Math.round(containerW / ratio) + 'px';
   }
 
+  const bounds = [[0, 0], [config.height, config.width]];
+
   const map = L.map('map', {
     crs: L.CRS.Simple,
-    minZoom: -2, maxZoom: 3,
+    maxZoom: 3,
     zoomSnap: 0,
     zoomControl: false,
     attributionControl: false,
+    maxBounds: bounds,
+    maxBoundsViscosity: 1.0,
   });
 
   // Add zoom control to top-right to avoid sidebar overlap
   L.control.zoom({ position: 'topright' }).addTo(map);
 
-  const bounds = [[0, 0], [config.height, config.width]];
+
 
   const img = new Image();
-  img.onload = function () {
+img.onload = function () {
     L.imageOverlay(config.image, bounds).addTo(map);
     map.fitBounds(bounds, { padding: [0, 0] });
     setTimeout(() => {
       map.invalidateSize();
       map.fitBounds(bounds, { padding: [0, 0] });
+      map.setMinZoom(map.getZoom());
     }, 100);
 
-    // Don't place pins until user clicks explore (if landing exists)
     var landing = document.getElementById('map-landing');
     if (landing) {
-      // Disable map interaction while landing is showing
       map.dragging.disable();
       map.scrollWheelZoom.disable();
       map.touchZoom.disable();
@@ -221,18 +224,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
 
       // Region name labels
-      if (loc.type === 'region') {
-        // Pin name labels
-        var labelClass = 'map-label--' + loc.type;
-        var yOffset = loc.type === 'region' ? -20 : -14;
-        var label = L.divIcon({
-          className: 'map-label',
-          html: '<span class="' + labelClass + '">' + loc.name + '</span>',
-          iconSize: [140, 20],
-          iconAnchor: [70, yOffset],
-        });
-        L.marker(loc.coords, { icon: label, interactive: false }).addTo(map);
-      }
+      // Pin name labels
+      var labelClass = 'map-label--' + loc.type;
+      var yOffset = loc.type === 'region' ? -20 : -14;
+      var label = L.divIcon({
+        className: 'map-label',
+        html: '<span class="' + labelClass + '">' + loc.name + '</span>',
+        iconSize: [140, 20],
+        iconAnchor: [70, yOffset],
+      });
+      L.marker(loc.coords, { icon: label, interactive: false }).addTo(map);
     });
   }
 
