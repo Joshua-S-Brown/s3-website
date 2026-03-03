@@ -1019,7 +1019,7 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at center, rgba(19,19,19,0.3) 0%, rgba(19,19,19,0.75) 100%);
+  background: radial-gradient(ellipse at center, rgba(19,19,19,0.6) 0%, rgba(19,19,19,0.85) 100%);
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 .map-landing.is-hidden {
@@ -1123,20 +1123,44 @@ h3 { font-size: 1.25rem; font-weight: 400; }
     width: 100%;
   }
 }
-
-/* ============================================
-   CSS TO DELETE (old homepage stuff):
-   - .home-map-wrapper and everything inside it
-   - .home-map-caption
-   - .map-section (the old non-fullscreen version)
-   - .home-intro and its children
-   - .home-grid
-   - .continent-grid
-   - .home-content
-   - .home-card__title, .home-card__subtitle, .home-card__desc
-   
-   KEEP:
-   - All sidebar CSS from previous update
-   - Map pin CSS
-   - Map popup/label CSS
-   ============================================ */
+/* --- Map Labels (all pin types) --- */
+.map-label {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.map-label span {
+  white-space: nowrap;
+  text-shadow:
+    0 0 6px rgba(0,0,0,0.9),
+    0 0 12px rgba(0,0,0,0.7),
+    0 0 20px rgba(0,0,0,0.4);
+}
+.map-label--region {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--heading);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.map-label--city {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--heading);
+  letter-spacing: 2px;
+}
+.map-label--landmark {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+.map-label--ruin {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: #8B4513;
+  letter-spacing: 1px;
+  font-style: italic;
+}

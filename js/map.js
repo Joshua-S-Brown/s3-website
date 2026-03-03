@@ -222,11 +222,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Region name labels
       if (loc.type === 'region') {
+        // Pin name labels
+        var labelClass = 'map-label--' + loc.type;
+        var yOffset = loc.type === 'region' ? -20 : -14;
         var label = L.divIcon({
           className: 'map-label',
-          html: '<span class="map-label--region">' + loc.name + '</span>',
-          iconSize: [120, 20],
-          iconAnchor: [60, -16],
+          html: '<span class="' + labelClass + '">' + loc.name + '</span>',
+          iconSize: [140, 20],
+          iconAnchor: [70, yOffset],
         });
         L.marker(loc.coords, { icon: label, interactive: false }).addTo(map);
       }
