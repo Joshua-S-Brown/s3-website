@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     crs: L.CRS.Simple,
     minZoom: -2,
     maxZoom: 3,
+    zoomSnap: 0,
     zoomControl: true,
     attributionControl: false,
   });
