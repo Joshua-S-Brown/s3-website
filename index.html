@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Second Self Studios</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="description" content="A fantasy world built one story, one map, and one sketch at a time.">
+  <meta property="og:image" content="/og-image.png">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
+
   <header class="site-header">
     <a href="/" class="site-logo">
       <span class="site-logo__second">SECOND</span>
@@ -15,14 +21,69 @@
       <span class="site-logo__studios">STUDIOS</span>
     </a>
     <nav class="site-nav">
-      <a href="/pages/stories/">Stories</a>
-      <a href="/pages/lore/">Lore</a>
-      <a href="/pages/characters/">Gallery</a>
+      <a href="/pages/locations/kael-doran.html">Locations</a>
+      <a href="/pages/stories/the-lamplighters-oath.html">Stories</a>
+      <a href="#">Lore</a>
       <a href="#">Journal</a>
     </nav>
   </header>
-  <div id="map"></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/map.js"></script>
+
+  <div class="page-body">
+    <div class="container">
+
+      <!-- Hero -->
+      <div class="home-hero">
+        <p class="label label--gold home-hero__label">A World Being Built</p>
+        <h1 class="home-hero__title">Second Self Studios</h1>
+        <p class="home-hero__desc">A fantasy world explored through stories, maps, art, and lore. Everything here is connected — every place has characters, every character has a story, every story has a place on the map.</p>
+        <p class="home-hero__note">The interactive world map is coming soon. For now, start exploring below.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Featured Location -->
+      <div class="section">
+        <p class="label label--gold section__label">Featured Location</p>
+        <a class="card-link" href="/pages/locations/kael-doran.html">
+          <div class="card card--clickable">
+            <h2 class="home-card__title">Kael’Doran</h2>
+            <p class="home-card__subtitle">The Ember Gate · Ashenvael</p>
+            <p class="home-card__desc">The city rises from the blackite cliffs like a fist clenched against the sky. Three centuries of stubbornness carved into stone, smoke rising from the forge quarter, and wards that are slowly failing.</p>
+            <span class="home-card__link">Explore →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Featured Story -->
+      <div class="section">
+        <p class="label label--teal section__label">Featured Story</p>
+        <a class="card-link" href="/pages/stories/the-lamplighters-oath.html">
+          <div class="card card--clickable">
+            <div class="story-card__header">
+              <span class="story-card__title">The Lamplighter’s Oath</span>
+              <span class="story-card__time">12 min</span>
+            </div>
+            <p class="story-card__excerpt">“The lamp at the corner of Ashfall and Sixth had been dead for eleven years when Sera Voss noticed it burning.”</p>
+            <span class="home-card__link">Read →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- What This Is -->
+      <div class="section">
+        <p class="label label--muted section__label">What This Is</p>
+        <div class="prose">
+          <p>This is a living worldbuilding project. The map, the stories, the characters, the art — they’re all being created in real time. Some pages are stubs. Some regions are unnamed. That’s the point. You’re watching a world take shape.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Second Self Studios — A world being built</p>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
