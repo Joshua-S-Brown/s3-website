@@ -477,3 +477,156 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
   .error-links { flex-direction: column; width: 100%; max-width: 260px; }
   .error-btn { width: 100%; text-align: center; }
 }
+
+/* ============================================
+   ADDITIONS — Paste at end of styles.css
+   ============================================ */
+
+/* --- Homepage Map --- */
+#map {
+  width: 100%;
+  height: calc(100vh - 56px);
+  margin-top: 56px;
+  background: var(--bg);
+}
+
+/* --- Map Fallback (when no map image exists yet) --- */
+.map-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 40% 45%, rgba(201, 168, 76, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 55%, rgba(78, 205, 196, 0.03) 0%, transparent 50%),
+    var(--bg);
+}
+.map-fallback__content {
+  text-align: center;
+  max-width: 440px;
+  padding: var(--space-xl);
+}
+.map-fallback__icon {
+  font-size: 2.5rem;
+  color: var(--gold);
+  opacity: 0.4;
+  margin-bottom: var(--space-md);
+}
+.map-fallback__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--heading);
+  margin-bottom: var(--space-md);
+}
+.map-fallback__desc {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: var(--space-xl);
+}
+.map-fallback__links {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+}
+.map-fallback__links a {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--teal);
+}
+.map-fallback__sep {
+  color: var(--border);
+}
+
+/* --- Hub Pages --- */
+.hub-card__location {
+  font-size: 0.6875rem;
+  color: var(--gold);
+  margin-top: var(--space-sm);
+}
+.hub-card__date {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+/* --- Home Cards (shared by hub pages) --- */
+.home-card__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--heading);
+  margin-bottom: var(--space-xs);
+}
+.home-card__subtitle {
+  font-size: 0.8125rem;
+  color: var(--gold);
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+.home-card__desc {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* --- 404 Page --- */
+.error-page {
+  text-align: center;
+  padding-top: var(--space-3xl);
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error-code {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 300;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: var(--space-lg);
+}
+.error-title {
+  font-size: 1.75rem;
+  color: var(--heading);
+  font-family: var(--font-display);
+  margin-bottom: var(--space-md);
+}
+.error-desc {
+  font-size: 1rem;
+  color: var(--text);
+  max-width: 400px;
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+.error-links {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+}
+.error-btn {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: 1px solid var(--teal);
+  border-radius: 4px;
+  color: var(--teal);
+  transition: all var(--ease);
+}
+.error-btn:hover {
+  background: rgba(78, 205, 196, 0.1);
+  color: var(--teal);
+}
+
+@media (max-width: 600px) {
+  .error-code { font-size: 5rem; }
+  .error-title { font-size: 1.4rem; }
+  .error-links { flex-direction: column; width: 100%; max-width: 260px; }
+  .error-btn { width: 100%; text-align: center; }
+}
