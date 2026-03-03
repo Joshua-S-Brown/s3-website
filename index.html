@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="description" content="A fantasy world built one story, one map, and one sketch at a time.">
+  <meta name="description" content="A fantasy worldbuilding project. Stories, maps, art, and lore from the world of Veridia.">
   <meta property="og:image" content="/og-image.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -29,36 +29,32 @@
     </nav>
   </header>
 
-  <!-- Map Section -->
-  <div class="map-section">
-    <div id="map"
-      data-width="2000"
-      data-height="1125">
-    </div>
-
-    <!-- Overlay text on the map -->
-    <div class="map-overlay">
-      <p class="map-overlay__label label label--gold">Explore the World of Veridia</p>
-      <p class="map-overlay__hint">Click a pin to learn more. Scroll down to begin.</p>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator">
-      <span>&#8964;</span>
-    </div>
-  </div>
-
-  <!-- Below the Map -->
-  <div class="home-content">
+  <!-- Intro -->
+  <div class="page-body">
     <div class="container">
 
       <div class="home-intro">
-        <div class="divider"></div>
-        <p class="home-intro__text">Veridia is a world being built in the open &mdash; one story, one map, and one sketch at a time. Three continents. Centuries of buried history. Magic that is fading. And the people trying to hold it all together.</p>
-        <p class="home-intro__sub">This is a living project. Some pages are stubs. Some regions are unnamed. You&rsquo;re watching a world take shape.</p>
+        <h1 class="home-intro__title">The World of Veridia</h1>
+        <p class="home-intro__text">Three continents. Fading magic. Centuries of history buried under politics and ash. This is a worldbuilding project told through short fiction, hand-drawn maps, and lore entries. Everything connects. Every place has characters, every character has a story, and every story has a spot on the map.</p>
+        <p class="label label--muted">Work in progress. Updated as new content is created.</p>
       </div>
 
-      <!-- Featured -->
+    </div>
+
+    <!-- Map (contained, not full viewport) -->
+    <div class="home-map-wrapper">
+      <div id="map"
+        data-width="2000"
+        data-height="1125">
+      </div>
+      <p class="home-map-caption">Click a pin to explore. Drag to pan, scroll to zoom.</p>
+    </div>
+
+    <div class="container">
+
+      <div class="divider"></div>
+
+      <!-- Latest -->
       <div class="home-grid">
 
         <div class="section">
@@ -81,28 +77,28 @@
             <div class="card card--clickable">
               <h3 class="home-card__title">Kael&rsquo;Doran</h3>
               <p class="home-card__subtitle">The Ember Gate &middot; Ashenvael</p>
-              <p class="home-card__desc">A city carved from blackite cliffs by refugees of the fallen Thal Empire. The wards are failing. The governor pretends not to notice.</p>
+              <p class="home-card__desc">A city on blackite cliffs built by refugees of the Thal Empire. Three centuries later the wards are failing and no one wants to talk about it.</p>
             </div>
           </a>
         </div>
 
       </div>
 
-      <!-- Three Continents -->
+      <!-- Continents -->
       <div class="section">
-        <p class="label label--muted section__label">Three Continents</p>
+        <p class="label label--muted section__label">The Continents</p>
         <div class="continent-grid">
           <div class="card">
             <h3 class="home-card__title">Andoria</h3>
-            <p class="home-card__desc">Frozen fjords in the north, iron mountains in the south, and the Godsvein Valley running through it all like a scar that never healed.</p>
+            <p class="home-card__desc">Frozen fjords to the north, iron mountains to the south. The Godsvein Valley runs through the center like a wound that never closed.</p>
           </div>
           <div class="card">
             <h3 class="home-card__title">Kalendra</h3>
-            <p class="home-card__desc">A thousand lakes, a fertile crescent, and an endless desert. The center of the old world &mdash; and the place where the Sundering hit hardest.</p>
+            <p class="home-card__desc">A thousand lakes, a fertile crescent, a desert that swallowed an empire. The center of the old world and the place the Sundering hit hardest.</p>
           </div>
           <div class="card">
             <h3 class="home-card__title">Morgard</h3>
-            <p class="home-card__desc">The Everwood. The Howling Plains. A coastline of drowned ruins and storms that never stop. The east keeps its secrets.</p>
+            <p class="home-card__desc">The Everwood. The Howling Plains. A coastline of drowned ruins and storms that never quit. The east keeps to itself.</p>
           </div>
         </div>
       </div>
@@ -111,7 +107,7 @@
   </div>
 
   <footer class="site-footer">
-    <p>Second Self Studios &mdash; A world being built</p>
+    <p>Second Self Studios</p>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

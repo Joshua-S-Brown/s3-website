@@ -701,74 +701,6 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
    HOMEPAGE — Paste at end of styles.css
    ============================================ */
 
-/* --- Map Section (holds map + overlay) --- */
-.map-section {
-  position: relative;
-}
-
-/* --- Map Overlay Text --- */
-.map-overlay {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 800;
-  pointer-events: none;
-}
-.map-overlay__label {
-  margin-bottom: var(--space-sm);
-}
-.map-overlay__hint {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  letter-spacing: 0.5px;
-}
-
-/* --- Scroll Indicator --- */
-.scroll-indicator {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 800;
-  animation: bob 2s ease-in-out infinite;
-}
-.scroll-indicator span {
-  font-size: 1.5rem;
-  color: var(--gold);
-  opacity: 0.5;
-}
-@keyframes bob {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(6px); }
-}
-
-/* --- Home Content (below the map) --- */
-.home-content {
-  padding: var(--space-2xl) 0 var(--space-3xl);
-}
-
-/* --- Home Intro --- */
-.home-intro {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto var(--space-2xl);
-}
-.home-intro__text {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--heading);
-  margin-bottom: var(--space-lg);
-}
-.home-intro__sub {
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-  font-style: italic;
-  line-height: 1.7;
-}
 
 /* --- Home Grid (story + location side by side on desktop) --- */
 .home-grid {
@@ -805,3 +737,68 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   HOMEPAGE v2 — Replace old homepage CSS
+   ============================================ */
+
+/* --- Home Intro (above the map) --- */
+.home-intro {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto var(--space-2xl);
+  padding-top: var(--space-lg);
+}
+.home-intro__title {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: var(--heading);
+  letter-spacing: 1px;
+  margin-bottom: var(--space-lg);
+}
+.home-intro__text {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: var(--space-md);
+}
+
+/* --- Map wrapper (contained, not full viewport) --- */
+.home-map-wrapper {
+  max-width: 1100px;
+  margin: 0 auto var(--space-lg);
+  padding: 0 var(--space-xl);
+}
+.home-map-wrapper #map {
+  height: 500px;
+  margin-top: 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.home-map-caption {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: var(--space-sm);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .home-map-wrapper #map {
+    height: 350px;
+  }
+  .home-intro__title {
+    font-size: 1.75rem;
+  }
+}
+
+/* --- You can DELETE these old homepage classes --- */
+/*
+  .map-section
+  .map-overlay
+  .map-overlay__label
+  .map-overlay__hint
+  .scroll-indicator
+  @keyframes bob
+*/
