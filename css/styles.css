@@ -696,3 +696,112 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
 .leaflet-popup-close-button:hover {
   color: var(--heading);
 }
+
+/* ============================================
+   HOMEPAGE — Paste at end of styles.css
+   ============================================ */
+
+/* --- Map Section (holds map + overlay) --- */
+.map-section {
+  position: relative;
+}
+
+/* --- Map Overlay Text --- */
+.map-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 800;
+  pointer-events: none;
+}
+.map-overlay__label {
+  margin-bottom: var(--space-sm);
+}
+.map-overlay__hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* --- Scroll Indicator --- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 800;
+  animation: bob 2s ease-in-out infinite;
+}
+.scroll-indicator span {
+  font-size: 1.5rem;
+  color: var(--gold);
+  opacity: 0.5;
+}
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* --- Home Content (below the map) --- */
+.home-content {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+}
+
+/* --- Home Intro --- */
+.home-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-2xl);
+}
+.home-intro__text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--heading);
+  margin-bottom: var(--space-lg);
+}
+.home-intro__sub {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* --- Home Grid (story + location side by side on desktop) --- */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+@media (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Continent Grid --- */
+.continent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-md);
+}
+.continent-grid .card {
+  padding: var(--space-lg);
+}
+.continent-grid .home-card__title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+.continent-grid .home-card__desc {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .continent-grid {
+    grid-template-columns: 1fr;
+  }
+}

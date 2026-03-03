@@ -29,12 +29,93 @@
     </nav>
   </header>
 
-  <div id="map"
-    data-width="2000"
-    data-height="1125">
+  <!-- Map Section -->
+  <div class="map-section">
+    <div id="map"
+      data-width="2000"
+      data-height="1125">
+    </div>
+
+    <!-- Overlay text on the map -->
+    <div class="map-overlay">
+      <p class="map-overlay__label label label--gold">Explore the World of Veridia</p>
+      <p class="map-overlay__hint">Click a pin to learn more. Scroll down to begin.</p>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>&#8964;</span>
+    </div>
   </div>
+
+  <!-- Below the Map -->
+  <div class="home-content">
+    <div class="container">
+
+      <div class="home-intro">
+        <div class="divider"></div>
+        <p class="home-intro__text">Veridia is a world being built in the open &mdash; one story, one map, and one sketch at a time. Three continents. Centuries of buried history. Magic that is fading. And the people trying to hold it all together.</p>
+        <p class="home-intro__sub">This is a living project. Some pages are stubs. Some regions are unnamed. You&rsquo;re watching a world take shape.</p>
+      </div>
+
+      <!-- Featured -->
+      <div class="home-grid">
+
+        <div class="section">
+          <p class="label label--teal section__label">Latest Story</p>
+          <a class="card-link" href="/pages/stories/the-lamplighters-oath.html">
+            <div class="card card--clickable">
+              <div class="story-card__header">
+                <span class="story-card__title">The Lamplighter&rsquo;s Oath</span>
+                <span class="story-card__time">12 min</span>
+              </div>
+              <p class="story-card__excerpt">&ldquo;The lamp at the corner of Ashfall and Sixth had been dead for eleven years when Sera Voss noticed it burning.&rdquo;</p>
+              <p class="hub-card__location">&#9670; Kael&rsquo;Doran, Ashenvael</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="section">
+          <p class="label label--gold section__label">Featured Location</p>
+          <a class="card-link" href="/pages/locations/kael-doran.html">
+            <div class="card card--clickable">
+              <h3 class="home-card__title">Kael&rsquo;Doran</h3>
+              <p class="home-card__subtitle">The Ember Gate &middot; Ashenvael</p>
+              <p class="home-card__desc">A city carved from blackite cliffs by refugees of the fallen Thal Empire. The wards are failing. The governor pretends not to notice.</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Three Continents -->
+      <div class="section">
+        <p class="label label--muted section__label">Three Continents</p>
+        <div class="continent-grid">
+          <div class="card">
+            <h3 class="home-card__title">Andoria</h3>
+            <p class="home-card__desc">Frozen fjords in the north, iron mountains in the south, and the Godsvein Valley running through it all like a scar that never healed.</p>
+          </div>
+          <div class="card">
+            <h3 class="home-card__title">Kalendra</h3>
+            <p class="home-card__desc">A thousand lakes, a fertile crescent, and an endless desert. The center of the old world &mdash; and the place where the Sundering hit hardest.</p>
+          </div>
+          <div class="card">
+            <h3 class="home-card__title">Morgard</h3>
+            <p class="home-card__desc">The Everwood. The Howling Plains. A coastline of drowned ruins and storms that never stop. The east keeps its secrets.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Second Self Studios &mdash; A world being built</p>
+  </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/map.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
