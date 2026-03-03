@@ -14,6 +14,7 @@
 
   <header class="site-header">
     <a href="/" class="site-logo">
+      <img src="/assets/images/logo.png" alt="S3" class="site-logo__icon">
       <span class="site-logo__second">SECOND</span>
       <span class="site-logo__self">SELF</span>
       <span class="site-logo__studios">STUDIOS</span>
@@ -21,50 +22,61 @@
     <nav class="site-nav">
       <a href="/pages/locations/">Locations</a>
       <a href="/pages/stories/">Stories</a>
+      <a href="/pages/characters/">Characters</a>
       <a href="/pages/lore/">Lore</a>
       <a href="/pages/journal/">Journal</a>
     </nav>
   </header>
 
-  <div class="location-hero">
-    <div class="container--wide">
-      <h1>Lore</h1>
-      <p class="location-hero__subtitle">History, magic, and the shape of things</p>
-    </div>
-  </div>
-
   <div class="page-body">
     <div class="container--wide">
 
-      <div class="section">
-        <div class="prose">
-          <p>The encyclopedia is being written. Entries on magic systems, historical events, factions, and cultures will appear here as the world takes shape.</p>
-        </div>
+      <div class="hub-header">
+        <h1>Lore</h1>
+        <p class="hub-header__desc">History, magic, factions, and the things that hold the world together. Or used to.</p>
       </div>
 
-      <!--
-        TO ADD A LORE ENTRY:
-        <div class="section">
-          <p class="label label--gold section__label">History</p>
-          <a class="card-link" href="/pages/lore/the-sundering.html">
-            <div class="card card--clickable">
-              <h3 class="home-card__title">The Sundering</h3>
-              <p class="home-card__desc">The cataclysm that ended the Thal Empire.</p>
-            </div>
-          </a>
-        </div>
-      -->
+      <div class="divider"></div>
 
-      <div class="text-center mt-lg">
-        <a href="/" class="map-link">◎ Back to Map</a>
+      <!-- Filter by category -->
+      <div class="hub-filters">
+        <span class="tag tag--active">All</span>
+        <span class="tag">Historical Events</span>
+        <span class="tag">Magic</span>
+        <span class="tag">Factions</span>
+        <span class="tag">Materials</span>
+        <!-- EDIT: Add more categories as content grows -->
+      </div>
+
+      <!-- Entries -->
+      <div class="hub-list">
+
+        <a class="card-link" href="/pages/lore/the-sundering.html">
+          <div class="card card--clickable hub-entry">
+            <div class="hub-entry__meta">
+              <span class="label label--gold">Historical Event</span>
+            </div>
+            <h3 class="hub-entry__title">The Sundering</h3>
+            <p class="hub-entry__desc">The cataclysm that broke the world's connection to raw magic and reshaped all three continents.</p>
+            <div class="hub-entry__tags">
+              <span class="hub-entry__tag">Kalendra</span>
+              <span class="hub-entry__tag">Thal Empire</span>
+              <span class="hub-entry__tag">Magic</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- TO ADD: Copy the block above for each new lore entry -->
+
       </div>
 
     </div>
   </div>
 
   <footer class="site-footer">
-    <p>Second Self Studios — A world being built</p>
+    <p>Second Self Studios</p>
   </footer>
+
   <script src="/js/main.js"></script>
 </body>
 </html>

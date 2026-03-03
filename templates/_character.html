@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: Page title -->
+  <title>CHARACTER NAME — Characters — Second Self Studios</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <img src="/assets/images/logo.png" alt="S3" class="site-logo__icon">
+      <span class="site-logo__second">SECOND</span>
+      <span class="site-logo__self">SELF</span>
+      <span class="site-logo__studios">STUDIOS</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/pages/locations/">Locations</a>
+      <a href="/pages/stories/">Stories</a>
+      <a href="/pages/characters/">Characters</a>
+      <a href="/pages/lore/">Lore</a>
+      <a href="/pages/journal/">Journal</a>
+    </nav>
+  </header>
+
+  <div class="page-body">
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="breadcrumbs__sep">/</span>
+        <a href="/pages/characters/">Characters</a>
+        <span class="breadcrumbs__sep">/</span>
+        <!-- EDIT: Breadcrumb name -->
+        <span class="breadcrumbs__current">CHARACTER NAME</span>
+      </nav>
+
+      <div class="char-header">
+        <div class="char-header__top">
+          <div class="char-header__portrait">
+            <!-- EDIT: Replace with <img src="/assets/images/characters/SLUG.jpg" alt="CHARACTER NAME"> when art exists -->
+            <span class="char-header__initial">X</span>
+          </div>
+          <div class="char-header__info">
+            <!-- EDIT: Role/title -->
+            <p class="label label--teal">ROLE OR TITLE</p>
+            <!-- EDIT: Character name -->
+            <h1>CHARACTER NAME</h1>
+            <!-- EDIT: Location (link to location page if it exists) -->
+            <p class="char-header__location">
+              <a href="/pages/locations/SLUG.html">LOCATION</a>, REGION
+            </p>
+          </div>
+        </div>
+        <!-- EDIT: Defining quote (delete if none) -->
+        <p class="char-header__quote">"A quote that captures this character."</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- EDIT: Quick facts -->
+      <div class="char-facts">
+        <div class="char-facts__item">
+          <span class="char-facts__label">Status</span>
+          <span class="char-facts__value">VALUE</span>
+        </div>
+        <div class="char-facts__item">
+          <span class="char-facts__label">Affiliation</span>
+          <span class="char-facts__value">VALUE</span>
+        </div>
+        <div class="char-facts__item">
+          <span class="char-facts__label">Age</span>
+          <span class="char-facts__value">VALUE</span>
+        </div>
+        <div class="char-facts__item">
+          <span class="char-facts__label">First Appearance</span>
+          <span class="char-facts__value">STORY NAME</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- EDIT: Bio -->
+      <div class="prose">
+        <p>Character description goes here.</p>
+
+        <h2>Background</h2>
+        <p>Origin and history.</p>
+
+        <h2>Current Situation</h2>
+        <p>What they're dealing with now.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- EDIT: Story appearances -->
+      <div class="section">
+        <p class="label label--muted section__label">Appears In</p>
+        <div class="char-appearances">
+          <a href="/pages/stories/SLUG.html" class="card card--clickable char-appearance">
+            <div class="story-card__header">
+              <span class="story-card__title">STORY TITLE</span>
+              <span class="story-card__time">X min</span>
+            </div>
+            <p class="story-card__excerpt">Opening line or excerpt.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- EDIT: Connections -->
+      <div class="section">
+        <p class="label label--muted section__label">Connections</p>
+        <div class="char-connections">
+          <a href="/pages/locations/SLUG.html" class="lore-related__link">
+            <span class="lore-related__type">Location</span>
+            <span class="lore-related__name">LOCATION NAME</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Second Self Studios</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

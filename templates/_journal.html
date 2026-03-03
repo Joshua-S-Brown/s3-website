@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journal — Second Self Studios</title>
+  <!-- EDIT: Page title -->
+  <title>ENTRY TITLE — Journal — Second Self Studios</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -29,32 +30,34 @@
   </header>
 
   <div class="page-body">
-    <div class="container--wide">
+    <div class="container">
 
-      <div class="hub-header">
-        <h1>Builder's Journal</h1>
-        <p class="hub-header__desc">Notes on the creative process. What I'm building, why, and what I learned along the way.</p>
+      <nav class="breadcrumbs">
+        <a href="/">Home</a>
+        <span class="breadcrumbs__sep">/</span>
+        <a href="/pages/journal/">Journal</a>
+        <span class="breadcrumbs__sep">/</span>
+        <!-- EDIT: Breadcrumb name -->
+        <span class="breadcrumbs__current">ENTRY TITLE</span>
+      </nav>
+
+      <div class="journal-header">
+        <!-- EDIT: Date -->
+        <p class="journal-header__date">Month Year</p>
+        <!-- EDIT: Title -->
+        <h1>ENTRY TITLE</h1>
+        <!-- EDIT: Tags -->
+        <div class="journal-header__tags">
+          <span class="tag">Tag</span>
+        </div>
       </div>
 
       <div class="divider"></div>
 
-      <!-- Entries -->
-      <div class="hub-list">
-
-        <a class="card-link" href="/pages/journal/why-im-building-a-world.html">
-          <div class="card card--clickable hub-entry">
-            <p class="hub-entry__date">March 2026</p>
-            <h3 class="hub-entry__title">Why I'm Building a World</h3>
-            <p class="hub-entry__desc">Every creative project I've worked on in the last twenty years turned out to be worldbuilding from a different angle. This is what happens when I connect them.</p>
-            <div class="hub-entry__tags">
-              <span class="hub-entry__tag">Process</span>
-              <span class="hub-entry__tag">Origins</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- TO ADD: Copy the block above for each new journal entry -->
-
+      <!-- EDIT: Body content -->
+      <div class="prose">
+        <p class="drop-cap">First paragraph with drop cap.</p>
+        <p>More paragraphs here.</p>
       </div>
 
     </div>
