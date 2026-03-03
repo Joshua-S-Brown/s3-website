@@ -15,10 +15,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   try { const r = await fetch(config.pins); locations = await r.json(); }
   catch (e) { console.warn('No pins:', e); }
 
-  // Full-screen mode: map fills viewport below header
   const isFullScreen = document.body.classList.contains('page-map');
 
-  // If not full-screen, size to aspect ratio
   if (!isFullScreen) {
     var ratio = config.width / config.height;
     var containerW = mapEl.offsetWidth;
@@ -37,23 +35,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     maxBoundsViscosity: 1.0,
   });
 
-  // Add zoom control to top-right to avoid sidebar overlap
   L.control.zoom({ position: 'topright' }).addTo(map);
 
-
-
   const img = new Image();
-img.onload = function () {
+  img.onload = function () {
     L.imageOverlay(config.image, bounds).addTo(map);
     map.fitBounds(bounds, { padding: [0, 0] });
+
     setTimeout(() => {
       map.invalidateSize();
       map.fitBounds(bounds, { padding: [0, 0] });
-      map.setMinZoom(map.getZoom());
+
+      // Lock min zoom to current level so user can't zoom out beyond full map
+      setTimeout(() => {
+        map.setMinZoom(map.getZoom());
+      }, 50);
     }, 100);
 
+    // Check if user already explored this session
     var landing = document.getElementById('map-landing');
-    if (landing) {
+    var alreadyExplored = sessionStorage.getItem('veridia-explored');
+
+    if (landing && alreadyExplored) {
+      // Skip the landing, go straight to interactive map
+      landing.remove();
+      placePins();
+    } else if (landing) {
+      // First visit this session — show landing, disable interaction
       map.dragging.disable();
       map.scrollWheelZoom.disable();
       map.touchZoom.disable();
@@ -72,7 +80,9 @@ img.onload = function () {
       var landing = document.getElementById('map-landing');
       landing.classList.add('is-hidden');
 
-      // Enable map interaction
+      // Remember that user has explored
+      sessionStorage.setItem('veridia-explored', 'true');
+
       map.dragging.enable();
       map.scrollWheelZoom.enable();
       map.touchZoom.enable();
@@ -80,7 +90,6 @@ img.onload = function () {
 
       placePins();
 
-      // Remove landing from DOM after animation
       setTimeout(function () { landing.remove(); }, 600);
     });
   }
@@ -97,24 +106,18 @@ img.onload = function () {
     if (!sidebar) return;
     var html = '';
 
-    // Type
     html += '<p class="sidebar__type">' + loc.type + '</p>';
-
-    // Name
     html += '<h2 class="sidebar__name">' + loc.name + '</h2>';
 
-    // Tagline
     if (loc.tagline) {
       html += '<p class="sidebar__tagline">' + loc.tagline + '</p>';
     }
 
-    // Description
     if (loc.description) {
       html += '<div class="sidebar__divider"></div>';
       html += '<p class="sidebar__desc">' + loc.description + '</p>';
     }
 
-    // Facts
     if (loc.facts) {
       html += '<div class="sidebar__facts">';
       for (var key in loc.facts) {
@@ -126,7 +129,6 @@ img.onload = function () {
       html += '</div>';
     }
 
-    // Characters
     if (loc.characters && loc.characters.length > 0) {
       html += '<div class="sidebar__divider"></div>';
       html += '<p class="sidebar__section-label">Characters</p>';
@@ -140,7 +142,6 @@ img.onload = function () {
       });
     }
 
-    // Stories
     if (loc.stories && loc.stories.length > 0) {
       html += '<div class="sidebar__divider"></div>';
       html += '<p class="sidebar__section-label">Stories</p>';
@@ -156,7 +157,6 @@ img.onload = function () {
       });
     }
 
-    // Explore link
     if (loc.page) {
       html += '<div class="sidebar__divider"></div>';
       html += '<a href="' + loc.page + '" class="sidebar__explore">Explore ' + loc.name + ' &rarr;</a>';
@@ -223,8 +223,7 @@ img.onload = function () {
         openSidebar(loc);
       });
 
-      // Region name labels
-      // Pin name labels
+      // Pin name labels for all types
       var labelClass = 'map-label--' + loc.type;
       var yOffset = loc.type === 'region' ? -20 : -14;
       var label = L.divIcon({
@@ -237,14 +236,12 @@ img.onload = function () {
     });
   }
 
-  // Close sidebar on empty map click
   map.on('click', function () {
     if (sidebar && sidebar.classList.contains('is-open')) {
       closeSidebar();
     }
   });
 
-  // Resize handler
   window.addEventListener('resize', function () {
     if (!isFullScreen) {
       var r = config.width / config.height;
