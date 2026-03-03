@@ -1,205 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Second Self Studios | Less Prep. More Play.</title>
-    <meta name="description" content="Premium campaign settings and adventures for Dungeons & Dragons 5th Edition. Drop-in ready content for busy Game Masters with 120,000+ words, detailed NPCs, and session-by-session guides. Less Prep. More Play.">
-    
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="Second Self Studios | Less Prep. More Play.">
-    <meta property="og:description" content="Premium D&amp;D 5e campaign settings and adventures for busy Game Masters. Drop-in ready content that respects your time.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://secondselfstudios.com">
-    <meta property="og:image" content="https://secondselfstudios.com/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Second Self Studios">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Second Self Studios | Less Prep. More Play.">
-    <meta name="twitter:description" content="Premium D&amp;D 5e campaign settings and adventures for busy Game Masters.">
-    <meta name="twitter:image" content="https://secondselfstudios.com/og-image.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://secondselfstudios.com">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Second Self Studios",
-        "url": "https://secondselfstudios.com",
-        "logo": "https://secondselfstudios.com/og-image.png",
-        "description": "Premium D&D 5e content designed for busy professionals. Less Prep. More Play.",
-        "sameAs": []
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Self Studios</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-
-    <nav>
-        <a href="/" class="nav-logo">S<sup>3</sup></a>
-        <input type="checkbox" id="nav-toggle" class="nav-checkbox">
-        <label for="nav-toggle" class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <ul class="nav-links">
-            <li><a href="/products/">Products</a></li>
-            <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
-            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
-            <li><a href="/blood-on-the-line/">Blood on the Line</a></li>
-            <li><a href="/gm-academy/">GM Academy</a></li>
-            <li><a href="/roadmap/">Roadmap</a></li>
-            <li><a href="/about/">About</a></li>
-        </ul>
-        <label for="nav-toggle" class="nav-overlay"></label>
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <span class="site-logo__second">SECOND</span>
+      <span class="site-logo__self">SELF</span>
+      <span class="site-logo__studios">STUDIOS</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/pages/stories/">Stories</a>
+      <a href="/pages/lore/">Lore</a>
+      <a href="/pages/characters/">Gallery</a>
+      <a href="#">Journal</a>
     </nav>
-
-    <section class="hero">
-        <div class="hero-logo">S<sup>3</sup></div>
-        <div class="hero-brand">Second Self Studios</div>
-        <h1 class="hero-tagline">Less Prep. <span class="accent">More Play.</span></h1>
-        <p class="hero-description">
-            Premium D&D 5e content for game masters with full lives.
-        </p>
-        <div class="button-group">
-            <a href="/the-shattered-veil/" class="cta-button">Discover Our World</a>
-            <a href="/about/" class="cta-button cta-secondary">Learn Our Approach</a>
-        </div>
-    </section>
-
-    <section id="value">
-        <div class="section-label">Why S³</div>
-        <h2 class="section-title">Built for GMs Who Have Day Jobs</h2>
-        <p class="section-description">
-            Content that <span class="text-emphasis">respects your time</span> so you can focus on the game.
-        </p>
-        <div class="value-grid">
-            <div class="value-card">
-                <div class="value-icon">⚡</div>
-                <div class="value-title">Run Tonight, Expand Later</div>
-                <p class="value-text">Every zone, faction, and adventure works <span class="text-emphasis">standalone or as part of a larger campaign</span>. Use what you need, ignore what you don't.</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">🎯</div>
-                <div class="value-title">Prep That Pays Off</div>
-                <p class="value-text">When players do their homework (researching enemies, scouting locations) they get <span class="text-emphasis">real tactical advantages</span>. Preparation is rewarded at the table.</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">🗺️</div>
-                <div class="value-title">Worlds That Breathe</div>
-                <p class="value-text">Detailed economies, political tensions, and faction dynamics that create <span class="text-emphasis">emergent story opportunities</span> without scripted railroads.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="format-preview" class="format-preview-section">
-        <div class="format-preview-grid">
-            <div class="format-preview-info">
-                <div class="section-label">The Difference</div>
-                <h2 class="section-title section-title-small">Prep Guide + Play Guide</h2>
-                <p class="format-preview-description">
-                    Every session comes with a <strong class="text-white">Prep Guide</strong> you watch, listen to, or read before the session, and a <strong class="text-white">Play Guide</strong> you reference at the table.
-                </p>
-                <p class="format-preview-description format-preview-description-last">
-                    Video walkthroughs for your commute. Audio for the gym. PDF for the table. Prep however fits your life.
-                </p>
-                <a href="/blood-on-the-line/" class="cta-button cta-secondary">See the Full Format</a>
-            </div>
-            <div class="format-preview-example">
-                <div class="format-preview-label">Example: Prep Guide Excerpt</div>
-                <div class="format-preview-title">Story in 60 Seconds</div>
-                <p class="format-preview-text">
-                    The Frostfang Pack has guarded the eastern mountains for generations. Two weeks ago, a frost troll invaded their territory and claimed their den. The wolves have been investigating the kill sites, trying to warn travelers away. Merchants see wolves near corpses and assume causation.
-                </p>
-                <p class="format-preview-hook">
-                    The question becomes whether the party figures this out before killing the very creatures they should be saving.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="shattered-veil">
-        <div class="section-label">Flagship Setting</div>
-        <h2 class="section-title">The Shattered Veil</h2>
-        <p class="section-description">
-            A world where seventeen planes crashed into reality a thousand years ago. Each "fragment zone" offers distinct environmental storytelling, moral dilemmas, and mechanical hooks that make your sessions memorable without hours of prep.
-        </p>
-        <div class="featured">
-            <div class="featured-image">
-                <div class="featured-placeholder">Map artwork placeholder<br><small>Your cartography goes here</small></div>
-            </div>
-            <div class="featured-content">
-                <div class="featured-label">First Release</div>
-                <h3 class="featured-title">Frozen Fjords</h3>
-                <p class="featured-description">
-                    Where a fragment of heaven bleeds through the arctic. A forced paradise where morality becomes environmental law. The celestial light transforms everyone who stays, pushing them toward goodness whether they want it or not. Some call it heaven. Others call it a prison with comfortable chains.
-                </p>
-                <div class="tag-list">
-                    <span class="tag">Levels 1-10+</span>
-                    <span class="tag">Moral Complexity</span>
-                    <span class="tag">120k+ Words</span>
-                </div>
-                <a href="/frozen-fjords/" class="cta-button">Preview the Zone</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="adventure">
-        <div class="section-label">Introductory Adventure</div>
-        <h2 class="section-title">Blood on the Line</h2>
-        <p class="section-description">
-            A supply train has gone silent. Demon cells are sabotaging Hallowed Harbor's defenses. Professional hunters are needed to uncover the conspiracy before the border falls. The perfect entry point to The Shattered Veil, or a standalone arctic intrigue one-shot. Coming soon.
-        </p>
-        <div class="tag-list tag-list-spaced">
-            <span class="tag">Levels 1-3</span>
-            <span class="tag">5 Sessions</span>
-            <span class="tag">Standalone or Campaign Start</span>
-        </div>
-        <a href="/blood-on-the-line/" class="cta-button cta-secondary">Preview the Adventure</a>
-    </section>
-
-    <section id="notify" class="notify-section">
-        <div class="notify-content">
-            <h2>More Coming Soon</h2>
-            <p>Frozen Fjords and Blood on the Line are in active development. Check the <a href="/roadmap/">Roadmap</a> to see where we're headed, or follow along on the <a href="/dev-log/">Dev Log</a>.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-logo">S<sup>3</sup></div>
-        <div class="footer-tagline">Less Prep. More Play.</div>
-        <ul class="footer-links">
-            <li><a href="/products/">Products</a></li>
-            <li><a href="/the-shattered-veil/">The Shattered Veil</a></li>
-            <li><a href="/frozen-fjords/">Frozen Fjords</a></li>
-            <li><a href="/gm-academy/">GM Academy</a></li>
-            <li><a href="/roadmap/">Roadmap</a></li>
-            <li><a href="/about/">About</a></li>
-        </ul>
-        <div class="footer-copyright">© 2025 Second Self Studios. All rights reserved.</div>
-    </footer>
-
-    <script src="/js/main.js"></script>
+  </header>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/map.js"></script>
 </body>
 </html>

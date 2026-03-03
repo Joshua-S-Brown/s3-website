@@ -1,17 +1,5 @@
-# OS files
 .DS_Store
 Thumbs.db
-
-# Editor files
-.vscode/
 *.swp
-*.swo
-
-# Build artifacts (if we add a build step later)
-node_modules/
-dist/
-.cache/
-
-# Local environment
-.env
-.env.local
+*~
+.vscode/

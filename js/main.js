@@ -1,173 +1,35 @@
-/* S³ - Second Self Studios
-   Interactive Enhancements
-   ======================== */
+document.addEventListener('DOMContentLoaded', () => {
+  // Highlight active nav link
+  const navLinks = document.querySelectorAll('.site-nav a');
+  const path = window.location.pathname;
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href !== '/' && path.includes(href)) link.classList.add('active');
+  });
 
-// Wait for DOM to be ready
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ==================
-    // BACK TO TOP BUTTON
-    // ==================
-    
-    const backToTop = document.createElement('button');
-    backToTop.className = 'back-to-top';
-    backToTop.setAttribute('aria-label', 'Back to top');
-    backToTop.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    `;
-    document.body.appendChild(backToTop);
-    
-    const toggleBackToTop = () => {
-        if (window.scrollY > 400) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    };
-    
-    window.addEventListener('scroll', toggleBackToTop, { passive: true });
-    toggleBackToTop();
-    
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+  // Audio player
+  document.querySelectorAll('.audio-bar').forEach(bar => {
+    const src = bar.dataset.src;
+    if (!src) return;
+    const playBtn = bar.querySelector('.audio-bar__play');
+    const progress = bar.querySelector('.audio-bar__progress');
+    const dur = bar.querySelector('.audio-bar__duration');
+    let audio = null, playing = false;
+    playBtn.addEventListener('click', () => {
+      if (!audio) {
+        audio = new Audio(src);
+        audio.addEventListener('timeupdate', () => {
+          if (audio.duration) progress.style.width = (audio.currentTime / audio.duration * 100) + '%';
         });
-    });
-    
-    
-    // ==================
-    // FADE IN ON SCROLL
-    // ==================
-    
-    // Elements to animate on scroll
-    const animateOnScroll = document.querySelectorAll(
-        'section:not(.hero):not(.roadmap-hero):not(.setting-hero):not(.product-hero):not(.about-hero):not(.devlog-hero), ' +
-        '.status-card, .future-card, .timeline-item, .sample-card, .creator-content, ' +
-        '.concept-card, .continent-card, .zone-preview, .principle-card, .value-card, ' +
-        '.product-card, .featured-product, .zone-card, .how-it-works-item, .quick-summary-item'
-    );
-    
-    // Add initial hidden state
-    animateOnScroll.forEach(el => {
-        el.classList.add('scroll-hidden');
-    });
-    
-    // Intersection Observer for scroll animations
-    const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('scroll-visible');
-                entry.target.classList.remove('scroll-hidden');
-                // Optionally unobserve after animation (better performance)
-                // scrollObserver.unobserve(entry.target);
-            }
+        audio.addEventListener('loadedmetadata', () => {
+          const m = Math.floor(audio.duration / 60);
+          const s = Math.floor(audio.duration % 60).toString().padStart(2, '0');
+          dur.textContent = m + ':' + s;
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        audio.addEventListener('ended', () => { playing = false; progress.style.width = '0%'; });
+      }
+      if (playing) { audio.pause(); } else { audio.play(); }
+      playing = !playing;
     });
-    
-    animateOnScroll.forEach(el => {
-        scrollObserver.observe(el);
-    });
-    
-    
-    // ==================
-    // CURRENT PAGE NAV HIGHLIGHT
-    // ==================
-    
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        
-        // Check if current path matches or starts with link path
-        // Handle both /page/ and /page formats
-        if (currentPath === linkPath || 
-            currentPath === linkPath.replace(/\/$/, '') ||
-            (linkPath !== '/' && currentPath.startsWith(linkPath.replace(/\/$/, '')))) {
-            link.classList.add('nav-active');
-        }
-    });
-    
-    
-    // ==================
-    // ROADMAP PROGRESS INDICATOR
-    // ==================
-    
-    const timeline = document.querySelector('.timeline');
-    const timelineLine = document.querySelector('.timeline::before');
-    
-    if (timeline) {
-        // Create progress fill element
-        const progressFill = document.createElement('div');
-        progressFill.className = 'timeline-progress-fill';
-        timeline.appendChild(progressFill);
-        
-        // Update progress on scroll
-        const updateTimelineProgress = () => {
-            const timelineRect = timeline.getBoundingClientRect();
-            const timelineTop = timelineRect.top;
-            const timelineHeight = timelineRect.height;
-            const windowHeight = window.innerHeight;
-            
-            // Calculate how much of the timeline is visible/passed
-            const scrollProgress = Math.max(0, Math.min(1, 
-                (windowHeight * 0.5 - timelineTop) / timelineHeight
-            ));
-            
-            progressFill.style.height = (scrollProgress * 100) + '%';
-        };
-        
-        window.addEventListener('scroll', updateTimelineProgress, { passive: true });
-        updateTimelineProgress(); // Initial call
-    }
-    
-    
-    // ==================
-    // SMOOTH CARD INTERACTIONS
-    // ==================
-    
-    // Add hover sound/haptic class for cards (CSS handles the visual)
-    const interactiveCards = document.querySelectorAll(
-        '.value-card, .zone-card, .product-card, .status-card, .future-card, ' +
-        '.principle-card, .sample-card, .concept-card, .quick-summary-item'
-    );
-    
-    interactiveCards.forEach(card => {
-        card.classList.add('interactive-card');
-    });
-    
-    
-    // ==================
-    // STAGGER ANIMATIONS FOR GRIDS
-    // ==================
-    
-    const staggerContainers = document.querySelectorAll(
-        '.status-grid, .future-grid, .how-it-works-grid, .quick-summary-content, ' +
-        '.principles-grid, .zones-grid, .product-grid'
-    );
-    
-    staggerContainers.forEach(container => {
-        const children = container.children;
-        Array.from(children).forEach((child, index) => {
-            child.style.transitionDelay = (index * 0.1) + 's';
-        });
-    });
-    
+  });
 });
-
-// ==================
-// REDUCED MOTION SUPPORT
-// ==================
-
-// Check if user prefers reduced motion
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-if (prefersReducedMotion.matches) {
-    document.documentElement.classList.add('reduce-motion');
-}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ashenvael",
+    "name": "Ashenvael",
+    "type": "region",
+    "tagline": "The Scorched Frontier",
+    "coords": [
+      3200,
+      1500
+    ],
+    "page": null
+  },
+  {
+    "id": "kael-doran",
+    "name": "Kael'Doran",
+    "type": "city",
+    "tagline": "The Ember Gate",
+    "coords": [
+      2800,
+      1600
+    ],
+    "page": "/pages/locations/kael-doran.html"
+  },
+  {
+    "id": "port-serin",
+    "name": "Port Serin",
+    "type": "city",
+    "tagline": null,
+    "coords": [
+      2000,
+      2600
+    ],
+    "page": null
+  },
+  {
+    "id": "thornwatch",
+    "name": "Thornwatch Keep",
+    "type": "landmark",
+    "tagline": null,
+    "coords": [
+      2400,
+      2100
+    ],
+    "page": null
+  }
+]

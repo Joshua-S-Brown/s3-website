@@ -1,46 +1,45 @@
-# S³ - Second Self Studios Website
+# Second Self Studios — World Site
 
-The official website for Second Self Studios, an indie TTRPG publisher creating premium D&D 5e content for busy professionals.
+## Quick Start
+1. Open this folder in VS Code
+2. Install the "Live Server" extension
+3. Right-click `index.html` → "Open with Live Server"
 
-**Live Site:** [secondselfstudios.com](https://secondselfstudios.com)
+## How to Add Content
 
-## About
+### New Location
+1. Copy `templates/_location.html` to `pages/locations/your-location.html`
+2. Edit content (look for EDIT comments)
+3. Add a pin to `data/locations.json`
+4. Commit and push
 
-Second Self Studios creates campaign settings, adventures, and DM resources designed for one purpose: **saving you prep time without sacrificing depth.**
+### New Story
+1. Copy `templates/_story.html` to `pages/stories/your-story-slug.html`
+2. Write your story in the prose section
+3. Commit and push
 
-Our flagship product is **The Shattered Veil**, a D&D 5e campaign setting where planar fragments have permanently transformed the world. Each fragment zone is a complete region shaped by a different plane of existence.
+### New Map Pin
+Open `data/locations.json`, add an entry with coords, name, type, and page link.
 
-## Structure
+## Map Setup
+1. Drop any map image at `assets/images/world-map.jpg` (works immediately)
+2. Later: slice into tiles with MapTiler or gdal2tiles
+3. Switch from imageOverlay to tileLayer in `js/map.js` (see comments)
 
-```
-s3-website/
-├── index.html              # Landing page
-├── css/
-│   └── style.css           # Global styles
-├── assets/
-│   └── images/
-│       ├── logo/           # Logo variations
-│       ├── maps/           # Cartography
-│       └── zones/          # Zone artwork
-└── README.md
-```
+## Style Rules
+- ALL styles live in `css/styles.css` — one file, one source of truth
+- HTML uses only CSS classes — zero inline style attributes
+- To change spacing, colors, or fonts: edit the CSS variables in :root
+- To add new component styles: add them to styles.css
 
-## Development
-
-This is a static site hosted on GitHub Pages. To work on it locally:
-
-1. Clone the repository
-2. Open `index.html` in a browser
-3. Edit files as needed
-4. Commit and push to deploy
-
-## Brand
-
-- **Primary Font:** Montserrat (Google Fonts)
-- **Body Font:** Crimson Pro (Google Fonts)  
-- **Accent Color:** #4ECDC4 (Teal)
-- **Background:** #0A0A0A (Dark)
-
-## License
-
-Content © 2025 Second Self Studios. All rights reserved.
+## Palette: Iron & Gold
+| Role       | Hex       |
+|------------|-----------|
+| Background | #131313   |
+| Card       | #1C1C1C   |
+| Border     | #2C2C2C   |
+| Body Text  | #C5C0B8   |
+| Muted      | #808080   |
+| Gold       | #C9A84C   |
+| Teal       | #4ECDC4   |
+| Heading    | #EDEBE8   |
