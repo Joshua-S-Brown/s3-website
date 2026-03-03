@@ -771,7 +771,7 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
 }
 /* Change this for image resolution*/
 .home-map-wrapper #map {
-  height: 65vh;
+  height: 65vh;   /* fallback before JS runs */
   margin-top: 0;
   border-radius: 8px;
   border: 1px solid var(--border);

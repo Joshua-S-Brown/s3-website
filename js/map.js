@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   try { const r = await fetch(config.pins); locations = await r.json(); }
   catch (e) { console.warn('No pins:', e); }
 
+  // Size container to match image aspect ratio
+  var ratio = config.width / config.height;
+  var containerW = mapEl.offsetWidth;
+  mapEl.style.height = Math.round(containerW / ratio) + 'px';
+
   const map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -2,
