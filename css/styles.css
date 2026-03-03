@@ -637,24 +637,29 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
    (These replace the old JS-injected styles)
    ============================================ */
 
+/* --- Map Pin Base --- */
+.map-pin div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+}
+.map-pin div:hover {
+  transform: scale(1.3);
+}
 
-/* --- Map Pins --- */
-.map-pin {
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.map-pin:hover {
-  transform: scale(1.5);
-  box-shadow: 0 0 16px rgba(201, 168, 76, 0.6);
-}
-.map-pin--city     { background: #FF6B6B; }
-.map-pin--region   { background: var(--gold); }
-.map-pin--landmark { background: var(--text-muted); }
-.map-pin--ruin     { background: var(--text-muted); border-radius: 2px; }
-.map-pin--npc      { background: var(--teal); }
-.map-pin--shop     { background: #E8A87C; }
-.map-pin--district { background: var(--gold-dim); opacity: 0.7; }
+/* --- Pin Types --- */
+.map-pin--city     { color: #FF6B6B; font-size: 18px; }
+.map-pin--region   { color: var(--gold); font-size: 22px; }
+.map-pin--landmark { color: var(--text-muted); font-size: 16px; }
+.map-pin--ruin     { color: #8B4513; font-size: 16px; }
+.map-pin--npc      { color: var(--teal); font-size: 14px; }
+.map-pin--shop     { color: #E8A87C; font-size: 14px; }
+.map-pin--district { color: var(--gold-dim); font-size: 16px; opacity: 0.7; }
 
 /* --- Leaflet Popup --- */
 .leaflet-popup-content-wrapper {

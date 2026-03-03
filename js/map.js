@@ -36,14 +36,42 @@ document.addEventListener('DOMContentLoaded', async () => {
   img.src = config.image;
 
   function placePins() {
-    const icons = {
-      city:     L.divIcon({className:'map-pin map-pin--city',     iconSize:[12,12], iconAnchor:[6,6],  popupAnchor:[0,-10]}),
-      region:   L.divIcon({className:'map-pin map-pin--region',   iconSize:[16,16], iconAnchor:[8,8],  popupAnchor:[0,-12]}),
-      landmark: L.divIcon({className:'map-pin map-pin--landmark', iconSize:[10,10], iconAnchor:[5,5],  popupAnchor:[0,-8]}),
-      ruin:     L.divIcon({className:'map-pin map-pin--ruin',     iconSize:[10,10], iconAnchor:[5,5],  popupAnchor:[0,-8]}),
-      npc:      L.divIcon({className:'map-pin map-pin--npc',      iconSize:[10,10], iconAnchor:[5,5],  popupAnchor:[0,-8]}),
-      shop:     L.divIcon({className:'map-pin map-pin--shop',     iconSize:[10,10], iconAnchor:[5,5],  popupAnchor:[0,-8]}),
-      district: L.divIcon({className:'map-pin map-pin--district', iconSize:[14,14], iconAnchor:[7,7],  popupAnchor:[0,-12]}),
+   const icons = {
+      city: L.divIcon({
+        className: 'map-pin',
+        html: '<div class="map-pin--city">&#9688;</div>',
+        iconSize: [24, 24], iconAnchor: [12, 12], popupAnchor: [0, -14]
+      }),
+      region: L.divIcon({
+        className: 'map-pin',
+        html: '<div class="map-pin--region">&#9670;</div>',
+        iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -16]
+      }),
+      landmark: L.divIcon({
+        className: 'map-pin',
+        html: '<div class="map-pin--landmark">&#9650;</div>',
+        iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -12]
+      }),
+      ruin: L.divIcon({
+        className: 'map-pin',
+        html: '<div class="map-pin--ruin">&#10005;</div>',
+        iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -12]
+      }),
+      npc: L.divIcon({
+        className: 'map-pin',
+        html: '<div class="map-pin--npc">&#9679;</div>',
+        iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -12]
+      }),
+      shop: L.divIcon({
+        className: 'map-pin',
+        html: '<div class="map-pin--shop">&#9635;</div>',
+        iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -12]
+      }),
+      district: L.divIcon({
+        className: 'map-pin',
+        html: '<div class="map-pin--district">&#11044;</div>',
+        iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -14]
+      }),
     };
     locations.forEach(loc => {
       if (!loc.coords) return;
