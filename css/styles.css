@@ -769,8 +769,11 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
   margin: 0 auto var(--space-lg);
   padding: 0 var(--space-3xl);
 }
+/* Change this for image resolution*/
 .home-map-wrapper #map {
-  height: 70vh;
+  aspect-ratio: 2000 / 1125;
+  height: auto;
+  max-height: 75vh;
   margin-top: 0;
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -782,13 +785,14 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
   margin-top: var(--space-sm);
   letter-spacing: 0.5px;
 }
-
+/* Change this for image resolution*/
 @media (max-width: 768px) {
   .home-map-wrapper {
     padding: 0 var(--space-xl);
   }
   .home-map-wrapper #map {
-    height: 50vh;
+    aspect-ratio: 2000 / 1125;
+    max-height: 50vh;
   }
 }
 
