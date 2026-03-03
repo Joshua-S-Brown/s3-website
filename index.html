@@ -38,6 +38,7 @@
   </div>
 
   <!-- Landing overlay (covers map on first load) -->
+  <!-- Landing overlay -->
   <div id="map-landing" class="map-landing">
     <div class="map-landing__content">
       <p class="map-landing__label">Second Self Studios</p>
@@ -46,6 +47,11 @@
       <button class="map-landing__btn" id="explore-btn">Explore the World</button>
     </div>
   </div>
+  <script>
+    if (sessionStorage.getItem('veridia-explored')) {
+      document.getElementById('map-landing').remove();
+    }
+  </script>
 
   <!-- Sidebar -->
   <div id="map-sidebar">
