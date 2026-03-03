@@ -1046,11 +1046,11 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 .map-landing__title {
   font-family: var(--font-display);
   font-size: 5rem;
-  font-weight: 300;
-  color: var(--heading);
-  letter-spacing: 16px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 20px;
   margin-bottom: var(--space-md);
-  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 30px rgba(0,0,0,0.7);
 }
 
 .map-landing__sub {
@@ -1065,20 +1065,21 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 
 .map-landing__btn {
   font-family: var(--font-body);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--gold);
-  background: transparent;
-  border: 1px solid var(--gold);
-  padding: 14px 40px;
+  color: var(--white);
+  background: rgba(19, 19, 19, 0.8);
+  border: 2px solid var(--gold);
+  padding: 16px 48px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .map-landing__btn:hover {
-  background: rgba(201, 168, 76, 0.12);
-  box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+  background: rgba(19, 19, 19, 0.95);
+  box-shadow: 0 0 24px rgba(201, 168, 76, 0.25);
 }
 
 /* --- Sidebar (full-screen positioning) --- */
