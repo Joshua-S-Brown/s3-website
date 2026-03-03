@@ -29,13 +29,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   const img = new Image();
   img.onload = function () {
     L.imageOverlay(config.image, bounds).addTo(map);
-    map.fitBounds(bounds, { padding: [0, 0], maxZoom: -0.5 });
+    
+    // Calculate zoom to fill width of container
+    var containerWidth = mapEl.offsetWidth;
+    var zoom = map.getBoundsZoom(bounds, false);
+    map.setView([config.height / 2, config.width / 2], zoom);
+    
     setTimeout(() => {
       map.invalidateSize();
-      map.fitBounds(bounds, { padding: [0, 0], maxZoom: -0.5 });
+      var z = map.getBoundsZoom(bounds, false);
+      map.setView([config.height / 2, config.width / 2], z);
     }, 100);
+    
     placePins();
-};
+  };
   img.onerror = function () { showFallback(); };
   img.src = config.image;
 
