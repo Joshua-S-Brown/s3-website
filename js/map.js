@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   img.onload = function () {
     L.imageOverlay(config.image, bounds).addTo(map);
     map.fitBounds(bounds);
+    setTimeout(() => { map.invalidateSize(); map.fitBounds(bounds); }, 100);
     placePins();
   };
   img.onerror = function () { showFallback(); };
