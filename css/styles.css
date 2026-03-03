@@ -637,7 +637,8 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
    (These replace the old JS-injected styles)
    ============================================ */
 
-/* --- Pin Base --- */
+
+/* --- Map Pins --- */
 .map-pin {
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
@@ -647,8 +648,6 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
   transform: scale(1.5);
   box-shadow: 0 0 16px rgba(201, 168, 76, 0.6);
 }
-
-/* --- Pin Types --- */
 .map-pin--city     { background: #FF6B6B; }
 .map-pin--region   { background: var(--gold); }
 .map-pin--landmark { background: var(--text-muted); }
@@ -657,7 +656,7 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
 .map-pin--shop     { background: #E8A87C; }
 .map-pin--district { background: var(--gold-dim); opacity: 0.7; }
 
-/* --- Leaflet Popup Overrides --- */
+/* --- Leaflet Popup --- */
 .leaflet-popup-content-wrapper {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -685,4 +684,10 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
 .map-popup a {
   color: var(--teal);
   font-size: 0.75rem;
+}
+.leaflet-popup-close-button {
+  color: var(--text-muted);
+}
+.leaflet-popup-close-button:hover {
+  color: var(--heading);
 }
