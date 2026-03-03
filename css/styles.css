@@ -734,7 +734,7 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   position: absolute;
   top: 0;
   right: 0;
-  width: 380px;
+  width: 440px;
   height: 100%;
   background: rgba(19, 19, 19, 0.95);
   backdrop-filter: blur(12px);
@@ -1086,7 +1086,7 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   position: fixed;
   top: 56px;
   right: 0;
-  width: 380px;
+  width: 440px;
   height: calc(100vh - 56px);
   z-index: 900;
 }
