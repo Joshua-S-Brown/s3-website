@@ -17,7 +17,7 @@
 
   <header class="site-header">
     <a href="/" class="site-logo">
-      <img src="/assets/images/logo.png" alt="Second Self Studios" class="site-logo__icon">
+      <img src="/assets/images/logo.png" alt="S3" class="site-logo__icon">
       <span class="site-logo__second">SECOND</span>
       <span class="site-logo__self">SELF</span>
       <span class="site-logo__studios">STUDIOS</span>
@@ -30,34 +30,38 @@
     </nav>
   </header>
 
-  <!-- Intro -->
   <div class="page-body">
     <div class="container">
-
       <div class="home-intro">
         <h1 class="home-intro__title">The World of Veridia</h1>
         <p class="home-intro__text">Three continents. Fading magic. Centuries of history buried under politics and ash. This is a worldbuilding project told through short fiction, hand-drawn maps, and lore entries. Everything connects. Every place has characters, every character has a story, and every story has a spot on the map.</p>
         <p class="label label--muted">Work in progress. Updated as new content is created.</p>
       </div>
-
     </div>
 
-    <!-- Map (contained, not full viewport) -->
+    <!-- Map + Sidebar -->
     <div class="home-map-wrapper">
-      <div id="map"
-        data-width="2000"
-        data-height="1125">
+      <div class="map-section">
+        <div id="map"
+          data-width="2000"
+          data-height="1125">
+        </div>
+
+        <!-- Sidebar (hidden until a pin is clicked) -->
+        <div id="map-sidebar">
+          <div class="sidebar__close">
+            <button class="sidebar__close-btn" id="map-sidebar-close">&times;</button>
+          </div>
+          <div id="map-sidebar-content"></div>
+        </div>
       </div>
       <p class="home-map-caption">Click a pin to explore. Drag to pan, scroll to zoom.</p>
     </div>
 
     <div class="container--wide">
-
       <div class="divider"></div>
 
-      <!-- Latest -->
       <div class="home-grid">
-
         <div class="section">
           <p class="label label--teal section__label">Latest Story</p>
           <a class="card-link" href="/pages/stories/the-lamplighters-oath.html">
@@ -82,10 +86,8 @@
             </div>
           </a>
         </div>
-
       </div>
 
-      <!-- Continents -->
       <div class="section">
         <p class="label label--muted section__label">The Continents</p>
         <div class="continent-grid">
@@ -103,7 +105,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 

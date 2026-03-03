@@ -806,3 +806,277 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
   border-radius: 4px;
   margin-right: var(--space-xs);
 }
+
+/* ============================================
+   SIDEBAR + TYPOGRAPHY UPGRADE
+   Replace old map pin CSS and add these.
+   ============================================ */
+
+/* --- Typography Bump --- */
+h1 { font-size: 2.75rem; letter-spacing: 1px; }
+h2 { font-size: 1.75rem; letter-spacing: 0.5px; }
+h3 { font-size: 1.25rem; font-weight: 400; }
+
+.site-nav a {
+  font-size: 0.8125rem;
+  letter-spacing: 3px;
+}
+.site-logo__second,
+.site-logo__self,
+.site-logo__studios {
+  font-size: 1.125rem;
+}
+
+/* --- Map Sidebar Panel --- */
+.map-section {
+  position: relative;
+  overflow: hidden;
+}
+
+#map-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100%;
+  background: rgba(19, 19, 19, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 1px solid var(--border);
+  z-index: 900;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#map-sidebar.is-open {
+  transform: translateX(0);
+}
+
+/* Sidebar close button */
+.sidebar__close {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 20px 8px;
+  z-index: 2;
+}
+.sidebar__close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--ease);
+}
+.sidebar__close-btn:hover {
+  border-color: var(--teal-dim);
+  color: var(--heading);
+}
+
+/* Sidebar content */
+#map-sidebar-content {
+  padding: 0 28px 32px;
+}
+
+.sidebar__type {
+  font-size: 0.625rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.sidebar__name {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--heading);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.sidebar__tagline {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.sidebar__divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+}
+
+.sidebar__desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+/* Quick facts grid */
+.sidebar__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+.sidebar__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sidebar__fact-label {
+  font-size: 0.625rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.sidebar__fact-value {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--heading);
+}
+
+/* Sidebar section label */
+.sidebar__section-label {
+  font-size: 0.625rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* Character entries */
+.sidebar__character {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+.sidebar__character + .sidebar__character {
+  border-top: 1px solid var(--border);
+}
+.sidebar__character-initial {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.sidebar__character-name {
+  font-size: 0.875rem;
+  color: var(--heading);
+  font-family: var(--font-display);
+}
+.sidebar__character-role {
+  font-size: 0.6875rem;
+  color: var(--teal-dim);
+}
+
+/* Story entries */
+.sidebar__story {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color var(--ease);
+  text-decoration: none;
+}
+.sidebar__story:hover {
+  border-color: var(--gold-dim);
+}
+.sidebar__story + .sidebar__story {
+  margin-top: 6px;
+}
+.sidebar__story-title {
+  font-size: 0.875rem;
+  color: var(--heading);
+  font-family: var(--font-display);
+}
+.sidebar__story-time {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* Explore link */
+.sidebar__explore {
+  display: block;
+  text-align: center;
+  padding: 12px 20px;
+  border: 1px solid var(--teal);
+  border-radius: 6px;
+  color: var(--teal);
+  font-size: 0.8125rem;
+  letter-spacing: 1px;
+  transition: all var(--ease);
+}
+.sidebar__explore:hover {
+  background: rgba(78, 205, 196, 0.1);
+  color: var(--teal);
+}
+
+/* Region name labels on map */
+.map-label {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.map-label--region {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--heading);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6);
+  white-space: nowrap;
+}
+
+/* Scrollbar styling for sidebar */
+#map-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+#map-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+#map-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #map-sidebar {
+    width: 100%;
+  }
+  .sidebar__name {
+    font-size: 1.5rem;
+  }
+}
