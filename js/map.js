@@ -29,10 +29,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const img = new Image();
   img.onload = function () {
     L.imageOverlay(config.image, bounds).addTo(map);
-    map.fitBounds(bounds);
-    setTimeout(() => { map.invalidateSize(); map.fitBounds(bounds); }, 100);
+    map.fitBounds(bounds, { padding: [0, 0], maxZoom: -0.5 });
+    setTimeout(() => {
+      map.invalidateSize();
+      map.fitBounds(bounds, { padding: [0, 0], maxZoom: -0.5 });
+    }, 100);
     placePins();
-  };
+};
   img.onerror = function () { showFallback(); };
   img.src = config.image;
 

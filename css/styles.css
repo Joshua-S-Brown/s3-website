@@ -771,9 +771,7 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
 }
 /* Change this for image resolution*/
 .home-map-wrapper #map {
-  aspect-ratio: 2000 / 1125;
-  height: auto;
-  max-height: 75vh;
+  height: 65vh;
   margin-top: 0;
   border-radius: 8px;
   border: 1px solid var(--border);
