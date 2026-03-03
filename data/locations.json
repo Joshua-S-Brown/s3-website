@@ -1,45 +1,254 @@
 [
   {
-    "id": "ashenvael",
-    "name": "Ashenvael",
+    "id": "andoria",
+    "name": "Andoria",
     "type": "region",
-    "tagline": "The Scorched Frontier",
+    "tagline": "The Western Continent",
     "coords": [
-      3200,
-      1500
+      860,
+      195
     ],
     "page": null
   },
   {
-    "id": "kael-doran",
-    "name": "Kael'Doran",
-    "type": "city",
-    "tagline": "The Ember Gate",
+    "id": "kalendra",
+    "name": "Kalendra",
+    "type": "region",
+    "tagline": "The Central Continent",
     "coords": [
-      2800,
-      1600
-    ],
-    "page": "/pages/locations/kael-doran.html"
-  },
-  {
-    "id": "port-serin",
-    "name": "Port Serin",
-    "type": "city",
-    "tagline": null,
-    "coords": [
-      2000,
-      2600
+      615,
+      770
     ],
     "page": null
   },
   {
-    "id": "thornwatch",
-    "name": "Thornwatch Keep",
+    "id": "morgard",
+    "name": "Morgard",
+    "type": "region",
+    "tagline": "The Eastern Continent",
+    "coords": [
+      705,
+      1160
+    ],
+    "page": null
+  },
+  {
+    "id": "frozen-fjords",
+    "name": "Frozen Fjords",
     "type": "landmark",
-    "tagline": null,
+    "tagline": "Ice and silence at the top of the world",
     "coords": [
-      2400,
-      2100
+      1015,
+      230
+    ],
+    "page": null
+  },
+  {
+    "id": "northern-forests",
+    "name": "Northern Forests",
+    "type": "landmark",
+    "tagline": "Dense woodland below the frost line",
+    "coords": [
+      950,
+      200
+    ],
+    "page": null
+  },
+  {
+    "id": "eastern-dry-lands",
+    "name": "Eastern Dry Lands",
+    "type": "landmark",
+    "tagline": "Arid badlands east of the valley",
+    "coords": [
+      970,
+      370
+    ],
+    "page": null
+  },
+  {
+    "id": "godsvein-valley",
+    "name": "Godsvein Valley",
+    "type": "landmark",
+    "tagline": "The heart of Andoria",
+    "coords": [
+      900,
+      240
+    ],
+    "page": null
+  },
+  {
+    "id": "ironspine-mountains",
+    "name": "Ironspine Mountains",
+    "type": "landmark",
+    "tagline": "A spine of dark stone splitting the continent",
+    "coords": [
+      805,
+      230
+    ],
+    "page": null
+  },
+  {
+    "id": "southern-peninsula",
+    "name": "Southern Peninsula",
+    "type": "landmark",
+    "tagline": "Where the land gives way to open sea",
+    "coords": [
+      730,
+      200
+    ],
+    "page": null
+  },
+  {
+    "id": "thousand-lakes",
+    "name": "The Thousand Lakes",
+    "type": "landmark",
+    "tagline": "A maze of freshwater and marshland",
+    "coords": [
+      755,
+      730
+    ],
+    "page": null
+  },
+  {
+    "id": "fertile-crescent",
+    "name": "The Fertile Crescent",
+    "type": "landmark",
+    "tagline": "Breadbasket of the central continent",
+    "coords": [
+      685,
+      730
+    ],
+    "page": null
+  },
+  {
+    "id": "great-erg-desert",
+    "name": "The Great Erg Desert",
+    "type": "landmark",
+    "tagline": "Endless dunes where nothing grows",
+    "coords": [
+      535,
+      780
+    ],
+    "page": null
+  },
+  {
+    "id": "skyreach-mountains",
+    "name": "Skyreach Mountains",
+    "type": "landmark",
+    "tagline": "Peaks that scrape the heavens",
+    "coords": [
+      445,
+      680
+    ],
+    "page": null
+  },
+  {
+    "id": "burning-valleys",
+    "name": "The Burning Valleys",
+    "type": "landmark",
+    "tagline": "Volcanic rifts that never cool",
+    "coords": [
+      445,
+      850
+    ],
+    "page": null
+  },
+  {
+    "id": "sunken-gulf",
+    "name": "The Sunken Gulf",
+    "type": "landmark",
+    "tagline": "A drowned coast of flooded ruins",
+    "coords": [
+      1020,
+      1180
+    ],
+    "page": null
+  },
+  {
+    "id": "jade-narrows-basin",
+    "name": "Jade Narrows Basin",
+    "type": "landmark",
+    "tagline": "Sheltered waters between the cliffs",
+    "coords": [
+      925,
+      1110
+    ],
+    "page": null
+  },
+  {
+    "id": "stormbreak-island",
+    "name": "Stormbreak Island",
+    "type": "landmark",
+    "tagline": "Battered by storms year-round",
+    "coords": [
+      835,
+      1050
+    ],
+    "page": null
+  },
+  {
+    "id": "howling-plains",
+    "name": "Howling Plains",
+    "type": "landmark",
+    "tagline": "Flat grassland where the wind never stops",
+    "coords": [
+      830,
+      1195
+    ],
+    "page": null
+  },
+  {
+    "id": "the-everwood",
+    "name": "The Everwood",
+    "type": "landmark",
+    "tagline": "An ancient forest that does not sleep",
+    "coords": [
+      765,
+      1195
+    ],
+    "page": null
+  },
+  {
+    "id": "worldedge-mountains",
+    "name": "Worldedge Mountains",
+    "type": "landmark",
+    "tagline": "The eastern rim of the known world",
+    "coords": [
+      655,
+      1185
+    ],
+    "page": null
+  },
+  {
+    "id": "southern-grasslands",
+    "name": "Southern Grasslands",
+    "type": "landmark",
+    "tagline": "Rolling plains stretching to the horizon",
+    "coords": [
+      590,
+      1190
+    ],
+    "page": null
+  },
+  {
+    "id": "subantarctic-forests",
+    "name": "Subantarctic Forests",
+    "type": "landmark",
+    "tagline": "Cold woodland at the edge of ice",
+    "coords": [
+      515,
+      1180
+    ],
+    "page": null
+  },
+  {
+    "id": "southern-ice-shield",
+    "name": "Southern Ice Shield",
+    "type": "landmark",
+    "tagline": "The frozen south",
+    "coords": [
+      445,
+      1230
     ],
     "page": null
   }

@@ -224,7 +224,7 @@ h3 { font-size: 1.125rem; font-weight: 400; }
 }
 
 /* --- Prose (story/lore body text) --- */
-.prose { font-size: 0.9375rem; line-height: 1.85; color: var(--text); }
+.prose { font-size: 1rem; line-height: 1.85; color: var(--text); }
 .prose p { margin-bottom: var(--space-lg); }
 .prose p:first-child { color: var(--heading); }
 .drop-cap::first-letter {
@@ -629,4 +629,60 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
   .error-title { font-size: 1.4rem; }
   .error-links { flex-direction: column; width: 100%; max-width: 260px; }
   .error-btn { width: 100%; text-align: center; }
+}
+
+
+/* ============================================
+   MAP PINS & POPUPS — Paste at end of styles.css
+   (These replace the old JS-injected styles)
+   ============================================ */
+
+/* --- Pin Base --- */
+.map-pin {
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.map-pin:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 16px rgba(201, 168, 76, 0.6);
+}
+
+/* --- Pin Types --- */
+.map-pin--city     { background: #FF6B6B; }
+.map-pin--region   { background: var(--gold); }
+.map-pin--landmark { background: var(--text-muted); }
+.map-pin--ruin     { background: var(--text-muted); border-radius: 2px; }
+.map-pin--npc      { background: var(--teal); }
+.map-pin--shop     { background: #E8A87C; }
+.map-pin--district { background: var(--gold-dim); opacity: 0.7; }
+
+/* --- Leaflet Popup Overrides --- */
+.leaflet-popup-content-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+.leaflet-popup-tip {
+  background: var(--bg-card);
+}
+.map-popup {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--text);
+}
+.map-popup strong {
+  color: var(--heading);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+}
+.map-popup__tagline {
+  color: var(--text-muted);
+  font-size: 0.6875rem;
+  font-style: italic;
+}
+.map-popup a {
+  color: var(--teal);
+  font-size: 0.75rem;
 }
