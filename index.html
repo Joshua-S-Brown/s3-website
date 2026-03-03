@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Second Self Studios</title>
+  <title>Second Self Studios — The World of Veridia</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="description" content="A fantasy worldbuilding project. Stories, maps, art, and lore from the world of Veridia.">
+  <meta name="description" content="Explore the world of Veridia. Three continents, fading magic, and centuries of buried history.">
   <meta property="og:image" content="/og-image.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
-<body>
+<body class="page-map">
 
-  <header class="site-header">
+  <header class="site-header site-header--transparent">
     <a href="/" class="site-logo">
       <img src="/assets/images/logo.png" alt="S3" class="site-logo__icon">
       <span class="site-logo__second">SECOND</span>
@@ -30,87 +30,29 @@
     </nav>
   </header>
 
-  <div class="page-body">
-    <div class="container">
-      <div class="home-intro">
-        <h1 class="home-intro__title">The World of Veridia</h1>
-        <p class="home-intro__text">Three continents. Fading magic. Centuries of history buried under politics and ash. This is a worldbuilding project told through short fiction, hand-drawn maps, and lore entries. Everything connects. Every place has characters, every character has a story, and every story has a spot on the map.</p>
-        <p class="label label--muted">Work in progress. Updated as new content is created.</p>
-      </div>
-    </div>
+  <!-- Full-screen map -->
+  <div id="map"
+    data-width="2000"
+    data-height="1125">
+  </div>
 
-    <!-- Map + Sidebar -->
-    <div class="home-map-wrapper">
-      <div class="map-section">
-        <div id="map"
-          data-width="2000"
-          data-height="1125">
-        </div>
-
-        <!-- Sidebar (hidden until a pin is clicked) -->
-        <div id="map-sidebar">
-          <div class="sidebar__close">
-            <button class="sidebar__close-btn" id="map-sidebar-close">&times;</button>
-          </div>
-          <div id="map-sidebar-content"></div>
-        </div>
-      </div>
-      <p class="home-map-caption">Click a pin to explore. Drag to pan, scroll to zoom.</p>
-    </div>
-
-    <div class="container--wide">
-      <div class="divider"></div>
-
-      <div class="home-grid">
-        <div class="section">
-          <p class="label label--teal section__label">Latest Story</p>
-          <a class="card-link" href="/pages/stories/the-lamplighters-oath.html">
-            <div class="card card--clickable">
-              <div class="story-card__header">
-                <span class="story-card__title">The Lamplighter&rsquo;s Oath</span>
-                <span class="story-card__time">12 min</span>
-              </div>
-              <p class="story-card__excerpt">&ldquo;The lamp at the corner of Ashfall and Sixth had been dead for eleven years when Sera Voss noticed it burning.&rdquo;</p>
-              <p class="hub-card__location">&#9670; Kael&rsquo;Doran, Ashenvael</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="section">
-          <p class="label label--gold section__label">Featured Location</p>
-          <a class="card-link" href="/pages/locations/kael-doran.html">
-            <div class="card card--clickable">
-              <h3 class="home-card__title">Kael&rsquo;Doran</h3>
-              <p class="home-card__subtitle">The Ember Gate &middot; Ashenvael</p>
-              <p class="home-card__desc">A city on blackite cliffs built by refugees of the Thal Empire. Three centuries later the wards are failing and no one wants to talk about it.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="section">
-        <p class="label label--muted section__label">The Continents</p>
-        <div class="continent-grid">
-          <div class="card">
-            <h3 class="home-card__title">Andoria</h3>
-            <p class="home-card__desc">Frozen fjords to the north, iron mountains to the south. The Godsvein Valley runs through the center like a wound that never closed.</p>
-          </div>
-          <div class="card">
-            <h3 class="home-card__title">Kalendra</h3>
-            <p class="home-card__desc">A thousand lakes, a fertile crescent, a desert that swallowed an empire. The center of the old world and the place the Sundering hit hardest.</p>
-          </div>
-          <div class="card">
-            <h3 class="home-card__title">Morgard</h3>
-            <p class="home-card__desc">The Everwood. The Howling Plains. A coastline of drowned ruins and storms that never quit. The east keeps to itself.</p>
-          </div>
-        </div>
-      </div>
+  <!-- Landing overlay (covers map on first load) -->
+  <div id="map-landing" class="map-landing">
+    <div class="map-landing__content">
+      <p class="map-landing__label">Second Self Studios</p>
+      <h1 class="map-landing__title">VERIDIA</h1>
+      <p class="map-landing__sub">Three continents. Fading magic. Buried history.</p>
+      <button class="map-landing__btn" id="explore-btn">Explore the World</button>
     </div>
   </div>
 
-  <footer class="site-footer">
-    <p>Second Self Studios</p>
-  </footer>
+  <!-- Sidebar -->
+  <div id="map-sidebar">
+    <div class="sidebar__close">
+      <button class="sidebar__close-btn" id="map-sidebar-close">&times;</button>
+    </div>
+    <div id="map-sidebar-content"></div>
+  </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/map.js"></script>

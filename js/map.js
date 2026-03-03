@@ -1,5 +1,4 @@
-/* SECOND SELF STUDIOS - Map with Sidebar Panel
-   Clicking a pin opens a detail sidebar instead of a popup. */
+/* SECOND SELF STUDIOS - Full-Screen Map with Landing + Sidebar */
 
 document.addEventListener('DOMContentLoaded', async () => {
   const mapEl = document.getElementById('map');
@@ -16,17 +15,26 @@ document.addEventListener('DOMContentLoaded', async () => {
   try { const r = await fetch(config.pins); locations = await r.json(); }
   catch (e) { console.warn('No pins:', e); }
 
-  // Size container to image aspect ratio
-  var ratio = config.width / config.height;
-  var containerW = mapEl.offsetWidth;
-  mapEl.style.height = Math.round(containerW / ratio) + 'px';
+  // Full-screen mode: map fills viewport below header
+  const isFullScreen = document.body.classList.contains('page-map');
+
+  // If not full-screen, size to aspect ratio
+  if (!isFullScreen) {
+    var ratio = config.width / config.height;
+    var containerW = mapEl.offsetWidth;
+    mapEl.style.height = Math.round(containerW / ratio) + 'px';
+  }
 
   const map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -2, maxZoom: 3,
     zoomSnap: 0,
-    zoomControl: true, attributionControl: false,
+    zoomControl: false,
+    attributionControl: false,
   });
+
+  // Add zoom control to top-right to avoid sidebar overlap
+  L.control.zoom({ position: 'topright' }).addTo(map);
 
   const bounds = [[0, 0], [config.height, config.width]];
 
@@ -38,15 +46,45 @@ document.addEventListener('DOMContentLoaded', async () => {
       map.invalidateSize();
       map.fitBounds(bounds, { padding: [0, 0] });
     }, 100);
-    placePins();
+
+    // Don't place pins until user clicks explore (if landing exists)
+    var landing = document.getElementById('map-landing');
+    if (landing) {
+      // Disable map interaction while landing is showing
+      map.dragging.disable();
+      map.scrollWheelZoom.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+    } else {
+      placePins();
+    }
   };
   img.onerror = function () { showFallback(); };
   img.src = config.image;
 
+  // --- Landing overlay ---
+  var exploreBtn = document.getElementById('explore-btn');
+  if (exploreBtn) {
+    exploreBtn.addEventListener('click', function () {
+      var landing = document.getElementById('map-landing');
+      landing.classList.add('is-hidden');
+
+      // Enable map interaction
+      map.dragging.enable();
+      map.scrollWheelZoom.enable();
+      map.touchZoom.enable();
+      map.doubleClickZoom.enable();
+
+      placePins();
+
+      // Remove landing from DOM after animation
+      setTimeout(function () { landing.remove(); }, 600);
+    });
+  }
+
   // --- Sidebar ---
-  const sidebar = document.getElementById('map-sidebar');
-  const sidebarClose = document.getElementById('map-sidebar-close');
-  let activeMarker = null;
+  var sidebar = document.getElementById('map-sidebar');
+  var sidebarClose = document.getElementById('map-sidebar-close');
 
   if (sidebarClose) {
     sidebarClose.addEventListener('click', closeSidebar);
@@ -54,11 +92,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function openSidebar(loc) {
     if (!sidebar) return;
+    var html = '';
 
-    // Build sidebar content
-    let html = '';
-
-    // Type label
+    // Type
     html += '<p class="sidebar__type">' + loc.type + '</p>';
 
     // Name
@@ -75,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       html += '<p class="sidebar__desc">' + loc.description + '</p>';
     }
 
-    // Quick facts
+    // Facts
     if (loc.facts) {
       html += '<div class="sidebar__facts">';
       for (var key in loc.facts) {
@@ -91,14 +127,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (loc.characters && loc.characters.length > 0) {
       html += '<div class="sidebar__divider"></div>';
       html += '<p class="sidebar__section-label">Characters</p>';
-      loc.characters.forEach(function(c) {
+      loc.characters.forEach(function (c) {
         html += '<div class="sidebar__character">';
         html += '<div class="sidebar__character-initial">' + c.name.charAt(0) + '</div>';
         html += '<div>';
         html += '<p class="sidebar__character-name">' + c.name + '</p>';
         if (c.role) html += '<p class="sidebar__character-role">' + c.role + '</p>';
-        html += '</div>';
-        html += '</div>';
+        html += '</div></div>';
       });
     }
 
@@ -106,7 +141,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (loc.stories && loc.stories.length > 0) {
       html += '<div class="sidebar__divider"></div>';
       html += '<p class="sidebar__section-label">Stories</p>';
-      loc.stories.forEach(function(s) {
+      loc.stories.forEach(function (s) {
         if (s.url) {
           html += '<a href="' + s.url + '" class="sidebar__story">';
         } else {
@@ -126,93 +161,92 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     document.getElementById('map-sidebar-content').innerHTML = html;
     sidebar.classList.add('is-open');
-
-    // Resize map to account for sidebar
-    setTimeout(function() { map.invalidateSize(); }, 350);
+    setTimeout(function () { map.invalidateSize(); }, 350);
   }
 
   function closeSidebar() {
     if (!sidebar) return;
     sidebar.classList.remove('is-open');
-    activeMarker = null;
-    setTimeout(function() { map.invalidateSize(); }, 350);
+    setTimeout(function () { map.invalidateSize(); }, 350);
   }
 
   // --- Pins ---
   function placePins() {
-    const icons = {
+    var icons = {
       city: L.divIcon({
         className: 'map-pin',
         html: '<div class="map-pin--city">&#9688;</div>',
-        iconSize: [24, 24], iconAnchor: [12, 12], popupAnchor: [0, -14]
+        iconSize: [24, 24], iconAnchor: [12, 12]
       }),
       region: L.divIcon({
         className: 'map-pin',
         html: '<div class="map-pin--region">&#9670;</div>',
-        iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -16]
+        iconSize: [28, 28], iconAnchor: [14, 14]
       }),
       landmark: L.divIcon({
         className: 'map-pin',
         html: '<div class="map-pin--landmark">&#9650;</div>',
-        iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -12]
+        iconSize: [20, 20], iconAnchor: [10, 10]
       }),
       ruin: L.divIcon({
         className: 'map-pin',
         html: '<div class="map-pin--ruin">&#10005;</div>',
-        iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -12]
+        iconSize: [20, 20], iconAnchor: [10, 10]
       }),
       npc: L.divIcon({
         className: 'map-pin',
         html: '<div class="map-pin--npc">&#9679;</div>',
-        iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -12]
+        iconSize: [18, 18], iconAnchor: [9, 9]
       }),
       shop: L.divIcon({
         className: 'map-pin',
         html: '<div class="map-pin--shop">&#9635;</div>',
-        iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -12]
+        iconSize: [18, 18], iconAnchor: [9, 9]
       }),
       district: L.divIcon({
         className: 'map-pin',
         html: '<div class="map-pin--district">&#11044;</div>',
-        iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -14]
+        iconSize: [22, 22], iconAnchor: [11, 11]
       }),
     };
 
-    locations.forEach(function(loc) {
+    locations.forEach(function (loc) {
       if (!loc.coords) return;
       var icon = icons[loc.type] || icons.landmark;
       var marker = L.marker(loc.coords, { icon: icon }).addTo(map);
 
-      marker.on('click', function() {
-        activeMarker = marker;
+      marker.on('click', function (e) {
+        L.DomEvent.stopPropagation(e);
         openSidebar(loc);
       });
 
-      // Add name label for regions
+      // Region name labels
       if (loc.type === 'region') {
         var label = L.divIcon({
           className: 'map-label',
           html: '<span class="map-label--region">' + loc.name + '</span>',
           iconSize: [120, 20],
-          iconAnchor: [60, -12],
+          iconAnchor: [60, -16],
         });
         L.marker(loc.coords, { icon: label, interactive: false }).addTo(map);
       }
     });
   }
 
-  // Close sidebar when clicking empty map
-  map.on('click', function() {
+  // Close sidebar on empty map click
+  map.on('click', function () {
     if (sidebar && sidebar.classList.contains('is-open')) {
       closeSidebar();
     }
   });
 
   // Resize handler
-  window.addEventListener('resize', function() {
-    var r = config.width / config.height;
-    var w = mapEl.offsetWidth;
-    mapEl.style.height = Math.round(w / r) + 'px';
+  window.addEventListener('resize', function () {
+    if (!isFullScreen) {
+      var r = config.width / config.height;
+      var w = mapEl.offsetWidth;
+      mapEl.style.height = Math.round(w / r) + 'px';
+    }
     map.invalidateSize();
   });
 
@@ -223,7 +257,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       '<div class="map-fallback__content">' +
       '<p class="map-fallback__icon">&#9678;</p>' +
       '<h2 class="map-fallback__title">The World Map</h2>' +
-      '<p class="map-fallback__desc">An interactive map is being drawn. When it arrives, every city, ruin, and landmark will be explorable from here.</p>' +
+      '<p class="map-fallback__desc">An interactive map is being drawn.</p>' +
       '<div class="map-fallback__links">' +
       '<a href="/pages/locations/">Browse Locations</a>' +
       '<span class="map-fallback__sep">&middot;</span>' +
