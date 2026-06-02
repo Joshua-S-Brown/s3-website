@@ -342,9 +342,39 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
 @media (max-width: 768px) {
   :root { --space-xl: 20px; }
   h1 { font-size: 1.75rem; }
-  .site-nav { gap: var(--space-md); }
-  .site-nav a { font-size: 0.625rem; letter-spacing: 1px; }
   .site-logo__studios { display: none; }
+
+  /* Hamburger menu */
+  .nav-toggle { display: flex; }
+  .site-nav {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(31, 27, 22, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xl);
+    z-index: 998;
+  }
+  .nav-open .site-nav {
+    display: flex;
+  }
+  .site-nav a {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: #B5AFA6;
+    padding: var(--space-sm) 0;
+  }
+  .site-nav a:hover,
+  .site-nav a.active {
+    color: #F2EBD9;
+  }
 }
 @media (max-width: 480px) {
   .site-header { padding: 0 var(--space-md); }
@@ -1702,16 +1732,6 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 
 /* --- Mobile Enhancements --- */
 @media (max-width: 768px) {
-  /* Nav scrolls horizontally on smaller screens */
-  .site-nav {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    flex-wrap: nowrap;
-    gap: var(--space-md);
-  }
-  .site-nav::-webkit-scrollbar { display: none; }
-
   /* Embedded map smaller on tablet */
   .solverde-map-section #map {
     min-height: 300px;
@@ -1726,10 +1746,6 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 }
 
 @media (max-width: 480px) {
-  /* Logo shrinks to just "S3" feel */
-  .site-logo__second { display: none; }
-  .site-logo__self { font-size: 0.875rem; }
-
   /* Hero title scales down further */
   .ww-hero__title { font-size: 1.75rem; letter-spacing: 1px; }
   .ww-hero__desc { font-size: 0.9375rem; }
@@ -1751,4 +1767,40 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   .solverde-map-section #map-sidebar {
     border-radius: 0;
   }
+}
+
+/* --- Hamburger Toggle --- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 999;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #B5AFA6;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+.nav-toggle:hover span {
+  background: #F2EBD9;
+}
+/* Animate to X when open */
+.nav-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.nav-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }

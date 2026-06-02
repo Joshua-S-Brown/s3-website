@@ -7,6 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (href && href !== '/' && path.includes(href)) link.classList.add('active');
   });
 
+  // Mobile nav toggle
+  const toggle = document.getElementById('nav-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+    });
+    // Close menu when a nav link is clicked
+    document.querySelectorAll('.site-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+      });
+    });
+  }
+
   // Audio player
   document.querySelectorAll('.audio-bar').forEach(bar => {
     const src = bar.dataset.src;
