@@ -98,7 +98,7 @@ h3 { font-size: 1.125rem; font-weight: 400; }
 }
 .site-logo__self {
   font-family: var(--font-display); font-size: 1rem;
-  font-weight: 600; color: #D07852; letter-spacing: 1px;
+  font-weight: 600; color: #5BBFB5; letter-spacing: 1px;
 }
 .site-logo__studios {
   font-family: var(--font-display); font-size: 1rem;
@@ -1678,6 +1678,7 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   max-width: 960px;
   margin: 0 auto;
   padding: 0 var(--space-xl);
+  overflow: hidden;
 }
 .solverde-map-section #map {
   width: 100%;
@@ -1693,4 +1694,58 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   right: var(--space-xl);
   height: 100%;
   border-radius: 0 8px 8px 0;
+}
+
+/* --- Mobile Enhancements --- */
+@media (max-width: 768px) {
+  /* Nav scrolls horizontally on smaller screens */
+  .site-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    gap: var(--space-md);
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+
+  /* Embedded map smaller on tablet */
+  .solverde-map-section #map {
+    min-height: 300px;
+    max-height: 400px;
+  }
+  /* Sidebar goes full-width on mobile */
+  .solverde-map-section #map-sidebar,
+  #map-sidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Logo shrinks to just "S3" feel */
+  .site-logo__second { display: none; }
+  .site-logo__self { font-size: 0.875rem; }
+
+  /* Hero title scales down further */
+  .ww-hero__title { font-size: 1.75rem; letter-spacing: 1px; }
+  .ww-hero__desc { font-size: 0.9375rem; }
+
+  /* Location hero tighter */
+  .location-hero { padding: var(--space-xl) var(--space-md) var(--space-md); }
+  .location-hero h1 { font-size: 1.5rem; }
+
+  /* Embedded map even smaller */
+  .solverde-map-section {
+    padding: 0 var(--space-md);
+  }
+  .solverde-map-section #map {
+    min-height: 250px;
+    max-height: 300px;
+  }
+
+  /* Sidebar on mobile */
+  .solverde-map-section #map-sidebar {
+    right: 0;
+    border-radius: 0;
+  }
 }
