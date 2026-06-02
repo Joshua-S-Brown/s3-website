@@ -69,7 +69,7 @@ h3 { font-size: 1.125rem; font-weight: 400; }
   font-family: var(--font-ui);
   font-weight: 500;
 }
-.label--gold  { color: var(--gold); }
+.label--gold  { color: var(--green); }
 .label--teal  { color: var(--teal); }
 .label--muted { color: var(--text-muted); }
 
@@ -121,9 +121,9 @@ h3 { font-size: 1.125rem; font-weight: 400; }
   display: flex; gap: var(--space-sm); align-items: center;
   margin-bottom: var(--space-md);
 }
-.breadcrumbs a { font-size: 0.6875rem; }
-.breadcrumbs__sep { font-size: 0.625rem; color: var(--text-muted); }
-.breadcrumbs__current { font-size: 0.6875rem; color: var(--text); }
+.breadcrumbs a { font-size: 0.8125rem; font-family: var(--font-ui); }
+.breadcrumbs__sep { font-size: 0.75rem; color: var(--text-muted); }
+.breadcrumbs__current { font-size: 0.8125rem; color: var(--text); font-family: var(--font-ui); }
 
 /* --- Cards --- */
 .card {
@@ -133,7 +133,7 @@ h3 { font-size: 1.125rem; font-weight: 400; }
   padding: var(--space-lg);
   transition: border-color var(--ease);
 }
-.card:hover { border-color: var(--gold-dim); }
+.card:hover { border-color: var(--green); }
 .card--clickable { cursor: pointer; }
 .card + .card { margin-top: var(--space-sm); }
 
@@ -154,14 +154,16 @@ h3 { font-size: 1.125rem; font-weight: 400; }
   width: 100%; height: 100%; object-fit: cover;
 }
 .character-card__name {
-  font-size: 0.875rem; color: var(--heading);
-  font-family: var(--font-display); margin-bottom: 2px;
+  font-size: 1.0625rem; color: var(--heading);
+  font-family: var(--font-display); font-weight: 500; margin-bottom: 4px;
 }
 .character-card__role {
-  font-size: 0.6875rem; color: var(--teal); margin-bottom: 4px;
+  font-size: 0.8125rem; color: var(--green); margin-bottom: 4px;
+  font-family: var(--font-ui); font-weight: 500;
 }
 .character-card__note {
-  font-size: 0.75rem; color: var(--text-muted); font-style: italic;
+  font-size: 0.875rem; color: var(--text-muted); font-style: italic;
+  line-height: 1.6;
 }
 
 /* --- Story Card --- */
@@ -246,9 +248,9 @@ h3 { font-size: 1.125rem; font-weight: 400; }
 }
 .location-hero h1 { margin-bottom: var(--space-xs); }
 .location-hero__subtitle {
-  font-size: 0.875rem; color: var(--gold);
-  font-family: var(--font-display);
-  letter-spacing: 3px; font-style: italic;
+  font-size: 1.0625rem; color: var(--text-muted);
+  font-family: var(--font-body);
+  letter-spacing: 0.5px; font-style: italic;
 }
 
 /* --- Story Page --- */
@@ -332,7 +334,7 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
 
 /* --- Text Utilities --- */
 .text-center { text-align: center; }
-.text-gold   { color: var(--gold); }
+.text-gold   { color: var(--green); }
 .text-teal   { color: var(--teal); }
 .text-muted  { color: var(--text-muted); }
 
@@ -787,9 +789,29 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 /* Sidebar on map stays dark (overlays map image) - override cream text colors */
 #map-sidebar { color: #D5CBBA; }
 #map-sidebar h2, #map-sidebar h3 { color: #F2EBD9; }
-#map-sidebar a { color: #4E9E9E; }
-#map-sidebar a:hover { color: #6BBABA; }
-.sidebar__type { font-family: var(--font-ui); }
+#map-sidebar p { color: #D5CBBA; }
+#map-sidebar a { color: #6BBABA; }
+#map-sidebar a:hover { color: #8ED4D4; }
+#map-sidebar .sidebar__type { color: #D07852; font-family: var(--font-ui); }
+#map-sidebar .sidebar__tagline { color: #B5AFA6; }
+#map-sidebar .sidebar__fact-label { color: #8B8478; }
+#map-sidebar .sidebar__fact-value { color: #D5CBBA; }
+#map-sidebar .sidebar__divider { background: rgba(213, 203, 186, 0.2); }
+#map-sidebar .sidebar__section-label { color: #D07852; }
+#map-sidebar .sidebar__character-name { color: #F2EBD9; }
+#map-sidebar .sidebar__character-role { color: #6BBABA; }
+#map-sidebar .sidebar__explore { color: #6BBABA; }
+#map-sidebar .sidebar__story-title { color: #F2EBD9; }
+#map-sidebar .sidebar__story-time { color: #8B8478; }
+.sidebar__close-btn {
+  background: rgba(242, 235, 217, 0.1);
+  border-color: rgba(242, 235, 217, 0.2);
+  color: #D5CBBA;
+}
+.sidebar__close-btn:hover {
+  background: rgba(242, 235, 217, 0.15);
+  color: #F2EBD9;
+}
 /* Sidebar content */
 #map-sidebar-content {
   padding: 0 28px 32px;
@@ -1016,8 +1038,8 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 
 /* --- Transparent header for map page --- */
 .site-header--transparent {
-  background: linear-gradient(to bottom, rgba(31, 27, 22, 0.85), rgba(31, 27, 22, 0));
-  border-bottom: none;
+  background: rgba(31, 27, 22, 0.95);
+  border-bottom: 1px solid rgba(213, 203, 186, 0.15);
 }
 
 /* --- Landing Overlay --- */
@@ -1568,12 +1590,12 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   margin: 0 auto;
 }
 .ww-hero__label {
-  font-size: 0.6875rem;
-  letter-spacing: 4px;
+  font-size: 0.8125rem;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--text-muted);
   font-family: var(--font-ui);
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: var(--space-md);
 }
 .ww-hero__title {
@@ -1587,7 +1609,7 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 .ww-hero__rule {
   width: 60px;
   height: 2px;
-  background: var(--gold);
+  background: var(--green);
   margin: 0 auto var(--space-lg);
 }
 .ww-hero__desc {
@@ -1620,13 +1642,13 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   transition: border-color var(--ease), transform var(--ease);
 }
 .ww-grid-card:hover {
-  border-color: var(--gold-dim);
+  border-color: var(--green);
   transform: translateY(-2px);
 }
 .ww-grid-card__icon {
   display: block;
   font-size: 1.5rem;
-  color: var(--gold);
+  color: var(--green);
   margin-bottom: var(--space-sm);
 }
 .ww-grid-card__title {
