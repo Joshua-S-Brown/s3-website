@@ -52,47 +52,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       }, 50);
     }, 100);
 
-    // Check if user already explored this session
-    var landing = document.getElementById('map-landing');
-    var alreadyExplored = sessionStorage.getItem('ww-explored');
-
-    if (landing && alreadyExplored) {
-      // Skip the landing, go straight to interactive map
-      landing.remove();
-      placePins();
-    } else if (landing) {
-      // First visit this session — show landing, disable interaction
-      map.dragging.disable();
-      map.scrollWheelZoom.disable();
-      map.touchZoom.disable();
-      map.doubleClickZoom.disable();
-    } else {
-      placePins();
-    }
+    placePins();
   };
   img.onerror = function () { showFallback(); };
   img.src = config.image;
-
-  // --- Landing overlay ---
-  var exploreBtn = document.getElementById('explore-btn');
-  if (exploreBtn) {
-    exploreBtn.addEventListener('click', function () {
-      var landing = document.getElementById('map-landing');
-      landing.classList.add('is-hidden');
-
-      // Remember that user has explored
-      sessionStorage.setItem('ww-explored', 'true');
-
-      map.dragging.enable();
-      map.scrollWheelZoom.enable();
-      map.touchZoom.enable();
-      map.doubleClickZoom.enable();
-
-      placePins();
-
-      setTimeout(function () { landing.remove(); }, 600);
-    });
-  }
 
   // --- Sidebar ---
   var sidebar = document.getElementById('map-sidebar');

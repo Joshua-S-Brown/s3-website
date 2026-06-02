@@ -11,18 +11,17 @@
   <meta name="description" content="Explore the world of Whisker & Wire. A solarpunk world where small animals build a better civilization from the ruins of ours.">
   <meta property="og:image" content="/og-image.png">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
-<body class="page-map">
+<body>
 
-  <header class="site-header site-header--transparent">
+  <header class="site-header">
     <a href="/" class="site-logo">
-      <img src="/assets/images/logo.png" alt="S3" class="site-logo__icon">
       <span class="site-logo__second">SECOND</span>
       <span class="site-logo__self">SELF</span>
       <span class="site-logo__studios">STUDIOS</span>
     </a>
     <nav class="site-nav">
+      <a href="/pages/map/">Map</a>
       <a href="/pages/locations/">Locations</a>
       <a href="/pages/stories/">Stories</a>
       <a href="/pages/characters/">Characters</a>
@@ -31,38 +30,74 @@
     </nav>
   </header>
 
-  <!-- Full-screen map -->
-  <div id="map"
-    data-width="2000"
-    data-height="1125">
-  </div>
+  <div class="page-body">
+    <div class="container">
 
-  <!-- Landing overlay (covers map on first load) -->
-  <!-- Landing overlay -->
-  <div id="map-landing" class="map-landing">
-    <div class="map-landing__content">
-      <p class="map-landing__label">Second Self Studios</p>
-      <h1 class="map-landing__title">WHISKER &amp; WIRE</h1>
-      <p class="map-landing__sub">A world being built. One story at a time.</p>
-      <button class="map-landing__btn" id="explore-btn">Explore the World</button>
+      <div class="home-hero">
+        <p class="label label--gold home-hero__label">Second Self Studios</p>
+        <h1 class="home-hero__title">Whisker &amp; Wire</h1>
+        <p class="home-hero__desc">
+          A solarpunk world where small animals build a better civilization from the ruins of ours.
+          Humanity is gone. They consumed themselves out of greed, stripped the soil, heated the oceans, and choked the air.
+          The green came back. And with it, something new.
+        </p>
+        <p class="home-hero__note">A world being built. One story at a time.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section">
+        <p class="label label--gold section__label">Explore</p>
+
+        <a class="card-link" href="/pages/map/">
+          <div class="card card--clickable">
+            <h3 class="home-card__title">The Map</h3>
+            <p class="home-card__desc">Explore Solverde and Azure Cove. Click any pin to discover locations, stories, and characters.</p>
+          </div>
+        </a>
+
+        <a class="card-link" href="/pages/locations/">
+          <div class="card card--clickable">
+            <h3 class="home-card__title">Locations</h3>
+            <p class="home-card__desc">Places in the world. The bakery that wakes the town, the boatyard where the fleet comes home, the ruins where the giants kept their ships.</p>
+          </div>
+        </a>
+
+        <a class="card-link" href="/pages/stories/">
+          <div class="card card--clickable">
+            <h3 class="home-card__title">Stories</h3>
+            <p class="home-card__desc">Short fiction set in Solverde and beyond. Each story happens somewhere specific on the map.</p>
+          </div>
+        </a>
+
+        <a class="card-link" href="/pages/characters/">
+          <div class="card card--clickable">
+            <h3 class="home-card__title">Characters</h3>
+            <p class="home-card__desc">The animals who live in this world. Discovered through stories, locations, and the map.</p>
+          </div>
+        </a>
+
+        <a class="card-link" href="/pages/lore/">
+          <div class="card card--clickable">
+            <h3 class="home-card__title">Lore</h3>
+            <p class="home-card__desc">The Falling. The Compact. Furmanity. The history, rules, and ideas that hold the world together.</p>
+          </div>
+        </a>
+
+        <a class="card-link" href="/pages/journal/">
+          <div class="card card--clickable">
+            <h3 class="home-card__title">Journal</h3>
+            <p class="home-card__desc">Notes on the creative process. What's being built and why.</p>
+          </div>
+        </a>
+      </div>
+
     </div>
   </div>
-  <script>
-    if (sessionStorage.getItem('ww-explored')) {
-      document.getElementById('map-landing').remove();
-    }
-  </script>
 
-  <!-- Sidebar -->
-  <div id="map-sidebar">
-    <div class="sidebar__close">
-      <button class="sidebar__close-btn" id="map-sidebar-close">&times;</button>
-    </div>
-    <div id="map-sidebar-content"></div>
-  </div>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/map.js"></script>
-  <script src="js/main.js"></script>
+  <footer class="site-footer">
+    <p>Second Self Studios — A world being built</p>
+  </footer>
+  <script src="/js/main.js"></script>
 </body>
 </html>
