@@ -377,7 +377,7 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
 @media (max-width: 768px) {
   :root { --space-xl: 20px; }
   h1 { font-size: 1.75rem; }
-  .site-logo__studios { display: none; }
+  .site-logo__icon { display: none; }
 
   /* Hamburger menu */
   .nav-toggle { display: flex; }
@@ -388,9 +388,7 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(31, 27, 22, 0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: #1F1B16;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -401,14 +399,14 @@ a.map-link  { font-size: 0.75rem; letter-spacing: 1px; }
     display: flex;
   }
   .site-nav a {
-    font-size: 1rem;
-    letter-spacing: 3px;
-    color: #B5AFA6;
+    font-size: 1.125rem !important;
+    letter-spacing: 3px !important;
+    color: #B5AFA6 !important;
     padding: var(--space-sm) 0;
   }
   .site-nav a:hover,
   .site-nav a.active {
-    color: #F2EBD9;
+    color: #F2EBD9 !important;
   }
 }
 @media (max-width: 480px) {
@@ -790,15 +788,7 @@ h1 { font-size: 2.75rem; letter-spacing: 1px; }
 h2 { font-size: 1.75rem; letter-spacing: 0.5px; }
 h3 { font-size: 1.25rem; font-weight: 400; }
 
-.site-nav a {
-  font-size: 0.8125rem;
-  letter-spacing: 3px;
-}
-.site-logo__second,
-.site-logo__self,
-.site-logo__studios {
-  font-size: 1.125rem;
-}
+
 
 
 
@@ -1804,3 +1794,80 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   }
 }
 
+
+/* --- Hub Page Intro --- */
+.hub-intro {
+  max-width: 640px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+.hub-intro p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* --- Rich Cards (with thumbnail) --- */
+.card--rich {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+.card__thumb {
+  flex-shrink: 0;
+  width: 160px;
+  height: 120px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--bg-hover), var(--bg-card));
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* --- Card Tags --- */
+.card__tags {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+.card__tag {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+/* --- Journal Date --- */
+.journal-date {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+/* --- Responsive: Rich cards stack on mobile --- */
+@media (max-width: 600px) {
+  .card--rich {
+    flex-direction: column;
+  }
+  .card__thumb {
+    width: 100%;
+    height: 160px;
+  }
+}
