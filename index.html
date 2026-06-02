@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Second Self Studios — The World of Veridia</title>
+  <title>Second Self Studios — Whisker & Wire</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="description" content="Explore the world of Veridia. Three continents, fading magic, and centuries of buried history.">
+  <meta name="description" content="Explore the world of Whisker & Wire. A solarpunk world where small animals build a better civilization from the ruins of ours.">
   <meta property="og:image" content="/og-image.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -42,13 +42,13 @@
   <div id="map-landing" class="map-landing">
     <div class="map-landing__content">
       <p class="map-landing__label">Second Self Studios</p>
-      <h1 class="map-landing__title">VERIDIA</h1>
-      <p class="map-landing__sub">Three continents. Fading magic. Buried history.</p>
+      <h1 class="map-landing__title">WHISKER &amp; WIRE</h1>
+      <p class="map-landing__sub">A world being built. One story at a time.</p>
       <button class="map-landing__btn" id="explore-btn">Explore the World</button>
     </div>
   </div>
   <script>
-    if (sessionStorage.getItem('veridia-explored')) {
+    if (sessionStorage.getItem('ww-explored')) {
       document.getElementById('map-landing').remove();
     }
   </script>

@@ -1,6 +1,6 @@
 /* ============================================
    SECOND SELF STUDIOS - Complete Stylesheet
-   Palette: Iron & Gold
+   Palette: Driftwood & Sea
    Zero inline styles needed in HTML files.
    ============================================ */
 
@@ -8,17 +8,17 @@
 
 /* --- Palette --- */
 :root {
-  --bg:          #131313;
-  --bg-card:     #1C1C1C;
-  --bg-hover:    #242424;
-  --border:      #2C2C2C;
+  --bg:          #121211;
+  --bg-card:     #1B1B19;
+  --bg-hover:    #242422;
+  --border:      #2C2C29;
   --text:        #C5C0B8;
-  --text-muted:  #808080;
-  --gold:        #C9A84C;
-  --gold-dim:    #A8893E;
-  --teal:        #4ECDC4;
-  --teal-dim:    #3DA89F;
-  --heading:     #EDEBE8;
+  --text-muted:  #807E76;
+  --gold:        #D4956A;
+  --gold-dim:    #B37C52;
+  --teal:        #4CBFB7;
+  --teal-dim:    #3DA19A;
+  --heading:     #EDE9E4;
   --white:       #FFFFFF;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'Source Sans 3', 'Segoe UI', sans-serif;

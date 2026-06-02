@@ -1,234 +1,131 @@
 [
   {
-    "id": "andoria",
-    "name": "Andoria",
+    "id": "azure-cove",
+    "name": "Azure Cove",
     "type": "region",
-    "tagline": "The Western Continent",
-    "description": "Frozen fjords to the north, iron mountains to the south. The Godsvein Valley runs through the center like a wound that never closed. Andoria's people are stubborn, insular, and built to endure.",
-    "coords": [860, 195],
+    "tagline": "The sheltered waters of home",
+    "description": "A C-shaped cove on the Cerulean Sea, protected by a reef between two peninsulas. Calm waters, reliable currents, and the kind of beauty that makes animals stay.",
+    "coords": [400, 1000],
     "page": null,
     "facts": {
-      "Climate": "Tundra to temperate",
-      "Known for": "Iron, shipbuilding",
-      "Governance": "Fractured clans",
-      "Threat": "Expanding frost line"
+      "Water": "Cerulean Sea",
+      "Protection": "Natural reef barrier",
+      "Climate": "Mediterranean coastal",
+      "Status": "Heart of Solverde"
     }
   },
   {
-    "id": "kalendra",
-    "name": "Kalendra",
-    "type": "region",
-    "tagline": "The Central Continent",
-    "description": "A thousand lakes, a fertile crescent, and a desert that swallowed an empire. Kalendra was the heart of the old world. The Sundering broke it worse than anywhere else and the scars are still visible.",
-    "coords": [615, 770],
-    "page": null,
-    "facts": {
-      "Climate": "Lakes to deep desert",
-      "Known for": "Agriculture, old magic",
-      "Governance": "City-states",
-      "Threat": "The Great Erg expanding"
-    }
-  },
-  {
-    "id": "morgard",
-    "name": "Morgard",
-    "type": "region",
-    "tagline": "The Eastern Continent",
-    "description": "The Everwood. The Howling Plains. A coastline of drowned ruins and storms that never quit. Morgard keeps to itself and outsiders learn quickly not to press the point.",
-    "coords": [705, 1160],
-    "page": null,
-    "facts": {
-      "Climate": "Temperate to subarctic",
-      "Known for": "Ancient forests, secrecy",
-      "Governance": "Unknown",
-      "Threat": "Coastal erosion, storms"
-    }
-  },
-  {
-    "id": "kael-doran",
-    "name": "Kael'Doran",
+    "id": "solverde",
+    "name": "Solverde",
     "type": "city",
-    "tagline": "The Ember Gate",
-    "description": "A city on blackite cliffs built by refugees of the fallen Thal Empire. Three centuries of stubbornness carved into stone. Smoke rises from the forge quarter. The wards are failing and no one wants to talk about it.",
-    "coords": [730, 600],
-    "page": "/pages/locations/kael-doran.html",
+    "tagline": "Where the green sun meets the sea",
+    "description": "A beach town built at animal scale from salvaged human materials. Whitewashed plaster walls, terracotta roofs, sea-glass windows, and mosaic floors from salvaged tile. The name comes from old human resort signage the animals adopted. The humans meant it as marketing. The animals made it true.",
+    "coords": [550, 1000],
+    "page": "/pages/locations/solverde.html",
     "facts": {
-      "Region": "Ashenvael",
-      "Population": "~12,000",
-      "Governance": "Governor-appointed",
-      "Status": "Declining"
-    },
-    "characters": [
-      {"name": "Sera Voss", "role": "Ward-Mason, Third Rank"},
-      {"name": "Aldric Thane", "role": "Governor of Kael'Doran"},
-      {"name": "The Lamplighter", "role": "Unknown"}
-    ],
-    "stories": [
-      {"title": "The Lamplighter's Oath", "time": "12 min", "url": "/pages/stories/the-lamplighters-oath.html"}
-    ]
+      "Region": "Azure Cove",
+      "Architecture": "Mediterranean coastal",
+      "Known for": "Morning market, boatyard",
+      "Governance": "Community council"
+    }
   },
   {
-    "id": "frozen-fjords",
-    "name": "Frozen Fjords",
+    "id": "seawall-promenade",
+    "name": "Seawall Promenade",
     "type": "landmark",
-    "tagline": "Ice and silence at the top of the world",
-    "description": "The northernmost reaches of Andoria where the sea cuts deep channels into frozen rock. Few settlements survive here. Those that do don't talk much about what lives in the water.",
-    "coords": [1015, 230],
+    "tagline": "The evening gathering place",
+    "description": "A walkway along the top of Solverde's seawall where the whole town gathers at dusk. The place where community happens without anyone organizing it.",
+    "coords": [520, 920],
     "page": null
   },
   {
-    "id": "northern-forests",
-    "name": "Northern Forests",
-    "type": "landmark",
-    "tagline": "Dense woodland below the frost line",
-    "coords": [950, 200],
+    "id": "morning-market",
+    "name": "Morning Market",
+    "type": "shop",
+    "tagline": "Open before the tide turns",
+    "description": "Stalls and tables along the harbor edge where the day's catch, baked goods, garden produce, and salvage change hands. Busiest at dawn, quiet by midday.",
+    "coords": [580, 950],
     "page": null
   },
   {
-    "id": "eastern-dry-lands",
-    "name": "Eastern Dry Lands",
-    "type": "landmark",
-    "tagline": "Arid badlands east of the valley",
-    "coords": [970, 370],
+    "id": "calas-bakery",
+    "name": "Cala's Bakery",
+    "type": "shop",
+    "tagline": "The smell that wakes the town",
+    "description": "A bakery on the edge of the morning market. Whitewashed walls, terracotta roof, flour dust in the pre-dawn light. Cala starts before anyone else is awake.",
+    "coords": [600, 960],
     "page": null
   },
   {
-    "id": "godsvein-valley",
-    "name": "Godsvein Valley",
-    "type": "landmark",
-    "tagline": "The heart of Andoria",
-    "description": "A massive river valley that splits Andoria nearly in half. Rich farmland on the banks, old mines in the cliffsides. The name comes from a belief that the river carries trace amounts of divine ore downstream.",
-    "coords": [900, 240],
+    "id": "driftwood-tavern",
+    "name": "The Driftwood",
+    "type": "shop",
+    "tagline": "Where the crews come home",
+    "description": "Solverde's tavern, built from salvaged ship timbers. Where salvage jobs get posted, news gets shared, and the evening turns into stories. Tomas keeps the place running.",
+    "coords": [620, 1020],
     "page": null
   },
   {
-    "id": "ironspine-mountains",
-    "name": "Ironspine Mountains",
+    "id": "boatyard",
+    "name": "The Boatyard",
     "type": "landmark",
-    "tagline": "A spine of dark stone splitting the continent",
-    "coords": [805, 230],
+    "tagline": "Where Sera keeps the fleet afloat",
+    "description": "Dry docks and repair berths where Solverde's boats are built and maintained. Smells like salt, tar, and sawdust. The sound of tools never fully stops.",
+    "coords": [650, 900],
     "page": null
   },
   {
-    "id": "southern-peninsula",
-    "name": "Southern Peninsula",
+    "id": "gardens",
+    "name": "The Gardens",
     "type": "landmark",
-    "tagline": "Where the land gives way to open sea",
-    "coords": [730, 200],
+    "tagline": "Furmanity's answer to the Falling",
+    "description": "Terraced growing plots climbing the hillside above town. A handful of giant plants tended like old friends. One tomato plant is a tree here. One tomato is a boulder that takes a team to harvest.",
+    "coords": [700, 1080],
     "page": null
   },
   {
-    "id": "thousand-lakes",
-    "name": "The Thousand Lakes",
+    "id": "tree-cranes",
+    "name": "Tree Cranes",
     "type": "landmark",
-    "tagline": "A maze of freshwater and marshland",
-    "coords": [755, 730],
+    "tagline": "Engineering at the canopy's edge",
+    "description": "Counterweighted cranes built into the trunks of trees along the harbor, used to lift heavy salvage from boats to the upper town. A Maker's pride.",
+    "coords": [560, 870],
     "page": null
   },
   {
-    "id": "fertile-crescent",
-    "name": "The Fertile Crescent",
+    "id": "the-reef",
+    "name": "The Reef",
     "type": "landmark",
-    "tagline": "Breadbasket of the central continent",
-    "coords": [685, 730],
+    "tagline": "Azure Cove's natural shield",
+    "description": "A living reef stretching between the two peninsulas that form the cove. Protects the harbor from open ocean swells. Home to creatures the divers know by name.",
+    "coords": [300, 900],
     "page": null
   },
   {
-    "id": "great-erg-desert",
-    "name": "The Great Erg Desert",
+    "id": "lighthouse",
+    "name": "The Lighthouse",
     "type": "landmark",
-    "tagline": "Endless dunes where nothing grows",
-    "description": "A desert that has been expanding for centuries. Old maps show cities beneath the sand. No one has confirmed what's down there because expeditions don't come back.",
-    "coords": [535, 780],
+    "tagline": "A human relic still earning its keep",
+    "description": "A surviving human lighthouse on the eastern peninsula, reactivated and maintained by Solverde. One of the few pieces of giant-scale infrastructure still serving its original purpose.",
+    "coords": [450, 700],
     "page": null
   },
   {
-    "id": "skyreach-mountains",
-    "name": "Skyreach Mountains",
-    "type": "landmark",
-    "tagline": "Peaks that scrape the heavens",
-    "coords": [445, 680],
+    "id": "old-dockyards",
+    "name": "Old Dockyards",
+    "type": "ruin",
+    "tagline": "Where the giants kept their ships",
+    "description": "A sprawling human marina complex outside the cove. Partially collapsed, partially flooded, largely unexplored. The most dangerous and most rewarding salvage site near Solverde. Crews go in prepared and sometimes still come back shaken.",
+    "coords": [350, 600],
     "page": null
   },
   {
-    "id": "burning-valleys",
-    "name": "The Burning Valleys",
-    "type": "landmark",
-    "tagline": "Volcanic rifts that never cool",
-    "coords": [445, 850],
-    "page": null
-  },
-  {
-    "id": "sunken-gulf",
-    "name": "The Sunken Gulf",
-    "type": "landmark",
-    "tagline": "A drowned coast of flooded ruins",
-    "coords": [1020, 1180],
-    "page": null
-  },
-  {
-    "id": "jade-narrows-basin",
-    "name": "Jade Narrows Basin",
-    "type": "landmark",
-    "tagline": "Sheltered waters between the cliffs",
-    "coords": [925, 1110],
-    "page": null
-  },
-  {
-    "id": "stormbreak-island",
-    "name": "Stormbreak Island",
-    "type": "landmark",
-    "tagline": "Battered by storms year-round",
-    "coords": [835, 1050],
-    "page": null
-  },
-  {
-    "id": "howling-plains",
-    "name": "Howling Plains",
-    "type": "landmark",
-    "tagline": "Flat grassland where the wind never stops",
-    "coords": [830, 1195],
-    "page": null
-  },
-  {
-    "id": "the-everwood",
-    "name": "The Everwood",
-    "type": "landmark",
-    "tagline": "An ancient forest that does not sleep",
-    "description": "Trees older than any recorded history. The canopy is so thick that the forest floor exists in permanent twilight. Locals say the trees move when you're not looking.",
-    "coords": [765, 1195],
-    "page": null
-  },
-  {
-    "id": "worldedge-mountains",
-    "name": "Worldedge Mountains",
-    "type": "landmark",
-    "tagline": "The eastern rim of the known world",
-    "coords": [655, 1185],
-    "page": null
-  },
-  {
-    "id": "southern-grasslands",
-    "name": "Southern Grasslands",
-    "type": "landmark",
-    "tagline": "Rolling plains stretching to the horizon",
-    "coords": [590, 1190],
-    "page": null
-  },
-  {
-    "id": "subantarctic-forests",
-    "name": "Subantarctic Forests",
-    "type": "landmark",
-    "tagline": "Cold woodland at the edge of ice",
-    "coords": [515, 1180],
-    "page": null
-  },
-  {
-    "id": "southern-ice-shield",
-    "name": "Southern Ice Shield",
-    "type": "landmark",
-    "tagline": "The frozen south",
-    "coords": [445, 1230],
+    "id": "underwater-ruins",
+    "name": "Underwater Ruins",
+    "type": "ruin",
+    "tagline": "What the sea reclaimed",
+    "description": "Submerged human structures visible from the surface on calm days. What's down there is unclear. The divers who've gone deep enough to see don't all agree on what they found.",
+    "coords": [250, 1050],
     "page": null
   }
 ]

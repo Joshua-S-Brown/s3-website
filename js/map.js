@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Check if user already explored this session
     var landing = document.getElementById('map-landing');
-    var alreadyExplored = sessionStorage.getItem('veridia-explored');
+    var alreadyExplored = sessionStorage.getItem('ww-explored');
 
     if (landing && alreadyExplored) {
       // Skip the landing, go straight to interactive map
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       landing.classList.add('is-hidden');
 
       // Remember that user has explored
-      sessionStorage.setItem('veridia-explored', 'true');
+      sessionStorage.setItem('ww-explored', 'true');
 
       map.dragging.enable();
       map.scrollWheelZoom.enable();
