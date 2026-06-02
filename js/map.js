@@ -41,15 +41,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   const img = new Image();
   img.onload = function () {
     L.imageOverlay(config.image, bounds).addTo(map);
-    map.fitBounds(bounds, { padding: [0, 0] });
+
+    // More padding on mobile so the map doesn't start zoomed in tight
+    var isMobile = window.innerWidth < 768;
+    var fitPadding = isMobile ? [20, 20] : [0, 0];
+    map.fitBounds(bounds, { padding: fitPadding });
 
     setTimeout(() => {
       map.invalidateSize();
-      map.fitBounds(bounds, { padding: [0, 0] });
+      map.fitBounds(bounds, { padding: fitPadding });
 
-      // Lock min zoom to current level so user can't zoom out beyond full map
+      // Lock min zoom - allow a bit more zoom-out on mobile
       setTimeout(() => {
-        map.setMinZoom(map.getZoom());
+        var currentZoom = map.getZoom();
+        map.setMinZoom(isMobile ? currentZoom - 0.5 : currentZoom);
       }, 50);
     }, 100);
 
