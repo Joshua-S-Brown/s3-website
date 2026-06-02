@@ -21,7 +21,7 @@
   --teal-dim:    #1F4F4F;
   --heading:     #1F1B16;
   --white:       #FFFFFF;
-  --green:       #4E7A3B;
+  --green:       #3D8B37;
   --sunlight:    #E8B84B;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'Lora', Georgia, serif;
@@ -1670,4 +1670,24 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 }
 @media (max-width: 480px) {
   .ww-grid-wrap { grid-template-columns: 1fr; }
+}
+
+/* --- Solverde Embedded Map --- */
+.solverde-map-section {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.solverde-map-section #map {
+  width: 100%;
+  min-height: 450px;
+  background: var(--bg-card);
+}
+.solverde-map-section #map-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }

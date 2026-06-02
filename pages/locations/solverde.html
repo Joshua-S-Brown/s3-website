@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solverde — Second Self Studios</title>
   <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,10 +42,26 @@
     </div>
   </div>
 
-  <div class="page-body">
-    <div class="container--wide">
+  <!-- Interactive Solverde Map -->
+  <div class="solverde-map-section">
+    <div id="map"
+      data-image="/assets/images/solverde-map.jpg"
+      data-pins="/data/solverde-locations.json"
+      data-width="2000"
+      data-height="1125">
+    </div>
 
-      <div class="map-placeholder mb-xl">◎ Interactive town map · coming soon</div>
+    <!-- Sidebar for map pins -->
+    <div id="map-sidebar">
+      <div class="sidebar__close">
+        <button class="sidebar__close-btn" id="map-sidebar-close">&times;</button>
+      </div>
+      <div id="map-sidebar-content"></div>
+    </div>
+  </div>
+
+  <div class="page-body" style="padding-top: var(--space-xl);">
+    <div class="container--wide">
 
       <div class="section">
         <div class="prose">
@@ -105,7 +122,7 @@
           <div class="story-card__header">
             <span class="story-card__title">Coming soon</span>
           </div>
-          <p class="story-card__excerpt">The first story set in Solverde is being written. Check back.</p>
+          <p class="story-card__excerpt">The first story set in Solverde is being written. A story about kids who play at being salvagers until the game becomes real.</p>
         </div>
       </div>
 
@@ -125,6 +142,8 @@
   <footer class="site-footer">
     <p>Second Self Studios — A world being built</p>
   </footer>
-  <script src="../../js/main.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/js/map.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

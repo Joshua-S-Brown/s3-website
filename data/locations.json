@@ -5,13 +5,12 @@
     "type": "region",
     "tagline": "The sheltered waters of home",
     "description": "A C-shaped cove on the Cerulean Sea, protected by a reef between two peninsulas. Calm waters, reliable currents, and the kind of beauty that makes animals stay.",
-    "coords": [400, 1000],
+    "coords": [560, 1000],
     "page": null,
     "facts": {
       "Water": "Cerulean Sea",
       "Protection": "Natural reef barrier",
-      "Climate": "Mediterranean coastal",
-      "Status": "Heart of Solverde"
+      "Climate": "Mediterranean coastal"
     }
   },
   {
@@ -20,7 +19,7 @@
     "type": "city",
     "tagline": "Where the green sun meets the sea",
     "description": "A beach town built at animal scale from salvaged human materials. Whitewashed plaster walls, terracotta roofs, sea-glass windows, and mosaic floors from salvaged tile. The name comes from old human resort signage the animals adopted. The humans meant it as marketing. The animals made it true.",
-    "coords": [550, 1000],
+    "coords": [560, 1000],
     "page": "/pages/locations/solverde.html",
     "facts": {
       "Region": "Azure Cove",
@@ -28,104 +27,5 @@
       "Known for": "Morning market, boatyard",
       "Governance": "Community council"
     }
-  },
-  {
-    "id": "seawall-promenade",
-    "name": "Seawall Promenade",
-    "type": "landmark",
-    "tagline": "The evening gathering place",
-    "description": "A walkway along the top of Solverde's seawall where the whole town gathers at dusk. The place where community happens without anyone organizing it.",
-    "coords": [520, 920],
-    "page": null
-  },
-  {
-    "id": "morning-market",
-    "name": "Morning Market",
-    "type": "shop",
-    "tagline": "Open before the tide turns",
-    "description": "Stalls and tables along the harbor edge where the day's catch, baked goods, garden produce, and salvage change hands. Busiest at dawn, quiet by midday.",
-    "coords": [580, 950],
-    "page": null
-  },
-  {
-    "id": "calas-bakery",
-    "name": "Cala's Bakery",
-    "type": "shop",
-    "tagline": "The smell that wakes the town",
-    "description": "A bakery on the edge of the morning market. Whitewashed walls, terracotta roof, flour dust in the pre-dawn light. Cala starts before anyone else is awake.",
-    "coords": [600, 960],
-    "page": null
-  },
-  {
-    "id": "driftwood-tavern",
-    "name": "The Driftwood",
-    "type": "shop",
-    "tagline": "Where the crews come home",
-    "description": "Solverde's tavern, built from salvaged ship timbers. Where salvage jobs get posted, news gets shared, and the evening turns into stories. Tomas keeps the place running.",
-    "coords": [620, 1020],
-    "page": null
-  },
-  {
-    "id": "boatyard",
-    "name": "The Boatyard",
-    "type": "landmark",
-    "tagline": "Where Sera keeps the fleet afloat",
-    "description": "Dry docks and repair berths where Solverde's boats are built and maintained. Smells like salt, tar, and sawdust. The sound of tools never fully stops.",
-    "coords": [650, 900],
-    "page": null
-  },
-  {
-    "id": "gardens",
-    "name": "The Gardens",
-    "type": "landmark",
-    "tagline": "Furmanity's answer to the Falling",
-    "description": "Terraced growing plots climbing the hillside above town. A handful of giant plants tended like old friends. One tomato plant is a tree here. One tomato is a boulder that takes a team to harvest.",
-    "coords": [700, 1080],
-    "page": null
-  },
-  {
-    "id": "tree-cranes",
-    "name": "Tree Cranes",
-    "type": "landmark",
-    "tagline": "Engineering at the canopy's edge",
-    "description": "Counterweighted cranes built into the trunks of trees along the harbor, used to lift heavy salvage from boats to the upper town. A Maker's pride.",
-    "coords": [560, 870],
-    "page": null
-  },
-  {
-    "id": "the-reef",
-    "name": "The Reef",
-    "type": "landmark",
-    "tagline": "Azure Cove's natural shield",
-    "description": "A living reef stretching between the two peninsulas that form the cove. Protects the harbor from open ocean swells. Home to creatures the divers know by name.",
-    "coords": [300, 900],
-    "page": null
-  },
-  {
-    "id": "lighthouse",
-    "name": "The Lighthouse",
-    "type": "landmark",
-    "tagline": "A human relic still earning its keep",
-    "description": "A surviving human lighthouse on the eastern peninsula, reactivated and maintained by Solverde. One of the few pieces of giant-scale infrastructure still serving its original purpose.",
-    "coords": [450, 700],
-    "page": null
-  },
-  {
-    "id": "old-dockyards",
-    "name": "Old Dockyards",
-    "type": "ruin",
-    "tagline": "Where the giants kept their ships",
-    "description": "A sprawling human marina complex outside the cove. Partially collapsed, partially flooded, largely unexplored. The most dangerous and most rewarding salvage site near Solverde. Crews go in prepared and sometimes still come back shaken.",
-    "coords": [350, 600],
-    "page": null
-  },
-  {
-    "id": "underwater-ruins",
-    "name": "Underwater Ruins",
-    "type": "ruin",
-    "tagline": "What the sea reclaimed",
-    "description": "Submerged human structures visible from the surface on calm days. What's down there is unclear. The divers who've gone deep enough to see don't all agree on what they found.",
-    "coords": [250, 1050],
-    "page": null
   }
 ]
