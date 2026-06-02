@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     attributionControl: false,
     maxBounds: bounds,
     maxBoundsViscosity: 1.0,
+    scrollWheelZoom: isFullScreen,
   });
 
   L.control.zoom({ position: 'topright' }).addTo(map);

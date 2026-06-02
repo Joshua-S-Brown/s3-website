@@ -1675,19 +1675,22 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 /* --- Solverde Embedded Map --- */
 .solverde-map-section {
   position: relative;
-  width: 100%;
-  margin-top: 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
 }
 .solverde-map-section #map {
   width: 100%;
-  min-height: 450px;
+  min-height: 400px;
+  max-height: 500px;
   background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 .solverde-map-section #map-sidebar {
   position: absolute;
   top: 0;
-  right: 0;
+  right: var(--space-xl);
   height: 100%;
+  border-radius: 0 8px 8px 0;
 }
