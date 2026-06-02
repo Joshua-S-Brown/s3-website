@@ -248,9 +248,9 @@ h3 { font-size: 1.125rem; font-weight: 400; }
 }
 .location-hero h1 { margin-bottom: var(--space-xs); }
 .location-hero__subtitle {
-  font-size: 1.0625rem; color: var(--text-muted);
+  font-size: 1.125rem; color: var(--text);
   font-family: var(--font-body);
-  letter-spacing: 0.5px; font-style: italic;
+  font-weight: 400; font-style: italic;
 }
 
 /* --- Story Page --- */
@@ -1694,6 +1694,10 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   right: 0;
   height: 100%;
   border-radius: 0 8px 8px 0;
+  visibility: hidden;
+}
+.solverde-map-section #map-sidebar.is-open {
+  visibility: visible;
 }
 
 /* --- Mobile Enhancements --- */
