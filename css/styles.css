@@ -2153,3 +2153,14 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 
 /* --- Scene Setter hardening --- */
 .scene-setter { width: 100%; }
+
+
+/* --- Hero: what this is --- */
+.ww-hero__what {
+  margin-top: var(--space-md);
+  font-size: 1rem;
+  color: var(--text);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}

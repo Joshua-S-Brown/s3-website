@@ -2,7 +2,7 @@
   {
     "id": "azure-cove",
     "name": "Azure Cove",
-    "type": "region",
+    "type": "cove",
     "tagline": "The sheltered waters of home",
     "description": "A C-shaped cove on the Cerulean Sea, protected by a reef between two peninsulas. Calm waters, reliable currents, and the kind of beauty that makes animals stay.",
     "coords": [
@@ -28,10 +28,10 @@
     ],
     "page": "/pages/locations/solverde.html",
     "facts": {
-      "Region": "Azure Cove",
+      "Cove": "Azure Cove",
+      "Region": "Veridian",
       "Architecture": "Mediterranean coastal",
-      "Known for": "Morning market, boatyard",
-      "Governance": "Community council"
+      "Known for": "Morning market, boatyard"
     },
     "related": {
       "Characters": [
