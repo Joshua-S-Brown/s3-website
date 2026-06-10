@@ -5,7 +5,10 @@
     "type": "region",
     "tagline": "The sheltered waters of home",
     "description": "A C-shaped cove on the Cerulean Sea, protected by a reef between two peninsulas. Calm waters, reliable currents, and the kind of beauty that makes animals stay.",
-    "coords": [560, 1000],
+    "coords": [
+      560,
+      1000
+    ],
     "page": null,
     "facts": {
       "Water": "Cerulean Sea",
@@ -19,13 +22,38 @@
     "type": "city",
     "tagline": "Where the green sun meets the sea",
     "description": "A beach town built at animal scale from salvaged human materials. Whitewashed plaster walls, terracotta roofs, sea-glass windows, and mosaic floors from salvaged tile. The name comes from old human resort signage the animals adopted. The humans meant it as marketing. The animals made it true.",
-    "coords": [560, 1000],
+    "coords": [
+      560,
+      1000
+    ],
     "page": "/pages/locations/solverde.html",
     "facts": {
       "Region": "Azure Cove",
       "Architecture": "Mediterranean coastal",
       "Known for": "Morning market, boatyard",
       "Governance": "Community council"
+    },
+    "related": {
+      "Characters": [
+        {
+          "name": "Cala",
+          "url": "/pages/characters/cala.html"
+        },
+        {
+          "name": "Tomas",
+          "url": "/pages/characters/tomas.html"
+        },
+        {
+          "name": "Sera",
+          "url": "/pages/characters/sera.html"
+        }
+      ],
+      "Stories": [
+        {
+          "name": "What the Tide Left",
+          "url": "/pages/stories/what-the-tide-left.html"
+        }
+      ]
     }
   }
 ]

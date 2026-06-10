@@ -87,6 +87,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       html += '<p class="sidebar__desc">' + loc.description + '</p>';
     }
 
+    if (loc.related) {
+      for (var group in loc.related) {
+        html += '<p class="sidebar__group-label">' + group + '</p>';
+        html += '<div class="sidebar__chips">';
+        loc.related[group].forEach(function (item) {
+          html += '<a class="sidebar__chip" href="' + item.url + '">' + item.name + '</a>';
+        });
+        html += '</div>';
+      }
+    }
+
     if (loc.facts) {
       html += '<div class="sidebar__facts">';
       for (var key in loc.facts) {
