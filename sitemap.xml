@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://secondselfstudios.com/</loc>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://secondselfstudios.com/pages/locations/kael-doran.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://secondselfstudios.com/pages/stories/the-lamplighters-oath.html</loc>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://secondselfstudios.com/</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/map/</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/locations/</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/locations/solverde.html</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/characters/</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/characters/cala.html</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/characters/tomas.html</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/characters/sera.html</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/stories/</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/stories/what-the-tide-left.html</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/lore/</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/lore/the-falling.html</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/journal/</loc></url>
+  <url><loc>https://secondselfstudios.com/pages/journal/why-im-building-a-world.html</loc></url>
 </urlset>
