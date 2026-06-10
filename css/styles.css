@@ -5,7 +5,6 @@
    Zero inline styles needed in HTML files.
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap');
 
 /* --- Palette --- */
 :root {
@@ -2002,6 +2001,10 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   max-width: 480px;
   width: 100%;
   display: block;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-card) !important;
 }
 .site-footer__updates {
   margin-top: var(--space-sm);
@@ -2021,6 +2024,10 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 
 /* --- Next Link (the walking tour) --- */
 .next-link {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  clear: both;
   text-align: center;
   padding: var(--space-xl) var(--space-xl) var(--space-2xl);
 }
@@ -2044,4 +2051,36 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   margin: 0 10px;
   color: var(--text-muted);
   opacity: 0.5;
+}
+
+/* --- Hero CTA --- */
+.hero-cta {
+  margin-top: var(--space-lg);
+}
+.hero-cta a {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  padding: 10px 22px;
+  display: inline-block;
+  transition: all var(--ease);
+}
+.hero-cta a:hover {
+  background: var(--green);
+  color: var(--bg);
+}
+
+/* --- Scene Setter --- */
+.scene-setter {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 auto var(--space-xl);
+  max-width: 560px;
+  padding: 0 var(--space-xl);
 }
