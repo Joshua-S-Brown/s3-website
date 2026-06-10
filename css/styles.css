@@ -2164,3 +2164,34 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   margin-left: auto;
   margin-right: auto;
 }
+
+/* --- Header Lockup: property-led, studio eyebrow --- */
+.site-logo--lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1;
+}
+.site-logo__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.5625rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: #8C857B;
+}
+.site-logo__property {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3125rem;
+  letter-spacing: 0.5px;
+  color: #F2EBD9;
+}
+.site-logo__property .amp {
+  color: var(--green);
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .site-logo__eyebrow { font-size: 0.5rem; letter-spacing: 2px; }
+  .site-logo__property { font-size: 1.125rem; }
+}
