@@ -2172,6 +2172,7 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   align-items: flex-start;
   gap: 2px;
   line-height: 1;
+  color: #F2EBD9;
 }
 .site-logo__eyebrow {
   font-family: var(--font-ui);
@@ -2188,7 +2189,7 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   color: #F2EBD9;
 }
 .site-logo__property .amp {
-  color: var(--green);
+  color: #3D8B37;
   font-weight: 500;
 }
 @media (max-width: 768px) {
